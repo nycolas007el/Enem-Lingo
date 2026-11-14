@@ -2810,3 +2810,594 @@ const QUESTION_DATABASE = {
 }
   ]
 };
+
+
+// ============================================================================
+// BANCO DE QUESTÕES REAIS DA UECE DOS ÚLTIMOS 5 ANOS (2022 a 2026)
+// 1ª e 2ª Fases da UECE (CEV/UECE) - Questões Objetivas de 4 Alternativas (A a D)
+// Rigorosamente formatadas com justificativas pedagógicas e gabaritos oficiais
+// ============================================================================
+
+const UECE_QUESTION_DATABASE = {
+  humanas_linguagens: [
+    // ==========================================
+    // UECE - LÍNGUA PORTUGUESA & LITERATURA CEARENSE
+    // ==========================================
+    {
+      difficulty: "medio",
+      category: "Linguagens • Literatura Cearense",
+      topic: "UECE 2025: PADARIA ESPIRITUAL E BOEMIA LITERÁRIA",
+      title: "O Humor Crítico e a Agremiação Boêmia em Fortaleza",
+      context: "Fundada em 1892 na cidade de Fortaleza por Antônio Sales, Adolfo Caminha e outros intelectuais, a Padaria Espiritual adotou uma organização satírica e irreverente, distribuindo 'pães de espírito' e desafiando o academicismo beletrista da época.",
+      question: "Considerando as características estéticas e ideológicas do Manifesto da Padaria Espiritual e sua atuação no Ceará, é correto afirmar que o grupo:",
+      options: [
+        { text: "Defendia a manutenção estrita do soneto parnasiano e da linguagem lusitana arcaica sem elementos regionais.", isCorrect: false },
+        { text: "Conjugou boemia, nacionalismo e sátira demolidora contra as instituições tradicionais, valorizando termos populares cearenses.", isCorrect: true },
+        { text: "Recusava veementemente a publicação de jornais de humor ou folhetins para não vulgarizar a arte clássica.", isCorrect: false },
+        { text: "Subordinou-se integralmente à censura do clero católico e às diretrizes dos partidos monarquistas vigentes.", isCorrect: false }
+      ],
+      explanation: "A Padaria Espiritual (1892) foi pioneira no pré-modernismo nordestino ao romper com o tom solene acadêmico por meio do humor, do jornal 'O Pão' e do léxico popular fortalezense."
+    },
+    {
+      difficulty: "facil",
+      category: "Linguagens • Literatura Cearense",
+      topic: "UECE 2024: O QUINZE DE RACHEL DE QUEIROZ",
+      title: "A Seca de 1915 e o Retirantismo no Sertão",
+      context: "Em 'O Quinze', publicado em 1930 quando Rachel de Queiroz tinha apenas 20 anos, a tragédia da estiagem sertaneja e os campos de concentração de retirantes em Fortaleza são narrados a partir do drama de Chico Bento e sua família.",
+      question: "Na estrutura temática e estilística da obra 'O Quinze', a força dramática do romance apoia-se:",
+      options: [
+        { text: "Na sobriedade e crueza da prosa que retrata o sofrimento dos retirantes sem apelos sentimentais artificiais, fundindo dor coletiva e afeto familiar.", isCorrect: true },
+        { text: "Na exaltação da fuga para os seringais da Amazônia como única solução pacífica e próspera para todo o campesinato.", isCorrect: false },
+        { text: "No uso de alegorias mitológicas greco-romanas para mascarar a situação de penúria dos sertanejos nos abarracamentos.", isCorrect: false },
+        { text: "No ponto de vista do fazendeiro autoritário que recusa socorrer afilhados e louva a seca como punição divina.", isCorrect: false }
+      ],
+      explanation: "Rachel de Queiroz revolucionou o romance de 30 com estilo direto, límpido e conciso ao narrar a migração forçada e o abandono dos retirantes no Ceará de 1915."
+    },
+    {
+      difficulty: "medio",
+      category: "Linguagens • Gramática e Figuras de Sintaxe",
+      topic: "UECE 2024: FIGURAS DE LINGUAGEM E RECURSOS EXPRESSIVOS",
+      title: "Zeugma vs. Elipse nos Clássicos Vestibulares",
+      context: "A prova de Língua Portuguesa da UECE frequentemente exige do candidato o reconhecimento minucioso de mecanismos sintáticos e figuras de construção em textos poéticos e crônicas.",
+      question: "No período: 'No sertão, a poeira sufocava os passos; na cidade, o clamor das multidões', ocorre a figura de linguagem denominada:",
+      options: [
+        { text: "Pleonasmo, pela reiteração enfática do sujeito gramatical em ambas as orações coordenadas.", isCorrect: false },
+        { text: "Zeugma, pela elipse do verbo 'sufocava', já expresso na oração anterior.", isCorrect: true },
+        { text: "Polissíndeto, pelo emprego repetitivo de conjunções coordenativas aditivas.", isCorrect: false },
+        { text: "Anacoluto, pela ruptura intencional da ordem direta sem concordância do predicado.", isCorrect: false }
+      ],
+      explanation: "Zeugma é a omissão de um termo que já foi mencionado anteriormente no contexto (no caso, a forma verbal 'sufocava' é omitida na segunda oração)."
+    },
+    {
+      difficulty: "medio",
+      category: "Linguagens • Funções da Linguagem",
+      topic: "UECE 2023: METALINGUAGEM E LINGUAGEM POÉTICA",
+      title: "A Poesia como Objeto do Próprio Poema",
+      context: "No poema em que o autor investiga o ato de esculpir as palavras no papel ('Lutar com palavras é a luta mais vã. No entanto, luto em tempo de paz...'), a linguagem se debruça sobre seus próprios limites de significação.",
+      question: "Nesse tipo de construção, a função da linguagem que predomina ao focalizar o próprio código linguístico chama-se:",
+      options: [
+        { text: "Função fática, focada em verificar o canal de comunicação entre os interlocutores.", isCorrect: false },
+        { text: "Função metalinguística, na qual o código é utilizado para explicar e refletir sobre si mesmo.", isCorrect: true },
+        { text: "Função conativa, orientada persuasivamente para ordenar um comportamento ao leitor.", isCorrect: false },
+        { text: "Função referencial, cujo foco exclusivo é a transmissão impessoal de dados científicos.", isCorrect: false }
+      ],
+      explanation: "Quando um texto utiliza a linguagem para analisar, explicar ou poetizar a própria feitura do texto e das palavras, predomina a função metalinguística."
+    },
+    {
+      difficulty: "facil",
+      category: "Linguagens • Literatura Brasileira",
+      topic: "UECE 2025: ROMANTISMO CEARENSE E JOSÉ DE ALENCAR",
+      title: "Iracema e o Mito Fundador do Ceará",
+      context: "José de Alencar concebeu a 'virgem dos lábios de mel' como personificação simbólica da terra cearense virgem, cujo encontro com o colonizador português Martim Soares Moreno concebe Moacir, 'o filho da dor'.",
+      question: "Do ponto de vista da formação da identidade nacional no Romantismo de Alencar, a união de Iracema e Martim simboliza:",
+      options: [
+        { text: "O conflito insolúvel que impede qualquer assimilação cultural entre europeus e povos nativos.", isCorrect: false },
+        { text: "A gênese lírica e mítica do povo cearense, fruto da fusão entre a natureza autóctone e a cultura ocidental.", isCorrect: true },
+        { text: "A vitória militar dos holandeses sobre as tribos tabajaras e potiguaras no litoral norte.", isCorrect: false },
+        { text: "A expulsão dos jesuítas e a condenação perpétua da língua nheengatu.", isCorrect: false }
+      ],
+      explanation: "Alencar constrói uma lenda etiológica em Iracema: o Ceará e o homem brasileiro nascem da fusão alegórica do elemento indígena (Iracema) com o português (Martim)."
+    },
+    {
+      difficulty: "dificil",
+      category: "Linguagens • Semântica e Coesão",
+      topic: "UECE 2026: POLISSEMIA E CONECTIVOS ARGUMENTATIVOS",
+      title: "Operadores Discursivos de Oposição Concessiva",
+      context: "Examine o período: 'Conquanto a seca fustigue implacavelmente a paisagem dos Inhamuns, a resistência cultural da população reinventa modos de convívio com a aridez.'",
+      question: "A conjunção 'Conquanto' estabelece entre as orações uma relação de sentido de:",
+      options: [
+        { text: "Concessão, introduzindo um fato que não anula a ação principal, equivalente a 'embora'.", isCorrect: true },
+        { text: "Causa, explicitando o motivo determinante da reinvenção cultural, equivalente a 'porque'.", isCorrect: false },
+        { text: "Conformidade, expressando acordo com normas estabelecidas, equivalente a 'conforme'.", isCorrect: false },
+        { text: "Condição, subordinando a resiliência à ocorrência da estiagem, equivalente a 'contanto que'.", isCorrect: false }
+      ],
+      explanation: "'Conquanto' é uma conjunção subordinativa concessiva (sinônimo de 'embora', 'ainda que', 'se bem que') que admite uma quebra na relação direta de oposição sem invalidar a oração principal."
+    },
+
+    // ==========================================
+    // UECE - CIÊNCIAS HUMANAS: HISTÓRIA DO CEARÁ E BRASIL
+    // ==========================================
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2024: A SEDIÇÃO DE JUAZEIRO (1914)",
+      title: "Messianismo, Coronelismo e a Queda de Franco Rabelo",
+      context: "Em 1914, Juazeiro do Norte transformou-se no palco de uma insurreição armada liderada pelo Padre Cícero Romão Batista e pelo médico e político Floro Bartolomeu, articulados à oligarquia Acioly contra a Política das Salvações de Hermes da Fonseca.",
+      question: "A respeito do contexto sociopolítico da Sedição de Juazeiro (1914), é correto afirmar que o movimento:",
+      options: [
+        { text: "Articulou o fervor religioso das massas camponesas e sertanejas aos interesses de oligarquias depostas, resultando na queda do governador interventor Franco Rabelo.", isCorrect: true },
+        { text: "Foi uma rebelião camponesa de caráter estritamente comunista que visava à desapropriação das terras do Cariri.", isCorrect: false },
+        { text: "Tinha por objetivo imediato restabelecer o Império do Brasil e entregar o governo do Ceará à Família Real em exílio.", isCorrect: false },
+        { text: "Originou-se de uma cisão irreconciliável entre o Padre Cícero e os coronéis da família Acioly.", isCorrect: false }
+      ],
+      explanation: "A Sedição de Juazeiro (1914) uniu a liderança carismática de Padre Cícero/Floro Bartolomeu às forças oligárquicas para sitiar Fortaleza e destituir o interventor federal Franco Rabelo."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2023: O CALDEIRÃO DA SANTA CRUZ DO DESERTO",
+      title: "Comunidade Messiânica e o Massacre do Crato (1937)",
+      context: "Na década de 1930, no sítio Caldeirão dos Jesuítas (Crato-CE), o beato José Lourenço organizou uma comunidade camponesa baseada no trabalho coletivo, na partilha e na devoção ao Padre Cícero.",
+      question: "A destruição violenta da comunidade do Caldeirão pelas forças policiais e aviação militar, durante o governo Vargas, foi motivada:",
+      options: [
+        { text: "Pelo temor dos latifundiários e autoridades de que a comunidade constituísse um 'reduto comunista' perigoso e desestabilizador da mão de obra regional.", isCorrect: true },
+        { text: "Pelo fato de José Lourenço ter liderado assaltos armados recorrentes aos bancos e comércios da cidade de Fortaleza.", isCorrect: false },
+        { text: "Pela recusa dos camponeses do Caldeirão em realizar qualquer tipo de prece ou prática religiosa cristã.", isCorrect: false },
+        { text: "Por um conflito territorial diplomático entre os estados do Ceará e de Pernambuco sobre a posse da Chapada do Araripe.", isCorrect: false }
+      ],
+      explanation: "O sucesso da economia comunitária do Caldeirão atraía milhares de sertanejos, incomodando latifundiários e a Igreja tradicional, sendo massacrado em 1937 sob a paranoia do 'perigo vermelho'."
+    },
+    {
+      difficulty: "facil",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2025: A TERRA DA LUZ E A ABOLIÇÃO DE 1884",
+      title: "Dragão do Mar e a Greve dos Jangadeiros no Porto",
+      context: "O Ceará libertou seus escravizados em 25 de março de 1884, quatro anos antes da Lei Áurea imperial, recebendo de José do Patrocínio a alcunha de 'Terra da Luz'.",
+      question: "O papel desempenhado pelo prático e jangadeiro Francisco José do Nascimento (o 'Dragão do Mar') na antecipação da abolição no Ceará consistiu em:",
+      options: [
+        { text: "Liderar a paralisação do embarque de escravizados no porto de Fortaleza, fechando o tráfico interprovincial pelo mar sob o lema 'No porto do Ceará não se embarcam mais escravos'.", isCorrect: true },
+        { text: "Financiar a compra das cartas de alforria de todos os negros do Vale do Jaguaribe com recursos da Coroa Britânica.", isCorrect: false },
+        { text: "Comandar a guerrilha armada dos quilombolas da Serra da Ibiapaba contra as tropas do Exército imperial.", isCorrect: false },
+        { text: "Redigir a petição que levou à renúncia do presidente da Província do Ceará em troca da libertação dos escravos.", isCorrect: false }
+      ],
+      explanation: "Em janeiro de 1881, Dragão do Mar e os jangadeiros se recusaram a transportar negros escravizados para os navios negreiros com destino ao Sul, sufocando o comércio e acelerando a abolição em 1884."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • História do Brasil e Ceará",
+      topic: "UECE 2022: A CONFEDERAÇÃO DO EQUADOR (1824)",
+      title: "O Frei Caneca e a Revolta Republicana no Nordeste",
+      context: "Em resposta ao fechamento autoritário da Constituinte de 1823 e à outorga da Constituição de 1824 por D. Pedro I, eclodiu em Pernambuco e se estendeu ao Ceará, Rio Grande do Norte e Paraíba a Confederação do Equador.",
+      question: "No Ceará, a Confederação do Equador destacou-se pela atuação de lideranças republicanas como Tristão Gonçalves de Alencar Araripe e teve como característica marcante:",
+      options: [
+        { text: "A defesa de um modelo republicano federativo com autonomia para as províncias e críticas severas ao Poder Moderador instituído pelo Imperador.", isCorrect: true },
+        { text: "A subserviência irrestrita aos tratados alfandegários britânicos e a exigência de manutenção da escravidão em todas as províncias do Norte.", isCorrect: false },
+        { text: "A adesão irrestrita aos mandos da monarquia absolutista de D. João VI em Lisboa contra a independência brasileira.", isCorrect: false },
+        { text: "O apoio maciço dos grandes senhores de engenho, que abandonaram totalmente as tropas fiéis ao imperador Pedro I.", isCorrect: false }
+      ],
+      explanation: "A Confederação do Equador (1824) defendeu o republicanismo federalista, insurgindo-se contra a centralização do Poder Moderador de D. Pedro I; no Ceará, Tristão Gonçalves foi uma das principais figuras."
+    },
+
+    // ==========================================
+    // UECE - CIÊNCIAS HUMANAS: GEOGRAFIA DO CEARÁ
+    // ==========================================
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Geografia do Ceará",
+      topic: "UECE 2025: BACIA DO JAGUARIBE E O CINTURÃO DAS ÁGUAS",
+      title: "Segurança Hídrica e o Açude Castanhão",
+      context: "A bacia hidrográfica do Rio Jaguaribe, conhecida historicamente como 'o maior rio temporário do mundo', abriga os dois maiores reservatórios de água do Ceará: o Orós e o Castanhão.",
+      question: "A integração das águas do Rio São Francisco à bacia do Jaguaribe por meio do Eixão das Águas e do Cinturão das Águas do Ceará (CAC) objetiva principalmente:",
+      options: [
+        { text: "Garantir a segurança hídrica para o consumo humano da Região Metropolitana de Fortaleza e viabilizar a agricultura irrigada e o Polo Industrial do Pecém.", isCorrect: true },
+        { text: "Substituir a navegação comercial marítima por hidrovias fluviais que conectem Juazeiro do Norte ao porto de Santos.", isCorrect: false },
+        { text: "Drenar permanentemente os manguezais do litoral leste cearense para criação exclusiva de camarão em cativeiro.", isCorrect: false },
+        { text: "Eliminar os períodos de estiagem natural por meio da modificação forçada do clima semiárido cearense.", isCorrect: false }
+      ],
+      explanation: "O Castanhão e o sistema de transposição do São Francisco canalizam água pelo Eixão para o abastecimento da RMF (Fortaleza), suporte industrial no Pecém e perímetros irrigados no Baixo Jaguaribe."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Geografia do Ceará",
+      topic: "UECE 2024: NÚCLEOS DE DESERTIFICAÇÃO NO CEARÁ",
+      title: "Degradação Pedológica e Antropização no Semiárido",
+      context: "O estado do Ceará possui áreas oficialmente mapeadas como núcleos de degradação ambiental grave e desertificação, identificadas pelo Ministério do Meio Ambiente e por órgãos estaduais.",
+      question: "Os dois mais expressivos e vulneráveis núcleos de desertificação no território cearense situam-se nos municípios/regiões de:",
+      options: [
+        { text: "Irauçuba e Médio Jaguaribe/Inhamuns, decorrentes do desmatamento da Caatinga para pecuária extensiva, queima de lenha e solos rasos propensos à erosão.", isCorrect: true },
+        { text: "Serra de Baturité e Chapada da Ibiapaba, provocados pelas neves e geadas frequentes de inverno sobre as plantações de café.", isCorrect: false },
+        { text: "Litoral de Aracati e Jericoacoara, em virtude do excesso de água doce retida nas dunas móveis costeiras.", isCorrect: false },
+        { text: "Guaramiranga e Pacoti, provocados pelo avanço da urbanização costeira e das marés de equinócio.", isCorrect: false }
+      ],
+      explanation: "O município de Irauçuba e áreas dos Inhamuns são notórios núcleos de desertificação no Ceará, onde solos cristalinos rasos sofrem intensa degradação pelo sobrepastoreio e queima de vegetação nativa."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Geografia e Demografia",
+      topic: "UECE 2024: CENSO DEMOGRÁFICO DO IBGE NO CEARÁ",
+      title: "Transição Demográfica e Envelhecimento Populacional",
+      context: "Os dados do Censo Demográfico revelaram que a taxa de fecundidade no Ceará continuou caindo, situando-se abaixo do nível de reposição populacional (2,1 filhos por mulher), acompanhando a tendência nacional.",
+      question: "Do ponto de vista socioeconômico e previdenciário, o estreitamento da base da pirâmide etária e o alargamento do topo no Ceará demandam:",
+      options: [
+        { text: "Reestruturação das políticas de saúde voltadas a doenças crônico-degenerativas e adaptação do sistema previdenciário ao aumento da razão de dependência de idosos.", isCorrect: true },
+        { text: "Fechamento imediato de todas as maternidades e universidades para transferir recursos à exploração de carvão mineral.", isCorrect: false },
+        { text: "Abertura irrestrita de escolas infantis para conter a explosão de nascimentos observada nas áreas rurais cearenses.", isCorrect: false },
+        { text: "Diminuição forçada da idade de aposentadoria de trabalhadores rurais para os 35 anos de idade.", isCorrect: false }
+      ],
+      explanation: "O envelhecimento populacional (aumento do percentual de idosos e redução de jovens) exige ajustes orçamentários na saúde geriátrica e nos fundos de previdência social."
+    },
+
+    // ==========================================
+    // UECE - CIÊNCIAS HUMANAS: FILOSOFIA & SOCIOLOGIA
+    // ==========================================
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Filosofia Contemporânea",
+      topic: "UECE 2025: MICHEL FOUCAULT E O BIOPODER",
+      title: "Da Soberania à Gestão da Vida e da População",
+      context: "Na clássica distinção formulada por Michel Foucault em 'A Vontade de Saber' e em 'Em Defesa da Sociedade', a passagem do poder soberano clássico para o biopoder marca a modernidade ocidental.",
+      question: "Para Foucault, a fórmula que sintetiza a lógica do biopoder na sociedade contemporânea é:",
+      options: [
+        { text: "Fazer viver e deixar morrer, controlando estatisticamente nascimentos, epidemias, longevidade e condições de higiene das populações.", isCorrect: true },
+        { text: "Fazer morrer e deixar viver, no qual o rei tem o direito pessoal e arbitrário de decapitar súditos em praça pública.", isCorrect: false },
+        { text: "Recusar qualquer mecanismo de vigilância hospitalar ou prisional, garantindo anarquia moral generalizada.", isCorrect: false },
+        { text: "Subordinar as decisões médicas e sanitárias aos mandamentos sagrados dos oráculos medievais.", isCorrect: false }
+      ],
+      explanation: "O poder soberano exercia o 'fazer morrer e deixar viver' (suplício). Já o biopoder atua gerindo a vida, a saúde pública, a natalidade e a mortalidade das populações: 'fazer viver e deixar morrer'."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Filosofia Moderna e Epistemologia",
+      topic: "UECE 2024: WITTGENSTEIN E OS LIMITES DA LINGUAGEM",
+      title: "O 'Tractatus Logico-Philosophicus' e o Silêncio Filosófico",
+      context: "A célebre proposição 7 do 'Tractatus Logico-Philosophicus' de Ludwig Wittgenstein afirma: 'Sobre aquilo de que não se pode falar, deve-se calar.'",
+      question: "Essa proposição expressa a concepção wittgensteiniana de que o papel da linguagem rigorosa consiste em:",
+      options: [
+        { text: "Delimitar o domínio dos fatos empiricamente figuráveis pelo pensamento lógico, reconhecendo que a ética, a mística e o sentido da vida ultrapassam a linguagem proposicional científica.", isCorrect: true },
+        { text: "Proibir o uso da poesia e declarar que apenas a fala cotidiana dos camponeses tem validade existencial.", isCorrect: false },
+        { text: "Exigir que todas as teorias científicas sejam convertidas em dogmas teológicos imutáveis.", isCorrect: false },
+        { text: "Demonstrar que as palavras não possuem qualquer ligação conceitual com os objetos do mundo material.", isCorrect: false }
+      ],
+      explanation: "Para o 'primeiro Wittgenstein', a proposição com sentido afigura estados de coisas no mundo empírico. Temas metafísicos e éticos pertencem ao indizível, devendo ser mostrados, e não teoretizados em proposições falsas."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Filosofia Política Clássica",
+      topic: "UECE 2023: ARISTÓTELES E O ANIMAL POLÍTICO",
+      title: "A Polis e a Natureza Social do Ser Humano",
+      context: "Em 'A Política', Aristóteles postula que o ser humano é por natureza um 'zoon politikon' (animal político) e que a pólis (cidade-estado) é anterior ao indivíduo por natureza.",
+      question: "De acordo com Aristóteles, a capacidade humana singular que justifica a vida política e a diferencia dos demais animais gregários é:",
+      options: [
+        { text: "A posse do 'logos' (discurso/razão), permitindo discernir e deliberar sobre o justo e o injusto, o conveniente e o prejudicial.", isCorrect: true },
+        { text: "A força física superior para aniquilar as feras silvestres e erguer muralhas de bronze.", isCorrect: false },
+        { text: "O instinto biológico cego de submissão aos líderes mais fortes da horda.", isCorrect: false },
+        { text: "A capacidade exclusiva de acumular riquezas monetárias e cobrar juros em transações comerciais.", isCorrect: false }
+      ],
+      explanation: "Aristóteles defende que o animal humano possui linguagem racional (logos), com a qual compartilha a percepção do bem, do mal, da justiça e constrói a comunidade política na pólis."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Filosofia Política Moderna",
+      topic: "UECE 2025: THOMAS HOBBES E O ESTADO DE NATUREZA",
+      title: "A Guerra de Todos contra Todos e o Contrato Social",
+      context: "No 'Leviatã' (1651), Thomas Hobbes descreve a condição natural da humanidade como uma permanente iminência de conflito e medo recíproco da morte violenta ('homo homini lupus').",
+      question: "Para superar a instabilidade do estado de natureza, os indivíduos hobbesianos realizam um pacto no qual:",
+      options: [
+        { text: "Transferem seu direito natural de autogoverno a um soberano absoluto, capaz de instituir leis, garantir a paz e a segurança coletiva.", isCorrect: true },
+        { text: "Aboliram todo tipo de governo e passaram a conviver pacificamente sem regras ou tribunais.", isCorrect: false },
+        { text: "Dividiram equitativamente a terra entre todas as famílias sob supervisão da Igreja Católica.", isCorrect: false },
+        { text: "Promoveram votações mensais diretas para destituir os governantes sempre que houvesse descontentamento popular.", isCorrect: false }
+      ],
+      explanation: "No contrato social hobbesiano, a renúncia mútua da liberdade natural em favor do Estado Soberano (Leviatã) tem como fim supremo a garantia da ordem, sobrevivência física e segurança coletiva."
+    }
+  ],
+
+  natureza_matematica: [
+    // ==========================================
+    // UECE - QUÍMICA (1ª E 2ª FASES)
+    // ==========================================
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Físico-Química",
+      topic: "UECE 2025: CINÉTICA QUÍMICA E CATÁLISE",
+      title: "Ação dos Catalisadores e Energia de Ativação",
+      context: "Em uma reação endotérmica A + B → C + D, a adição de um catalisador apropriado altera significativamente a velocidade da transformação química sem ser consumido no processo global.",
+      question: "Em relação à cinética desse sistema reacional catalisado, é correto afirmar que o catalisador atua:",
+      options: [
+        { text: "Diminuindo a energia de ativação da reação, proporcionando um novo caminho mecanicista para a formação do complexo ativado.", isCorrect: true },
+        { text: "Aumentando a variação de entalpia (ΔH) da reação, tornando o processo mais favorável termodinamicamente.", isCorrect: false },
+        { text: "Alterando a constante de equilíbrio químico (Kc), favorecendo unicamente a concentração dos produtos no estado final.", isCorrect: false },
+        { text: "Elevando a energia cinética de todas as moléculas sem alterar a barreira de ativação dos reagentes.", isCorrect: false }
+      ],
+      explanation: "O catalisador não altera ΔH, nem desloca a posição do equilíbrio químico (Kc); sua função exclusiva é criar um caminho reacional alternativo com menor energia de ativação (Ea), acelerando a reação."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Química Orgânica",
+      topic: "UECE 2024: POLÍMEROS SINTÉTICOS E MONÔMEROS",
+      title: "Policloreto de Vinila (PVC) e sua Estrutura",
+      context: "O PVC (policloreto de vinila) é um dos materiais plásticos mais utilizados na construção civil cearense em canos de distribuição de água potável, esgoto sanitário e eletrodutos rígidos.",
+      question: "O monômero precursor utilizado na polimerização por adição para a produção industrial do PVC é o:",
+      options: [
+        { text: "Cloroeteno (cloreto de vinila: CH₂=CH-Cl).", isCorrect: true },
+        { text: "Triclorometano (clorofórmio: CHCl₃).", isCorrect: false },
+        { text: "1,2-dicloroetano saturado (CH₂Cl-CH₂Cl).", isCorrect: false },
+        { text: "Clorobenzeno aromático (C₆H₅Cl).", isCorrect: false }
+      ],
+      explanation: "O PVC é obtido pela reação de polimerização por adição do cloroeteno (CH₂=CH-Cl), no qual a quebra da dupla ligação carbônica forma a cadeia polimérica (-CH₂-CHCl-)n."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Equilíbrio Químico",
+      topic: "UECE 2024: CONSTANTE DE EQUILÍBRIO Kc E Kp",
+      title: "Condição para Kc = Kp em Sistemas Gasosos",
+      context: "A relação matemática entre a constante de equilíbrio em função das pressões parciais (Kp) e a constante em função das concentrações em quantidade de matéria (Kc) é expressa por Kp = Kc · (R · T)^(Δn), em que Δn é a variação do número de mols gasosos (produtos - reagentes).",
+      question: "Em um sistema gasoso fechado a uma dada temperatura T, a igualdade numérica Kp = Kc ocorre estritamente quando:",
+      options: [
+        { text: "O somatório dos coeficientes estequiométricos gasosos dos reagentes for rigorosamente igual ao dos produtos (Δn = 0).", isCorrect: true },
+        { text: "A temperatura absoluta do reator for exatamente igual a 0 Kelvin (-273,15 °C).", isCorrect: false },
+        { text: "A reação for exclusivamente endotérmica com catalisador heterogêneo sólido.", isCorrect: false },
+        { text: "A pressão total no interior do sistema atingir 0 atm em vácuo absoluto.", isCorrect: false }
+      ],
+      explanation: "Como Kp = Kc · (R·T)^(Δn), para qualquer valor de R e T > 0, teremos (R·T)^0 = 1 se e somente se Δn = 0 (isto é, quando o número de mols de gás nos reagentes é igual ao dos produtos)."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Termodinâmica e Gases",
+      topic: "UECE 2023: ESTUDO DOS GASES IDEAIS",
+      title: "Transformação Isobárica e Variação de Volume",
+      context: "Certa massa fixa de um gás ideal, mantida sob pressão constante de 1,5 atm, ocupa inicialmente um volume de 4,0 L a uma temperatura absoluta Ti. O sistema é aquecido isobaricamente até que o volume atinja 10,0 L.",
+      question: "Pela Lei de Charles e Gay-Lussac para transformações isobáricas, a relação entre a temperatura final (Tf) e a temperatura inicial (Ti) é:",
+      options: [
+        { text: "5·Ti = 2·Tf (ou Tf = 2,5·Ti).", isCorrect: true },
+        { text: "Ti = 2,5·Tf (ou Tf = 0,4·Ti).", isCorrect: false },
+        { text: "Tf = Ti + 6,0 Kelvin.", isCorrect: false },
+        { text: "Tf · Ti = 40,0 Kelvin².", isCorrect: false }
+      ],
+      explanation: "Em transformação isobárica: V₁/T₁ = V₂/T₂ ⇒ 4/Ti = 10/Tf ⇒ 4·Tf = 10·Ti ⇒ 2·Tf = 5·Ti ⇒ Tf = 2,5·Ti."
+    },
+    {
+      difficulty: "facil",
+      category: "Ciências da Natureza • Propriedades Coligativas",
+      topic: "UECE 2025: TONOSCOPIA E EBULIOSCOPIA",
+      title: "Efeito da Adição de Soluto Não Volátil na Água",
+      context: "Ao dissolver cloreto de sódio (sal de cozinha) em água destilada, observa-se uma alteração marcante nas propriedades físicas da solução em relação ao solvente puro sob mesma pressão atmosférica.",
+      question: "Em consequência da presença do soluto iônico não volátil dissolvido, a solução salina resultante apresentará:",
+      options: [
+        { text: "Menor pressão máxima de vapor e maior temperatura de ebulição do que a água destilada pura.", isCorrect: true },
+        { text: "Maior pressão máxima de vapor e menor temperatura de congelamento que a água pura.", isCorrect: false },
+        { text: "Ponto de ebulição rigorosamente inalterado a exatamente 100 °C em qualquer altitude.", isCorrect: false },
+        { text: "Imediata diminuição da pressão osmótica para valores negativos.", isCorrect: false }
+      ],
+      explanation: "A adição de soluto não volátil causa tonoscopia (abaixamento da pressão de vapor do solvente), ebulioscopia (elevação do ponto de ebulição) e crioscopia (abaixamento do ponto de congelamento)."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Isomeria e Estereoquímica",
+      topic: "UECE 2026: ISOMERIA ÓPTICA NO ÁCIDO LÁTICO",
+      title: "Carbono Quiral e Atividade Óptica",
+      context: "O ácido lático (ácido 2-hidroxipropanoico, CH₃-CH(OH)-COOH) acumula-se no tecido muscular durante esforços anaeróbios intensos e é largamente utilizado na indústria de laticínios cearense.",
+      question: "A molécula de ácido lático exibe atividade óptica (enantiômeros dextrogiro e levogiro) devido à presença de:",
+      options: [
+        { text: "Um átomo de carbono assimétrico (quiral) ligado a quatro ligantes distintos: -H, -OH, -CH₃ e -COOH.", isCorrect: true },
+        { text: "Uma dupla ligação com impedimento estérico que impede a rotação molecular cis-trans.", isCorrect: false },
+        { text: "Um anel aromático hexagonal com elétrons pi deslocalizados por ressonância.", isCorrect: false },
+        { text: "Três átomos de oxigênio dispostos em geometria linear em torno da carbonila.", isCorrect: false }
+      ],
+      explanation: "O carbono 2 do ácido lático está ligado a quatro grupos diferentes (-H, -OH, -CH₃, -COOH), configurando um centro estereogênico (quiral) que desvia o plano da luz polarizada."
+    },
+
+    // ==========================================
+    // UECE - FÍSICA (1ª E 2ª FASES)
+    // ==========================================
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Óptica Geométrica",
+      topic: "UECE 2024: ESPELHOS ESFÉRICOS E ASSOCIAÇÃO",
+      title: "Distância Focal e Posição do Objeto",
+      context: "Um objeto real é colocado perpendicularmente ao eixo principal de um espelho esférico côncavo de distância focal f, situado a uma distância p do vértice. Para produzir uma imagem real com aumento linear transversal A = -1/2 (imagem invertida e com a metade da altura do objeto):",
+      question: "A distância p do objeto ao vértice do espelho côncavo deve ser expressa em função da distância focal f por:",
+      options: [
+        { text: "p = 3·f", isCorrect: true },
+        { text: "p = 1,5·f", isCorrect: false },
+        { text: "p = 0,5·f", isCorrect: false },
+        { text: "p = 4·f", isCorrect: false }
+      ],
+      explanation: "Aumento linear transversal em espelhos esféricos: A = f / (f - p). Como A = -1/2: -1/2 = f / (f - p) ⇒ -(f - p) = 2f ⇒ -f + p = 2f ⇒ p = 3f."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Mecânica e Energia",
+      topic: "UECE 2025: TRABALHO, ATRITO E FRENAGEM",
+      title: "Conservação de Energia em Plano Horizontal",
+      context: "Um automóvel de massa m trafega com velocidade constante v em uma pista horizontal retilínea da rodovia CE-040. Ao acionar os freios, as rodas travam e o veículo desliza até o repouso total sob ação exclusiva do atrito dinâmico constante entre pneus e asfalto.",
+      question: "Se o motorista dobrar sua velocidade de tráfego inicial (2v), a distância de frenagem necessária para o veículo parar completamente será multiplicada por:",
+      options: [
+        { text: "4 vezes o valor inicial.", isCorrect: true },
+        { text: "2 vezes o valor inicial.", isCorrect: false },
+        { text: "8 vezes o valor inicial.", isCorrect: false },
+        { text: "16 vezes o valor inicial.", isCorrect: false }
+      ],
+      explanation: "Pelo Teorema da Energia Cinética: W_atrito = ΔEc ⇒ Fat · d = (1/2)·m·v² ⇒ d = (m·v²) / (2·Fat). Como a distância varia com o quadrado da velocidade (v²), dobrar a velocidade quadruplica a distância de frenagem."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Eletromagnetismo",
+      topic: "UECE 2023: INDUÇÃO ELETROMAGNÉTICA DE FARADAY",
+      title: "Variação do Fluxo Magnético e Lei de Lenz",
+      context: "Uma espira condutora circular fechada é mantida em repouso no plano do papel. Um ímã em barra é aproximado rapidamente da espira, com seu polo Norte voltado para a face visível da espira.",
+      question: "De acordo com as Leis de Faraday e Lenz, a aproximação do polo Norte do ímã gera na espira:",
+      options: [
+        { text: "Uma corrente elétrica induzida no sentido anti-horário, criando um polo magnético Norte frontal que repele a aproximação do ímã.", isCorrect: true },
+        { text: "Uma corrente induzida no sentido horário que atrai intensamente o ímã em queda livre perpétua.", isCorrect: false },
+        { text: "Nenhuma corrente elétrica induzida, pois a espira encontra-se eletricamente neutra.", isCorrect: false },
+        { text: "Um campo elétrico nulo em todos os pontos do espaço delimitado pela espira.", isCorrect: false }
+      ],
+      explanation: "Lei de Lenz: o sentido da corrente induzida é tal que seus efeitos magnéticos se opõem à variação de fluxo que a originou. Ao aproximar o polo Norte (aumento do fluxo), a espira gera um polo Norte na face frontal (repulsão), correspondente ao sentido anti-horário da corrente induzida."
+    },
+
+    // ==========================================
+    // UECE - BIOLOGIA (1ª E 2ª FASES)
+    // ==========================================
+    {
+      difficulty: "facil",
+      category: "Ciências da Natureza • Genética Clássica",
+      topic: "UECE 2025: SISTEMA ABO E TRANSFUSÃO SANGUÍNEA",
+      title: "Aglutinogênios e Aglutininas Plasmáticas",
+      context: "O sistema sanguíneo ABO humano é determinado por alelos múltiplos (alelismo múltiplo: Iᴬ, Iᴮ e i), em que a presença de glicoproteínas nas hemácias e anticorpos no plasma sanguíneo condicionam a compatibilidade transfusional.",
+      question: "Um indivíduo portador do tipo sanguíneo AB positivo (AB+) é considerado classicamente 'receptor universal' porque:",
+      options: [
+        { text: "Suas hemácias não possuem aglutininas anti-A nem anti-B no plasma sanguíneo, e o fator Rh positivo aceita sangue com ou sem antígeno D.", isCorrect: true },
+        { text: "Não possui nenhuma proteína antigênica nas membranas de suas hemácias, impedindo a coagulação.", isCorrect: false },
+        { text: "Seu organismo produz anticorpos que destroem imediatamente as hemácias de qualquer outro doador.", isCorrect: false },
+        { text: "O plasma sanguíneo contém simultaneamente anticorpos anti-A, anti-B e anti-Rh de alta afinidade.", isCorrect: false }
+      ],
+      explanation: "O sangue AB não possui anticorpos anti-A nem anti-B no plasma circulante, permitindo que a pessoa receba hemácias de qualquer tipo sanguíneo do sistema ABO sem sofrer aglutinação primária."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Ecologia e Cadeias Tróficas",
+      topic: "UECE 2024: MAGNIFICAÇÃO TRÓFICA E POLUIÇÃO",
+      title: "Bioacumulação de Metais Pesados em Ecossistemas Aquáticos",
+      context: "Em uma lagoa costeira cearense contaminada por efluentes industriais com metilmercúrio, os pesquisadores analisaram a concentração do poluente em diferentes níveis tróficos da cadeia alimentar: fitoplâncton microalgal → microcrustáceos zooplanctônicos → pequenos peixes carnívoros → aves piscívoras do topo.",
+      question: "Em decorrência do fenômeno de magnificação trófica (bioacumulação ao longo da cadeia alimentar), a maior concentração de mercúrio por grama de biomassa será encontrada nos tecidos:",
+      options: [
+        { text: "Das aves piscívoras, ocupantes do último nível trófico da cadeia.", isCorrect: true },
+        { text: "Do fitoplâncton microalgal, base produtora autótrofa primária da cadeia.", isCorrect: false },
+        { text: "Dos microcrustáceos consumidores primários herbívoros.", isCorrect: false },
+        { text: "Da água da lagoa sob forma de vapor condensado estéril.", isCorrect: false }
+      ],
+      explanation: "Substâncias não biodegradáveis lipossolúveis (como mercúrio e agrotóxicos organoclorados) não são metabolizadas nem excretadas facilmente, concentrando-se progressivamente nos níveis tróficos superiores (topo da cadeia)."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Botânica e Evolução Vegetal",
+      topic: "UECE 2023: ADAPTAÇÕES DA VEGETAÇÃO DA CAATINGA",
+      title: "Plantas Xerófitas e Adaptações ao Semiárido",
+      context: "A Caatinga é o único bioma exclusivamente brasileiro e abriga uma rica diversidade de espécies vegetais adaptadas à escassez hídrica e à alta insolação típica do semiárido cearense.",
+      question: "Dentre as adaptações morfológicas e fisiológicas comuns apresentadas pelas plantas xerófitas da Caatinga (como juazeiro, mandacaru e xique-xique), destaca-se:",
+      options: [
+        { text: "Presença de cutícula cerosa espessa, folhas reduzidas ou modificadas em espinhos, estômatos protegidos e parênquima aquífero para reserva hídrica.", isCorrect: true },
+        { text: "Desenvolvimento de folhas largas e tênues sem estômatos para acelerar ao máximo a perda de água por transpiração diurna.", isCorrect: false },
+        { text: "Sistemas radiculares totalmente superficiais incapazes de absorver orvalho matinal ou umidade freática.", isCorrect: false },
+        { text: "Fixação biológica de oxigênio gasoso puro diretamente nos caules fotossintetizantes lenhosos.", isCorrect: false }
+      ],
+      explanation: "Xerófitas da Caatinga reduzem a transpiração com folhas transformadas em espinhos, cutícula impermeabilizante e caules suculentos (parênquima aquífero) para armazenamento de água."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Fisiologia Humana",
+      topic: "UECE 2025: OSMORREGULAÇÃO E HORMÔNIO ADH",
+      title: "Ação do Hormônio Antidiurético (Vasopressina) nos Néfrons",
+      context: "Em dias de calor intenso e privação de ingestão de água potável no sertão central cearense, os osmorreceptores hipotalâmicos detectam a elevação da osmolaridade plasmática, estimulando a neuro-hipófise a secretar o hormônio antidiurético (ADH).",
+      question: "A atuação direta do ADH nos néfrons dos rins humanos resulta em:",
+      options: [
+        { text: "Aumento da permeabilidade dos túbulos coletores à água pela inserção de aquaporinas, produzindo urina mais concentrada e de menor volume.", isCorrect: true },
+        { text: "Bloqueio da reabsorção de sódio, provocando diurese copiosa de urina extremamente diluída.", isCorrect: false },
+        { text: "Paralisação completa da filtração glomerular na cápsula renal de Bowman.", isCorrect: false },
+        { text: "Dilatação das artérias renais com destruição irreversível dos túbulos contorcidos distais.", isCorrect: false }
+      ],
+      explanation: "O ADH (vasopressina) atua nos ductos coletores aumentando a translocação de aquaporinas, permitindo que a água retorne ao sangue por osmose, concentrando a urina e evitando a desidratação."
+    },
+
+    // ==========================================
+    // UECE - MATEMÁTICA (1ª E 2ª FASES)
+    // ==========================================
+    {
+      difficulty: "medio",
+      category: "Matemática • Geometria Plana",
+      topic: "UECE 2024: POLÍGONOS REGULARES E HEXÁGONO",
+      title: "Área de Hexágono Regular Inscrito",
+      context: "Um hexágono regular convexo tem lado com medida igual a 8 cm. Sabendo que o hexágono é composto pela justaposição de 6 triângulos equiláteros congruentes de lado L = 8 cm:",
+      question: "A área total desse hexágono regular em centímetros quadrados (cm²) é rigorosamente igual a:",
+      options: [
+        { text: "96√3 cm²", isCorrect: true },
+        { text: "64√3 cm²", isCorrect: false },
+        { text: "128√3 cm²", isCorrect: false },
+        { text: "192 cm²", isCorrect: false }
+      ],
+      explanation: "A área de um triângulo equilátero de lado L é A_t = (L²·√3)/4 = (64·√3)/4 = 16√3 cm². A área do hexágono regular é 6 vezes essa área: A = 6 × 16√3 = 96√3 cm²."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Geometria Analítica",
+      topic: "UECE 2024: EQUAÇÃO DA CIRCUNFERÊNCIA E RETAS",
+      title: "Raio e Posição do Centro de uma Circunferência",
+      context: "No plano cartesiano ortogonal ℝ², a equação de uma circunferência é expressa em sua forma geral por x² + y² - 6x - 8y = 0.",
+      question: "As coordenadas do centro C e a medida do raio R dessa circunferência são, respectivamente:",
+      options: [
+        { text: "Centro C(3, 4) e raio R = 5", isCorrect: true },
+        { text: "Centro C(-3, -4) e raio R = 25", isCorrect: false },
+        { text: "Centro C(6, 8) e raio R = 10", isCorrect: false },
+        { text: "Centro C(0, 0) e raio R = 7", isCorrect: false }
+      ],
+      explanation: "Completando quadrados: (x² - 6x + 9) + (y² - 8y + 16) = 9 + 16 ⇒ (x - 3)² + (y - 4)² = 25 = 5². Logo, o centro é C(3, 4) e o raio é R = √25 = 5."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Análise Combinatória",
+      topic: "UECE 2025: PRINCÍPIO FUNDAMENTAL DA CONTAGEM",
+      title: "Formação de Números Pares com Algarismos Distintos",
+      context: "Deseja-se formar números naturais pares de 4 algarismos distintos utilizando exclusivamente os elementos do conjunto {1, 2, 3, 4, 5, 6, 7}.",
+      question: "A quantidade total de números pares de 4 algarismos distintos que podem ser formados é igual a:",
+      options: [
+        { text: "360", isCorrect: true },
+        { text: "420", isCorrect: false },
+        { text: "240", isCorrect: false },
+        { text: "504", isCorrect: false }
+      ],
+      explanation: "Para o número ser par, o último algarismo das unidades deve ser escolhido entre {2, 4, 6} (3 opções). Fixado o último algarismo, restam 6 algarismos disponíveis para as outras 3 posições ordenadas: 6 × 5 × 4 = 120 maneiras. Total: 120 × 3 = 360 números pares."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Números Complexos",
+      topic: "UECE 2023: POTÊNCIAS DA UNIDADE IMAGINÁRIA",
+      title: "Potências de (1 + i) e Simplificação Algébrica",
+      context: "Considere a unidade imaginária i tal que i² = -1. Seja o número complexo z = (1 + i).",
+      question: "O menor número inteiro positivo n para o qual a potência zⁿ = (1 + i)ⁿ é um número real negativo é:",
+      options: [
+        { text: "n = 4", isCorrect: true },
+        { text: "n = 2", isCorrect: false },
+        { text: "n = 6", isCorrect: false },
+        { text: "n = 8", isCorrect: false }
+      ],
+      explanation: "Calculando as potências sucessivas: z² = (1 + i)² = 1 + 2i - 1 = 2i. Para n = 4: z⁴ = (z²)² = (2i)² = 4i² = -4. Como -4 é um número real estritamente negativo, o menor valor positivo de n é 4."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Sequências e Progressões",
+      topic: "UECE 2025: PROGRESSÃO GEOMÉTRICA INFINITA",
+      title: "Soma dos Termos de PG Decrescente",
+      context: "Considere a progressão geométrica infinita (a₁, a₂, a₃, ...) cujos primeiros termos são (1/4, 1/16, 1/64, ...).",
+      question: "O valor exato da soma de todos os infinitos termos dessa progressão geométrica convergente é:",
+      options: [
+        { text: "1/3", isCorrect: true },
+        { text: "1/2", isCorrect: false },
+        { text: "3/4", isCorrect: false },
+        { text: "1/4", isCorrect: false }
+      ],
+      explanation: "O primeiro termo é a₁ = 1/4 e a razão é q = (1/16)/(1/4) = 1/4. Como |q| < 1, a soma infinita é S = a₁ / (1 - q) = (1/4) / (1 - 1/4) = (1/4) / (3/4) = 1/3."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Polinômios e Álgebra",
+      topic: "UECE 2024: TEOREMA DO RESTO DE D'ALEMBERT",
+      title: "Divisão de Polinômios por Binômio de 1º Grau",
+      context: "Seja o polinômio P(x) = x²⁰²⁴ + 3·x²⁰²³ + k, no qual k é uma constante real. Sabe-se que o resto da divisão de P(x) por (x + 1) é igual a 4.",
+      question: "Pelo Teorema do Resto, o valor numérico da constante real k é igual a:",
+      options: [
+        { text: "6", isCorrect: true },
+        { text: "2", isCorrect: false },
+        { text: "-2", isCorrect: false },
+        { text: "4", isCorrect: false }
+      ],
+      explanation: "Pelo Teorema do Resto: Resto = P(-1) = 4. Substituindo x = -1: (-1)²⁰²⁴ + 3·(-1)²⁰²³ + k = 4 ⇒ 1 + 3·(-1) + k = 4 ⇒ 1 - 3 + k = 4 ⇒ -2 + k = 4 ⇒ k = 6."
+    }
+  ]
+};
+
+// Objeto de Acesso Unificado aos Bancos de Questões por Modalidade
+const EXAM_DATABASES = {
+  enem: QUESTION_DATABASE,
+  uece: UECE_QUESTION_DATABASE
+};

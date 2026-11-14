@@ -845,6 +845,116 @@
     .report-weak .report-item {
       border-left-color: #ff4b4b;
     }
+  
+    /* Seletor de Modo de Exame: ENEM vs UECE */
+    .exam-mode-switcher {
+      display: flex;
+      background: #18262d;
+      border: 2px solid #233c47;
+      border-radius: 16px;
+      padding: 4px;
+      gap: 6px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    .mode-pill {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: none;
+      background: transparent;
+      color: #9cb2c0;
+      font-size: 13.5px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .mode-pill:hover {
+      color: #f1f7fb;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .mode-pill.active {
+      background: #1cb0f6;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(28, 176, 246, 0.35);
+    }
+
+    .mode-pill.active.uece-active {
+      background: #22c55e;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+    }
+
+    /* Card UECE Desempenho Bruto */
+    .uece-score-card {
+      background: linear-gradient(135deg, #15382b 0%, #0d281e 100%);
+      border: 2px solid #22c55e;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .uece-score-header {
+      font-size: 11px;
+      font-weight: 800;
+      color: #86efac;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .uece-score-value {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      margin: 4px 0 2px;
+      letter-spacing: -0.5px;
+    }
+
+    .uece-status-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-top: 4px;
+    }
+
+    .uece-status-badge.aprovado {
+      background: #15803d;
+      color: #dcfce7;
+      border: 1px solid #22c55e;
+    }
+
+    .uece-status-badge.competitivo {
+      background: #854d0e;
+      color: #fef08a;
+      border: 1px solid #eab308;
+    }
+
+    .uece-status-badge.treino {
+      background: #991b1b;
+      color: #fee2e2;
+      border: 1px solid #ef4444;
+    }
+
+    .uece-status-desc {
+      font-size: 11.5px;
+      color: #9cb2c0;
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+
+  
+
+
   </style>
 </head>
 <body>
@@ -875,24 +985,35 @@
     <!-- Tela de Escolha de Caderno do ENEM -->
     <div class="area-selector-screen" id="areaSelectorScreen">
       <div>
-        <div class="selector-hero-icon">🦉🔥</div>
-        <h1 class="selector-title">ENEM Lingo</h1>
-        <p class="selector-subtitle">Escolha seu caderno com os conteúdos que mais caem na prova:</p>
+        <div class="selector-hero-icon" id="heroExamIcon">🦉🔥</div>
+        <h1 class="selector-title" id="appMainTitle">ENEM Lingo</h1>
+        
+        <!-- Seletor Segmentado: Modo ENEM vs. Modo UECE -->
+        <div class="exam-mode-switcher">
+          <button class="mode-pill active" id="modeEnemBtn" onclick="setExamMode('enem')">
+            <span>🇧🇷</span> ENEM (5 Opções)
+          </button>
+          <button class="mode-pill" id="modeUeceBtn" onclick="setExamMode('uece')">
+            <span>🏛️</span> UECE (4 Opções)
+          </button>
+        </div>
+
+        <p class="selector-subtitle" id="appSubtitle">Escolha seu caderno com os conteúdos que mais caem na prova:</p>
       </div>
 
       <button class="area-card-btn" onclick="startQuiz('humanas_linguagens')">
-        <div class="area-icon-wrap icon-day1">📚</div>
+        <div class="area-icon-wrap icon-day1" id="iconDay1">📚</div>
         <div class="area-info">
-          <h3>Dia 1: Linguagens e Ciências Humanas</h3>
-          <p>Repertório completo do ENEM (2020 a 2025): IA Generativa, COP30 Amazônia, Deepfakes, Demarcação Indígena, Cultura Digital e Guerra Fria.</p>
+          <h3 id="titleDay1">Dia 1: Linguagens e Ciências Humanas</h3>
+          <p id="descDay1">Repertório completo do ENEM (2020 a 2025): IA Generativa, COP30 Amazônia, Deepfakes, Demarcação Indígena, Cultura Digital e Guerra Fria.</p>
         </div>
       </button>
 
       <button class="area-card-btn" onclick="startQuiz('natureza_matematica')">
-        <div class="area-icon-wrap icon-day2">🧪</div>
+        <div class="area-icon-wrap icon-day2" id="iconDay2">🧪</div>
         <div class="area-info">
-          <h3>Dia 2: Natureza e Matemática</h3>
-          <p>Repertório completo do ENEM (2020 a 2025): Hidrogênio Verde, Microplásticos, Dados Exponenciais, Queimadas, CRISPR e Energia Solar.</p>
+          <h3 id="titleDay2">Dia 2: Natureza e Matemática</h3>
+          <p id="descDay2">Repertório completo do ENEM (2020 a 2025): Hidrogênio Verde, Microplásticos, Dados Exponenciais, Queimadas, CRISPR e Energia Solar.</p>
         </div>
       </button>
 
@@ -971,12 +1092,20 @@
 
       <!-- Diagnóstico de Desempenho com Pontos Fortes e Fracos -->
       <div class="performance-box" id="performanceBox">
-        <!-- Card TRI Estimada -->
-        <div class="tri-score-card">
+        <!-- Card TRI Estimada (Modo ENEM) -->
+        <div class="tri-score-card" id="enemScoreCardModal">
           <div class="tri-score-header">Nota TRI Estimada (INEP)</div>
           <div class="tri-score-value" id="triScoreVal">--</div>
           <span class="tri-coherence-badge alta" id="triBadgeCoherence">Coerência Alta</span>
           <div class="tri-coherence-desc" id="triDescCoherence">Respostas consistentes na régua de proficiência.</div>
+        </div>
+
+        <!-- Card Nota Bruta UECE (Modo UECE) -->
+        <div class="uece-score-card" id="ueceScoreCardModal" style="display: none;">
+          <div class="uece-score-header">Desempenho Bruto Vestibular UECE</div>
+          <div class="uece-score-value" id="ueceScoreVal">--</div>
+          <span class="uece-status-badge aprovado" id="ueceStatusBadge">Desempenho Competitivo</span>
+          <div class="uece-status-desc" id="ueceStatusDesc">Projeção de corte para 2ª fase com base nas edições 2022-2026.</div>
         </div>
 
         <div class="performance-score" id="performanceScore">Acertos: 0 / 0 (0%)</div>
@@ -1014,12 +1143,20 @@
       </div>
 
       <div id="sideContentFilled" style="display: none; flex-direction: column; gap: 14px;">
-        <!-- Card TRI Lateral -->
-        <div class="tri-score-card">
+        <!-- Card TRI Lateral (Modo ENEM) -->
+        <div class="tri-score-card" id="sideEnemScoreCard">
           <div class="tri-score-header">Nota TRI Estimada (INEP)</div>
           <div class="tri-score-value" id="sideTriScoreVal">--</div>
           <span class="tri-coherence-badge alta" id="sideTriBadgeCoherence">Coerência Alta</span>
           <div class="tri-coherence-desc" id="sideTriDescCoherence">Respostas consistentes na régua de proficiência.</div>
+        </div>
+
+        <!-- Card Nota Bruta UECE Lateral (Modo UECE) -->
+        <div class="uece-score-card" id="sideUeceScoreCard" style="display: none;">
+          <div class="uece-score-header">Desempenho Bruto Vestibular UECE</div>
+          <div class="uece-score-value" id="sideUeceScoreVal">--</div>
+          <span class="uece-status-badge aprovado" id="sideUeceStatusBadge">Desempenho Competitivo</span>
+          <div class="uece-status-desc" id="sideUeceStatusDesc">Projeção de corte para 2ª fase com base nas edições 2022-2026.</div>
         </div>
 
         <div class="performance-score" id="sidePerformanceScore">Acertos: 0 / 0 (0%)</div>
@@ -1042,7 +1179,8 @@
   <script src="questions.js"></script>
 
   <script>
-    // Estado do App
+    // Estado Global do App & Modalidade
+    let currentExamMode = localStorage.getItem('enem_duo_exam_mode') || 'enem'; // 'enem' | 'uece'
     let activeQuestionList = [];
     let currentQuestionIndex = 0;
     let selectedOptionIndex = null;
@@ -1051,6 +1189,55 @@
     let timerInterval = null;
     let timeLeft = 120; // 2 minutos (120 segundos) por questão
     let userAnswersHistory = []; // Registro de acertos e erros por tema
+
+    function getCurrentDatabase() {
+      if (typeof EXAM_DATABASES !== 'undefined' && EXAM_DATABASES[currentExamMode]) {
+        return EXAM_DATABASES[currentExamMode];
+      }
+      return QUESTION_DATABASE;
+    }
+
+    function setExamMode(mode) {
+      if (mode !== 'enem' && mode !== 'uece') return;
+      currentExamMode = mode;
+      localStorage.setItem('enem_duo_exam_mode', mode);
+      updateExamModeUI();
+      updateWeakPointsButtonState();
+    }
+
+    function updateExamModeUI() {
+      const modeEnemBtn = document.getElementById('modeEnemBtn');
+      const modeUeceBtn = document.getElementById('modeUeceBtn');
+      const appMainTitle = document.getElementById('appMainTitle');
+      const appSubtitle = document.getElementById('appSubtitle');
+      const heroExamIcon = document.getElementById('heroExamIcon');
+      const titleDay1 = document.getElementById('titleDay1');
+      const descDay1 = document.getElementById('descDay1');
+      const titleDay2 = document.getElementById('titleDay2');
+      const descDay2 = document.getElementById('descDay2');
+
+      if (currentExamMode === 'uece') {
+        if (modeEnemBtn) { modeEnemBtn.className = 'mode-pill'; }
+        if (modeUeceBtn) { modeUeceBtn.className = 'mode-pill active uece-active'; }
+        if (appMainTitle) appMainTitle.textContent = 'UECE Lingo';
+        if (heroExamIcon) heroExamIcon.textContent = '🏛️☀️';
+        if (appSubtitle) appSubtitle.textContent = 'Questões reais da UECE (Últimos 5 Anos: 2022 a 2026) com 4 alternativas:';
+        if (titleDay1) titleDay1.textContent = 'Caderno 1: Humanas, Linguagens & Literatura Cearense';
+        if (descDay1) descDay1.textContent = 'Provas da UECE: Padaria Espiritual, Rachel de Queiroz, História do Ceará (Sedição de Juazeiro, Caldeirão, Dragão do Mar), Geografia (Castanhão, Desertificação) e Filosofia (Foucault, Wittgenstein).';
+        if (titleDay2) titleDay2.textContent = 'Caderno 2: Natureza & Matemática';
+        if (descDay2) descDay2.textContent = 'Provas da UECE: Cinética e Polímeros (PVC), Gases e Coligativas, Óptica e Faraday, Caatinga e ADH, Geometria (Hexágono e Circunferência), Combinatória e Complexos.';
+      } else {
+        if (modeEnemBtn) { modeEnemBtn.className = 'mode-pill active'; }
+        if (modeUeceBtn) { modeUeceBtn.className = 'mode-pill'; }
+        if (appMainTitle) appMainTitle.textContent = 'ENEM Lingo';
+        if (heroExamIcon) heroExamIcon.textContent = '🦉🔥';
+        if (appSubtitle) appSubtitle.textContent = 'Escolha seu caderno com os conteúdos que mais caem na prova:';
+        if (titleDay1) titleDay1.textContent = 'Dia 1: Linguagens e Ciências Humanas';
+        if (descDay1) descDay1.textContent = 'Repertório completo do ENEM (2020 a 2025): IA Generativa, COP30 Amazônia, Deepfakes, Demarcação Indígena, Cultura Digital e Guerra Fria.';
+        if (titleDay2) titleDay2.textContent = 'Dia 2: Natureza e Matemática';
+        if (descDay2) descDay2.textContent = 'Repertório completo do ENEM (2020 a 2025): Hidrogênio Verde, Microplásticos, Dados Exponenciais, Queimadas, CRISPR e Energia Solar.';
+      }
+    }
 
     // Funções do Cronômetro
     function startTimer() {
@@ -1386,25 +1573,32 @@
       streakCountEl.textContent = streak;
       heartsCountEl.textContent = hearts;
       progressBarEl.style.width = "0%";
+      updateExamModeUI();
       updateWeakPointsButtonState();
+    }
+
+    function getWeakPointsStorageKey() {
+      return currentExamMode === 'uece' ? 'uece_duo_weak_points' : 'enem_duo_weak_points';
     }
 
     function getPersistentWeakPoints() {
       try {
-        return JSON.parse(localStorage.getItem('enem_duo_weak_points') || "[]");
+        const key = getWeakPointsStorageKey();
+        return JSON.parse(localStorage.getItem(key) || "[]");
       } catch (e) {
         return [];
       }
     }
 
     function savePersistentWeakPoints(wrongs) {
+      const key = getWeakPointsStorageKey();
       const current = getPersistentWeakPoints();
       wrongs.forEach(w => {
         if (!current.some(item => item.title === w.title)) {
           current.push(w);
         }
       });
-      localStorage.setItem('enem_duo_weak_points', JSON.stringify(current));
+      localStorage.setItem(key, JSON.stringify(current));
       updateWeakPointsButtonState();
     }
 
@@ -1422,14 +1616,15 @@
 
     function startWeakPointsQuiz() {
       const weakList = getPersistentWeakPoints();
+      const db = getCurrentDatabase();
       
-      // Se ainda não houver pontos fracos salvos, pega questões mais desafiadoras das duas áreas
+      // Se ainda não houver pontos fracos salvos, pega questões mais desafiadoras das duas áreas da modalidade
       let targetQuestions = [];
       if (weakList.length > 0) {
-        // Encontra as questões originais correspondentes aos pontos fracos
+        // Encontra as questões originais correspondentes aos pontos fracos da modalidade
         const allQuestions = [
-          ...QUESTION_DATABASE.humanas_linguagens,
-          ...QUESTION_DATABASE.natureza_matematica
+          ...(db.humanas_linguagens || []),
+          ...(db.natureza_matematica || [])
         ];
         targetQuestions = allQuestions.filter(q => weakList.some(w => w.title === q.title));
       }
@@ -1437,8 +1632,8 @@
       if (targetQuestions.length === 0) {
         // Caso ainda não tenha errado, seleciona uma mescla inteligente de temas complexos
         const allQuestions = [
-          ...QUESTION_DATABASE.humanas_linguagens,
-          ...QUESTION_DATABASE.natureza_matematica
+          ...(db.humanas_linguagens || []),
+          ...(db.natureza_matematica || [])
         ];
         targetQuestions = shuffleArray(allQuestions).slice(0, 5);
       }
@@ -1475,8 +1670,9 @@
       }
 
       userAnswersHistory = [];
-      const rawQuestions = QUESTION_DATABASE[areaKey];
-      // Sorteia questões e embaralha as 5 opções de cada questão entre A e E
+      const db = getCurrentDatabase();
+      const rawQuestions = db[areaKey] || [];
+      // Sorteia questões e embaralha as opções de cada questão mantendo conformidade (4 opções UECE, 5 ENEM)
       activeQuestionList = shuffleArray(rawQuestions).slice(0, 6).map(q => {
         return {
           ...q,
@@ -1616,20 +1812,83 @@
       const wrongs = userAnswersHistory.filter(item => !item.isCorrect);
       const scorePercent = total > 0 ? Math.round((corrects.length / total) * 100) : 0;
 
-      // Cálculo da Nota TRI e Coerência Pedagógica (INEP)
-      const triResult = calculateTRIScore(userAnswersHistory);
-
       // Elementos do Modal do Celular
+      const enemModalCard = document.getElementById('enemScoreCardModal');
+      const ueceModalCard = document.getElementById('ueceScoreCardModal');
       const triScoreVal = document.getElementById('triScoreVal');
       const triBadgeCoherence = document.getElementById('triBadgeCoherence');
       const triDescCoherence = document.getElementById('triDescCoherence');
+      const ueceScoreVal = document.getElementById('ueceScoreVal');
+      const ueceStatusBadge = document.getElementById('ueceStatusBadge');
+      const ueceStatusDesc = document.getElementById('ueceStatusDesc');
 
-      if (triScoreVal) triScoreVal.textContent = triResult.score;
-      if (triBadgeCoherence) {
-        triBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
-        triBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
+      // Elementos do Painel Lateral
+      const sideEnemCard = document.getElementById('sideEnemScoreCard');
+      const sideUeceCard = document.getElementById('sideUeceScoreCard');
+      const sideTriScoreVal = document.getElementById('sideTriScoreVal');
+      const sideTriBadgeCoherence = document.getElementById('sideTriBadgeCoherence');
+      const sideTriDescCoherence = document.getElementById('sideTriDescCoherence');
+      const sideUeceScoreVal = document.getElementById('sideUeceScoreVal');
+      const sideUeceStatusBadge = document.getElementById('sideUeceStatusBadge');
+      const sideUeceStatusDesc = document.getElementById('sideUeceStatusDesc');
+
+      if (currentExamMode === 'uece') {
+        // Exibição de Nota Bruta da UECE (Acertos diretos e corte para 2ª fase)
+        if (enemModalCard) enemModalCard.style.display = 'none';
+        if (ueceModalCard) ueceModalCard.style.display = 'block';
+        if (sideEnemCard) sideEnemCard.style.display = 'none';
+        if (sideUeceCard) sideUeceCard.style.display = 'block';
+
+        let ueceStatusText = "Apto para 2ª Fase";
+        let ueceBadgeClass = "aprovado";
+        let ueceDescText = "Excelente aproveitamento bruto! Pontuação competitiva para ampla concorrência na UECE.";
+
+        if (scorePercent < 50) {
+          ueceStatusText = "Fase de Reforço";
+          ueceBadgeClass = "treino";
+          ueceDescText = "Aproveitamento abaixo da linha de corte média. Intensifique a revisão dos pontos fracos.";
+        } else if (scorePercent < 75) {
+          ueceStatusText = "Desempenho Competitivo";
+          ueceBadgeClass = "competitivo";
+          ueceDescText = "Bom resultado! Pontuação dentro da margem de disputa para vagas tradicionais da UECE.";
+        }
+
+        const scoreSummary = `${corrects.length}/${total} Acertos (${scorePercent}%)`;
+        if (ueceScoreVal) ueceScoreVal.textContent = scoreSummary;
+        if (ueceStatusBadge) {
+          ueceStatusBadge.textContent = ueceStatusText;
+          ueceStatusBadge.className = `uece-status-badge ${ueceBadgeClass}`;
+        }
+        if (ueceStatusDesc) ueceStatusDesc.textContent = ueceDescText;
+
+        if (sideUeceScoreVal) sideUeceScoreVal.textContent = scoreSummary;
+        if (sideUeceStatusBadge) {
+          sideUeceStatusBadge.textContent = ueceStatusText;
+          sideUeceStatusBadge.className = `uece-status-badge ${ueceBadgeClass}`;
+        }
+        if (sideUeceStatusDesc) sideUeceStatusDesc.textContent = ueceDescText;
+      } else {
+        // Exibição de TRI ENEM (INEP)
+        if (enemModalCard) enemModalCard.style.display = 'block';
+        if (ueceModalCard) ueceModalCard.style.display = 'none';
+        if (sideEnemCard) sideEnemCard.style.display = 'block';
+        if (sideUeceCard) sideUeceCard.style.display = 'none';
+
+        const triResult = calculateTRIScore(userAnswersHistory);
+        if (triScoreVal) triScoreVal.textContent = triResult.score;
+        if (triBadgeCoherence) {
+          triBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
+          triBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
+        }
+        if (triDescCoherence) triDescCoherence.textContent = triResult.desc;
+
+        if (sideTriScoreVal) sideTriScoreVal.textContent = triResult.score;
+        if (sideTriBadgeCoherence) {
+          sideTriBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
+          sideTriBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
+        }
+        if (sideTriDescCoherence) sideTriDescCoherence.textContent = triResult.desc;
       }
-      if (triDescCoherence) triDescCoherence.textContent = triResult.desc;
 
       const scoreEl = document.getElementById('performanceScore');
       const listStrongEl = document.getElementById('listStrong');
@@ -1638,7 +1897,8 @@
       const secWeakEl = document.getElementById('sectionWeak');
 
       // Renderiza no Modal do Celular
-      scoreEl.textContent = `Desempenho Geral: ${corrects.length}/${total} acertos (${scorePercent}%)`;
+      const examNameTag = currentExamMode === 'uece' ? 'UECE' : 'ENEM';
+      scoreEl.textContent = `Desempenho Geral (${examNameTag}): ${corrects.length}/${total} acertos (${scorePercent}%)`;
 
       // Persiste os pontos fracos para alimentar o botão especial "Treinar Pontos Fracos"
       if (wrongs.length > 0) {
@@ -1647,7 +1907,7 @@
         // Se acertou tudo no teste, remove os que foram dominados
         const currentWeak = getPersistentWeakPoints();
         const filtered = currentWeak.filter(w => !corrects.some(c => c.title === w.title));
-        localStorage.setItem('enem_duo_weak_points', JSON.stringify(filtered));
+        localStorage.setItem(getWeakPointsStorageKey(), JSON.stringify(filtered));
         updateWeakPointsButtonState();
       }
 
@@ -1660,17 +1920,7 @@
       const sideSecStrongEl = document.getElementById('sectionStrong');
       const sideSecWeakEl = document.getElementById('sectionWeak');
 
-      // Elementos TRI do Painel Lateral
-      const sideTriScoreVal = document.getElementById('sideTriScoreVal');
-      const sideTriBadgeCoherence = document.getElementById('sideTriBadgeCoherence');
-      const sideTriDescCoherence = document.getElementById('sideTriDescCoherence');
-
-      if (sideTriScoreVal) sideTriScoreVal.textContent = triResult.score;
-      if (sideTriBadgeCoherence) {
-        sideTriBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
-        sideTriBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
-      }
-      if (sideTriDescCoherence) sideTriDescCoherence.textContent = triResult.desc;
+      // Painel Lateral de Desempenho atualizado de acordo com a modalidade
 
       sideEmptyState.style.display = 'none';
       sideContentFilled.style.display = 'flex';
