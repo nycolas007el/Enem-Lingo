@@ -100,4 +100,4 @@ Não é necessária nenhuma instalação complexa ou servidor backend:
 Desenvolvido por **Nycolas**!
 
 [![GitHub](https://img.shields.io/badge/GitHub-nycolas007el-181717?style=for-the-badge&logo=github)](https://github.com/nycolas007el)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nycolas_Moreira-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nycolas-moreira-286206343/)
