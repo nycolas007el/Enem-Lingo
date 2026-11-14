@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ENEM Lingo - O Duolingo do ENEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #58cc02;
+      --primary-dark: #46a302;
+      --fire: #ff9600;
+      --fire-dark: #e07d00;
+      --heart: #ff4b4b;
+      --gem: #1cb0f6;
+      --bg: #131f24;
+      --card-bg: #1b2f38;
+      --card-border: #284452;
+      --text: #ffffff;
+      --text-muted: #8496a5;
+      --correct: #58cc02;
+      --wrong: #ff4b4b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 16px;
+    }
+
+    /* Container Principal com Layout Lado a Lado (Desktop) e Responsivo (Mobile) */
+    .app-layout-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 950px;
+    }
+
+    @media (max-width: 860px) {
+      .app-layout-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Painel Lateral Direito de Análise */
+    .side-analysis-panel {
+      width: 100%;
+      max-width: 400px;
+      height: 92vh;
+      max-height: 920px;
+      background: #142026;
+      border: 1px solid #233c47;
+      border-radius: 36px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.55);
+      display: none; /* Oculto inicialmente; aparece apenas no final de cada teste */
+      flex-direction: column;
+      padding: 24px 20px;
+      overflow: hidden;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @media (max-width: 860px) {
+      .side-analysis-panel {
+        height: auto;
+        max-height: none;
+        border-radius: 28px;
+        margin-top: 10px;
+      }
+    }
+
+    .side-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #233c47;
+      margin-bottom: 16px;
+    }
+
+    .side-panel-header .icon {
+      font-size: 32px;
+    }
+
+    .side-panel-header h2 {
+      font-size: 19px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .side-panel-header p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .side-panel-body {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-right: 4px;
+    }
+
+    .side-empty-state {
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 40px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .side-empty-icon {
+      font-size: 46px;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+
+    /* Container Smartphone Mobile-First */
+    .mobile-screen {
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      max-height: 920px;
+      background: #142026;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #233c47;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 450px) {
+      .mobile-screen {
+        height: 92vh;
+        border-radius: 36px;
+      }
+    }
+
+    /* Topbar com Progresso e Foguinho */
+    .header {
+      padding: 14px 18px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #142026;
+      z-index: 10;
+      border-bottom: 1px solid #1e333d;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 22px;
+      font-weight: 800;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      height: 14px;
+      background: #284452;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      border-radius: 10px;
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 800;
+      font-size: 14px;
+      background: #1a2c36;
+      padding: 4px 9px;
+      border-radius: 16px;
+      border: 2px solid #233c47;
+    }
+
+    .streak-badge {
+      color: var(--fire);
+    }
+
+    .streak-icon {
+      font-size: 17px;
+      animation: pulseFlame 1.5s infinite ease-in-out;
+      display: inline-block;
+    }
+
+    @keyframes pulseFlame {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.22) rotate(-4deg); }
+    }
+
+    .hearts-badge {
+      color: var(--heart);
+    }
+
+    .timer-badge {
+      color: #38bdf8;
+      display: none;
+    }
+
+    .timer-badge.warning {
+      color: #ef4444;
+      border-color: #ef4444;
+      animation: pulseFlame 0.8s infinite ease-in-out;
+    }
+
+    /* Tela de Seleção de Áreas do ENEM */
+    .area-selector-screen {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 22px 18px;
+      justify-content: center;
+      gap: 16px;
+      text-align: center;
+      overflow-y: auto;
+    }
+
+    .selector-hero-icon {
+      font-size: 52px;
+      margin-bottom: 2px;
+    }
+
+    .selector-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .selector-subtitle {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-top: -8px;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .area-card-btn {
+      background: #1b2f38;
+      border: 2px solid #284452;
+      border-bottom: 5px solid #1a2c36;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.1s ease;
+    }
+
+    .area-card-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 3px;
+    }
+
+    .area-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .icon-day1 {
+      background: #2a1f47;
+      color: #a855f7;
+    }
+
+    .icon-day2 {
+      background: #173847;
+      color: #06b6d4;
+    }
+
+    .icon-redacao {
+      background: #3b2a1a;
+      color: #f59e0b;
+    }
+
+    .icon-weak {
+      background: #3c191c;
+      color: #ff4b4b;
+    }
+
+    .area-card-btn.redacao-btn {
+      border-color: #593e1a;
+      border-bottom-color: #3d2a12;
+      background: #251d14;
+    }
+
+    .area-card-btn.redacao-btn:active {
+      border-bottom-color: #2b1d0c;
+    }
+
+    .icon-stats {
+      background: #193847;
+      color: #38bdf8;
+    }
+
+    .area-card-btn.weak-btn {
+      border-color: #4b2327;
+      border-bottom-color: #38181b;
+      background: #221a1d;
+    }
+
+    .area-card-btn.weak-btn:active {
+      border-bottom-color: #2b1316;
+    }
+
+    .area-card-btn.stats-btn {
+      border-color: #1e4558;
+      border-bottom-color: #143241;
+      background: #142a35;
+    }
+
+    .area-card-btn.stats-btn:active {
+      border-bottom-color: #0f2530;
+    }
+
+    /* Tela de Estatísticas por Disciplina */
+    .stats-screen-view {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      padding: 16px 18px 20px;
+      overflow-y: auto;
+    }
+
+    .stats-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .stats-header-row h2 {
+      font-size: 19px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .stat-subject-card {
+      background: #1b2f38;
+      border: 2px solid #284452;
+      border-radius: 16px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-subject-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-subject-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: #f1f7fb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-subject-percent {
+      font-size: 15px;
+      font-weight: 900;
+      color: #38bdf8;
+    }
+
+    .stat-bar-track {
+      width: 100%;
+      height: 10px;
+      background: #131f24;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .stat-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      background: #38bdf8;
+      transition: width 0.5s ease;
+    }
+
+    .stat-counts {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .area-info h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    .area-info p {
+      font-size: 12.5px;
+      color: #9cb2c0;
+      line-height: 1.35;
+    }
+
+    /* Tela de Questões do Quiz */
+    .question-view {
+      flex: 1;
+      display: none;
+      flex-direction: column;
+      padding: 14px 18px 84px;
+      overflow-y: auto;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .category-tag {
+      background: #233c47;
+      color: #1cb0f6;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 9px;
+      border-radius: 8px;
+      align-self: flex-start;
+    }
+
+    .topic-tag {
+      background: #2c2817;
+      color: #facc15;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    .question-title {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: #f1f7fb;
+    }
+
+    .question-context {
+      font-size: 13.5px;
+      line-height: 1.45;
+      color: #9cb0bd;
+      background: #1a2c35;
+      padding: 12px;
+      border-radius: 12px;
+      border-left: 4px solid #1cb0f6;
+      margin-bottom: 14px;
+    }
+
+    /* Alternativas de A até E */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 16px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      background: #1b2f38;
+      border: 2px solid #284452;
+      border-bottom: 4px solid #203540;
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.35;
+      transition: all 0.1s ease;
+    }
+
+    .option-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+    }
+
+    .option-btn.selected {
+      border-color: #1cb0f6;
+      background: #18384a;
+      border-bottom-color: #0d79ab;
+    }
+
+    .option-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: #253e4b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+      color: #9eb5c4;
+      margin-top: 1px;
+    }
+
+    .option-btn.selected .option-letter {
+      background: #1cb0f6;
+      color: #ffffff;
+    }
+
+    /* Barra Inferior com Botão Verificar */
+    .footer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 18px 18px;
+      background: #142026;
+      border-top: 2px solid #233c47;
+      z-index: 15;
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 14px;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: none;
+      background: var(--primary);
+      border-bottom: 5px solid var(--primary-dark);
+      color: #ffffff;
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+
+    .primary-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 3px;
+    }
+
+    .primary-btn:disabled {
+      background: #2b3b44;
+      border-bottom-color: #202b32;
+      color: #637682;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Folha Deslizante de Feedback (Duolingo Bottom Sheet) */
+    .feedback-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 18px 18px 22px;
+      transform: translateY(105%);
+      transition: transform 0.25s ease-out;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 25;
+    }
+
+    .feedback-sheet.correct {
+      background: #143521;
+      border-top: 3px solid #58cc02;
+    }
+
+    .feedback-sheet.wrong {
+      background: #3c191c;
+      border-top: 3px solid #ff4b4b;
+    }
+
+    .feedback-sheet.show {
+      transform: translateY(0);
+    }
+
+    .feedback-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feedback-icon {
+      font-size: 26px;
+    }
+
+    .feedback-title {
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .feedback-sheet.correct .feedback-title {
+      color: #58cc02;
+    }
+
+    .feedback-sheet.wrong .feedback-title {
+      color: #ff4b4b;
+    }
+
+    .feedback-explanation {
+      font-size: 13.5px;
+      color: #d8e5ee;
+      line-height: 1.4;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    /* Tela de Vitória / Streak Flame */
+    .streak-celebration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #131f24;
+      z-index: 35;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .streak-flame-hero {
+      font-size: 88px;
+      animation: bounceFlame 1s infinite alternate ease-in-out;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 25px rgba(255, 150, 0, 0.65));
+    }
+
+    @keyframes bounceFlame {
+      0% { transform: scale(0.9) rotate(-3deg); }
+      100% { transform: scale(1.1) rotate(3deg); }
+    }
+
+    .streak-number-hero {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--fire);
+      margin-bottom: 4px;
+    }
+
+    .streak-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .streak-desc {
+      font-size: 14px;
+      color: #9bb1be;
+      margin-bottom: 24px;
+      line-height: 1.45;
+    }
+
+    /* Card de Diagnóstico de Desempenho (Pontos Fortes e Fracos) */
+    .performance-box {
+      width: 100%;
+      background: #1a2c36;
+      border: 2px solid #233c47;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    /* Bloco em destaque da Nota TRI */
+    .tri-score-card {
+      background: linear-gradient(135deg, #0d384d, #142834);
+      border: 2px solid #38bdf8;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
+    }
+
+    .tri-score-header {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .tri-score-value {
+      font-size: 34px;
+      font-weight: 900;
+      color: #38bdf8;
+      line-height: 1.1;
+      margin: 4px 0;
+    }
+
+    .tri-coherence-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 12px;
+      margin-top: 3px;
+    }
+
+    .tri-coherence-badge.alta {
+      background: rgba(88, 204, 2, 0.2);
+      color: #58cc02;
+      border: 1px solid #58cc02;
+    }
+
+    .tri-coherence-badge.media {
+      background: rgba(250, 204, 21, 0.2);
+      color: #facc15;
+      border: 1px solid #facc15;
+    }
+
+    .tri-coherence-badge.baixa {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+      border: 1px solid #ef4444;
+    }
+
+    .tri-coherence-desc {
+      font-size: 11px;
+      color: #cbd5e1;
+      margin-top: 5px;
+      line-height: 1.3;
+    }
+
+    .performance-score {
+      font-size: 14px;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-bottom: 10px;
+      text-align: center;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #284452;
+    }
+
+    .report-section {
+      margin-bottom: 12px;
+    }
+
+    .report-section-title {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .report-strong .report-section-title {
+      color: #58cc02;
+    }
+
+    .report-weak .report-section-title {
+      color: #ff4b4b;
+    }
+
+    .report-item {
+      font-size: 12.5px;
+      color: #cbd5e1;
+      padding: 6px 10px;
+      background: #142026;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      border-left: 3px solid #284452;
+      line-height: 1.35;
+    }
+
+    .report-strong .report-item {
+      border-left-color: #58cc02;
+    }
+
+    .report-weak .report-item {
+      border-left-color: #ff4b4b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-layout-wrapper">
+    <!-- Tela 1: Tela Principal do Celular -->
+    <div class="mobile-screen">
+    <!-- Topbar -->
+    <header class="header">
+      <button class="close-btn" onclick="backToMenu()" title="Voltar ao Início">✕</button>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="stats-badge streak-badge" title="Foguinho / Ofensiva Diária">
+        <span class="streak-icon">🔥</span>
+        <span id="streakCount">0</span>
+      </div>
+      <div class="stats-badge hearts-badge" title="Corações">
+        <span>❤️</span>
+        <span id="heartsCount">3</span>
+      </div>
+      <div class="stats-badge timer-badge" id="timerBadge" title="Tempo restante">
+        <span>⏱️</span>
+        <span id="timerCount">02:00</span>
+      </div>
+    </header>
+
+    <!-- Tela de Escolha de Caderno do ENEM -->
+    <div class="area-selector-screen" id="areaSelectorScreen">
+      <div>
+        <div class="selector-hero-icon">🦉🔥</div>
+        <h1 class="selector-title">ENEM Lingo</h1>
+        <p class="selector-subtitle">Escolha seu caderno com os conteúdos que mais caem na prova:</p>
+      </div>
+
+      <button class="area-card-btn" onclick="startQuiz('humanas_linguagens')">
+        <div class="area-icon-wrap icon-day1">📚</div>
+        <div class="area-info">
+          <h3>Dia 1: Linguagens e Ciências Humanas</h3>
+          <p>Repertório completo do ENEM (2020 a 2025): IA Generativa, COP30 Amazônia, Deepfakes, Demarcação Indígena, Cultura Digital e Guerra Fria.</p>
+        </div>
+      </button>
+
+      <button class="area-card-btn" onclick="startQuiz('natureza_matematica')">
+        <div class="area-icon-wrap icon-day2">🧪</div>
+        <div class="area-info">
+          <h3>Dia 2: Natureza e Matemática</h3>
+          <p>Repertório completo do ENEM (2020 a 2025): Hidrogênio Verde, Microplásticos, Dados Exponenciais, Queimadas, CRISPR e Energia Solar.</p>
+        </div>
+      </button>
+
+      <!-- Opção de Treino Especial: Apenas Pontos Fracos do Usuário -->
+      <button class="area-card-btn weak-btn" onclick="startWeakPointsQuiz()">
+        <div class="area-icon-wrap icon-weak">🎯</div>
+        <div class="area-info">
+          <h3 style="color: #ff6b6b;">Treinar Pontos Fracos</h3>
+          <p id="weakPointsBtnDesc">Erros e conteúdos prioritários identificados nos seus simulados.</p>
+        </div>
+      </button>
+
+      <!-- Opção de Estatísticas por Disciplina/Área -->
+      <button class="area-card-btn stats-btn" onclick="openStatsScreen()">
+        <div class="area-icon-wrap icon-stats">📈</div>
+        <div class="area-info">
+          <h3 style="color: #38bdf8;">Estatísticas</h3>
+          <p>Desempenho detalhado em Português, Matemática, Natureza e Humanas.</p>
+        </div>
+      </button>
+    </div>
+
+    <!-- Tela Especial de Estatísticas do Usuário -->
+    <div class="stats-screen-view" id="statsScreenView">
+      <div class="stats-header-row">
+        <h2>📊 Painel de Desempenho</h2>
+        <button class="close-btn" onclick="closeStatsScreen()" title="Voltar">✕</button>
+      </div>
+
+      <div id="statsCardsContainer">
+        <!-- Injetado dinamicamente via JS -->
+      </div>
+
+      <button class="primary-btn" style="margin-top: 10px;" onclick="closeStatsScreen()">Voltar ao Menu</button>
+    </div>
+
+    <!-- Tela do Simulado / Pergunta -->
+    <main class="question-view" id="questionView">
+      <div class="badge-row">
+        <span class="category-tag" id="tagCategory">ENEM • DISCIPLINA</span>
+        <span class="topic-tag" id="tagTopic">TEMA OFICIAL RECORRENTE</span>
+      </div>
+      <h2 class="question-title" id="questionTitle">Carregando pergunta...</h2>
+      <div class="question-context" id="questionContext">...</div>
+      
+      <div class="options-list" id="optionsList">
+        <!-- Alternativas de A até E embaralhadas -->
+      </div>
+    </main>
+
+    <!-- Barra Inferior -->
+    <footer class="footer-bar" id="footerBar" style="display: none;">
+      <button class="primary-btn" id="checkBtn" disabled onclick="checkAnswer()">Verificar</button>
+    </footer>
+
+    <!-- Feedback Bottom Sheet -->
+    <div class="feedback-sheet" id="feedbackSheet">
+      <div class="feedback-header">
+        <span class="feedback-icon" id="feedbackIcon">🎉</span>
+        <div class="feedback-title" id="feedbackTitle">Muito bem!</div>
+      </div>
+      <div class="feedback-explanation" id="feedbackExplanation">
+        Explicação didática da resolução.
+      </div>
+      <button class="primary-btn" id="continueBtn" onclick="nextQuestion()">Continuar</button>
+    </div>
+
+    <!-- Tela de Conquista / Foguinho -->
+    <div class="streak-celebration" id="streakModal">
+      <div class="streak-flame-hero">🔥</div>
+      <div class="streak-number-hero" id="heroStreakCount">1 DIA!</div>
+      <h1 class="streak-title">Ofensiva em Chamas!</h1>
+      <p class="streak-desc" id="streakDesc">
+        Sensacional! Você concluiu a rodada de exercícios do ENEM!
+      </p>
+
+      <!-- Diagnóstico de Desempenho com Pontos Fortes e Fracos -->
+      <div class="performance-box" id="performanceBox">
+        <!-- Card TRI Estimada -->
+        <div class="tri-score-card">
+          <div class="tri-score-header">Nota TRI Estimada (INEP)</div>
+          <div class="tri-score-value" id="triScoreVal">--</div>
+          <span class="tri-coherence-badge alta" id="triBadgeCoherence">Coerência Alta</span>
+          <div class="tri-coherence-desc" id="triDescCoherence">Respostas consistentes na régua de proficiência.</div>
+        </div>
+
+        <div class="performance-score" id="performanceScore">Acertos: 0 / 0 (0%)</div>
+        
+        <div class="report-section report-strong" id="sectionStrong">
+          <div class="report-section-title">💪 Pontos Fortes Dominados:</div>
+          <div id="listStrong"></div>
+        </div>
+
+        <div class="report-section report-weak" id="sectionWeak">
+          <div class="report-section-title">⚠️ Pontos a Reforçar (Prioridade):</div>
+          <div id="listWeak"></div>
+        </div>
+      </div>
+
+      <button class="primary-btn" style="width: 100%;" onclick="backToMenu()">Treinar Outra Área</button>
+    </div>
+  </div>
+
+  <!-- Tela 2: Painel Lateral Direito com Diagnóstico dos Pontos Fortes e Fracos -->
+  <aside class="side-analysis-panel" id="sideAnalysisPanel">
+    <div class="side-panel-header">
+      <div class="icon">📊</div>
+      <div>
+        <h2>Raio-X de Desempenho</h2>
+        <p>Pontos Fortes & Tópicos a Reforçar no ENEM</p>
+      </div>
+    </div>
+
+    <div class="side-panel-body" id="sidePanelBody">
+      <div class="side-empty-state" id="sideEmptyState">
+        <div class="side-empty-icon">🦉📝</div>
+        <p><strong>Nenhum teste finalizado ainda.</strong></p>
+        <p style="font-size: 13px; margin-top: 6px;">Escolha um caderno ao lado e responda as questões para desbloquear seu mapa de competências!</p>
+      </div>
+
+      <div id="sideContentFilled" style="display: none; flex-direction: column; gap: 14px;">
+        <!-- Card TRI Lateral -->
+        <div class="tri-score-card">
+          <div class="tri-score-header">Nota TRI Estimada (INEP)</div>
+          <div class="tri-score-value" id="sideTriScoreVal">--</div>
+          <span class="tri-coherence-badge alta" id="sideTriBadgeCoherence">Coerência Alta</span>
+          <div class="tri-coherence-desc" id="sideTriDescCoherence">Respostas consistentes na régua de proficiência.</div>
+        </div>
+
+        <div class="performance-score" id="sidePerformanceScore">Acertos: 0 / 0 (0%)</div>
+
+        <div class="report-section report-strong" id="sideSectionStrong">
+          <div class="report-section-title">💪 Pontos Fortes Dominados:</div>
+          <div id="sideListStrong"></div>
+        </div>
+
+        <div class="report-section report-weak" id="sideSectionWeak">
+          <div class="report-section-title">⚠️ Pontos a Reforçar (Prioridade):</div>
+          <div id="sideListWeak"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  </div>
+
+  <!-- Banco de Questões Completo -->
+  <script src="questions.js"></script>
+
+  <script>
+    // Estado do App
+    let activeQuestionList = [];
+    let currentQuestionIndex = 0;
+    let selectedOptionIndex = null;
+    let hearts = 3;
+    let streak = parseInt(localStorage.getItem('enem_duo_streak') || "1");
+    let timerInterval = null;
+    let timeLeft = 120; // 2 minutos (120 segundos) por questão
+    let userAnswersHistory = []; // Registro de acertos e erros por tema
+
+    // Funções do Cronômetro
+    function startTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 120;
+      updateTimerDisplay();
+      timerBadgeEl.style.display = "flex";
+      timerBadgeEl.classList.remove('warning');
+
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+
+        if (timeLeft <= 20) {
+          timerBadgeEl.classList.add('warning');
+        }
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          handleTimeOut();
+        }
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
+
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerCountEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function handleTimeOut() {
+      // Bloqueia alternativas
+      const buttons = optionsListEl.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.style.pointerEvents = 'none');
+
+      hearts = Math.max(0, hearts - 1);
+      heartsCountEl.textContent = hearts;
+
+      const q = activeQuestionList[currentQuestionIndex];
+      const correctIdx = q.shuffledOptions.findIndex(o => o.isCorrect);
+      const correctLetter = ['A', 'B', 'C', 'D', 'E'][correctIdx];
+
+      userAnswersHistory.push({
+        topic: q.topic || q.category,
+        title: q.title,
+        difficulty: q.difficulty || 'medio',
+        isCorrect: false,
+        timedOut: true
+      });
+
+      feedbackSheetEl.className = "feedback-sheet wrong show";
+      feedbackIconEl.textContent = "⏱️ Tempo Esgotado!";
+      feedbackTitleEl.textContent = `A resposta era (${correctLetter})`;
+      feedbackExplanationEl.textContent = `Os 2 minutos acabaram! ${formatEnemText(q.explanation)}`;
+    }
+
+    // Parser para Formatação Oficial do ENEM (Fórmulas Químicas, Matemáticas e Operadores)
+    function formatEnemText(rawText) {
+      if (!rawText) return "";
+      let s = String(rawText);
+
+      // Fórmulas Químicas e Iônicas com subscritos e sobrescritos
+      const chemRules = [
+        [/\bH2O\b/g, 'H₂O'],
+        [/\bCO2\b/g, 'CO₂'],
+        [/\bH2\b/g, 'H₂'],
+        [/\bO2\b/g, 'O₂'],
+        [/\bN2\b/g, 'N₂'],
+        [/\bH2V\b/g, 'H₂V'],
+        [/\bSO2\b/g, 'SO₂'],
+        [/\bSO3\b/g, 'SO₃'],
+        [/\bH2SO4\b/g, 'H₂SO₄'],
+        [/\bHNO3\b/g, 'HNO₃'],
+        [/\bH2CO3\b/g, 'H₂CO₃'],
+        [/\bCaCO3\b/g, 'CaCO₃'],
+        [/\bAl2\(SO4\)3\b/g, 'Al₂(SO₄)₃'],
+        [/\bAl2\b/g, 'Al₂'],
+        [/\bPM2,5\b/g, 'PM₂,₅'],
+        [/\bPM2\.5\b/g, 'PM₂,₅'],
+        [/CO3\^2\-/g, 'CO₃²⁻'],
+        [/CO3²⁻/g, 'CO₃²⁻'],
+        [/Zn\^2\+/g, 'Zn²⁺'],
+        [/Cu\^2\+/g, 'Cu²⁺'],
+        [/Fe\^2\+/g, 'Fe²⁺'],
+        [/Mg\^2\+/g, 'Mg²⁺'],
+        [/Ca\^2\+/g, 'Ca²⁺'],
+        [/H3O\+/g, 'H₃O⁺'],
+        [/\bH\+\b/g, 'H⁺']
+      ];
+
+      chemRules.forEach(([pat, rep]) => {
+        s = s.replace(pat, rep);
+      });
+
+      // Potências matemáticas e unidades
+      s = s.replace(/(\d+)\^2\b/g, '$1²');
+      s = s.replace(/(\d+)\^3\b/g, '$1³');
+      s = s.replace(/\b10\^8\b/g, '10⁸');
+      s = s.replace(/\b36\^4\b/g, '36⁴');
+      s = s.replace(/\(10\^2\)/g, '(10²)');
+      s = s.replace(/\b2\^\(0,5t\)/g, '2⁰’⁵ᵗ');
+      s = s.replace(/\bm\^2\b/g, 'm²');
+      s = s.replace(/\bm\^3\b/g, 'm³');
+      s = s.replace(/\bcm\^2\b/g, 'cm²');
+      s = s.replace(/\bcm\^3\b/g, 'cm³');
+      s = s.replace(/\bv\^2\b/g, 'v²');
+      s = s.replace(/\bd\^2\b/g, 'd²');
+      s = s.replace(/\br\^2\b/g, 'r²');
+      s = s.replace(/\bL\^2\b/g, 'L²');
+
+      // Substituição de asterisco por operador de multiplicação elegante (×)
+      s = s.replace(/(\d+)\s*\*\s*(\d+)/g, '$1 × $2');
+      s = s.replace(/(\d+)\s*\*\s*\(/g, '$1 × (');
+      s = s.replace(/\)\s*\*\s*(\d+)/g, ') × $1');
+      s = s.replace(/([A-Za-z0-9²³])\s*\*\s*([A-Za-z0-9²³])/g, '$1 × $2');
+
+      return s;
+    }
+
+    // Algoritmo de Simulação Real da TRI (Teoria de Resposta ao Item)
+    function calculateTRIScore(answers) {
+      if (!answers || answers.length === 0) {
+        return { score: 350, coherence: "Alta", desc: "Nenhuma questão respondida." };
+      }
+
+      // Separação por nível de dificuldade
+      const easy = answers.filter(a => a.difficulty === 'facil');
+      const med = answers.filter(a => a.difficulty === 'medio');
+      const hard = answers.filter(a => a.difficulty === 'dificil');
+
+      const easyRight = easy.filter(a => a.isCorrect).length;
+      const medRight = med.filter(a => a.isCorrect).length;
+      const hardRight = hard.filter(a => a.isCorrect).length;
+
+      const easyTotal = easy.length || 1;
+      const medTotal = med.length || 1;
+      const hardTotal = hard.length || 1;
+
+      const easyAcc = easyRight / easyTotal;
+      const medAcc = medRight / medTotal;
+      const hardAcc = hardRight / hardTotal;
+
+      const totalCorrect = answers.filter(a => a.isCorrect).length;
+      const totalQuestions = answers.length;
+
+      // Base mínima TRI do ENEM (~350 pontos) e escala até 980+
+      let baseScore = 350;
+
+      // Se errou tudo: nota piso da TRI
+      if (totalCorrect === 0) {
+        return {
+          score: 350,
+          coherence: "Alta",
+          badgeClass: "alta",
+          desc: "Desempenho uniforme na base da régua de proficiência."
+        };
+      }
+
+      // Se gabaritou: pontuação máxima consistente
+      if (totalCorrect === totalQuestions) {
+        return {
+          score: 965,
+          coherence: "Alta",
+          badgeClass: "alta",
+          desc: "Excelente coerência pedagógica: domínio consistente de itens fáceis, médios e difíceis."
+        };
+      }
+
+      // Pontos brutos por nível
+      const pointsEasy = easyAcc * 220; // até +220
+      const pointsMed = medAcc * 230;   // até +230
+      let pointsHard = hardAcc * 200;    // até +200
+
+      // Análise de Coerência Pedagógica (Curva Característica do Item)
+      // Se acertou difíceis mas errou fáceis ou médias, a TRI do INEP penaliza como "chute"
+      let coherence = "Alta";
+      let badgeClass = "alta";
+      let desc = "Padrão de respostas consistente: acertou a base com domínio progressivo.";
+
+      if (hardRight > 0 && easyAcc < 0.5) {
+        // Acertou difícil mas errou a maioria das fáceis -> Incoerência alta (chute detectado)
+        coherence = "Baixa";
+        badgeClass = "baixa";
+        pointsHard *= 0.35; // Forte penalização nos itens difíceis
+        desc = "Incoerência detectada pelo modelo TRI: acerto de itens difíceis sem confirmação de itens fáceis (possível chute).";
+      } else if (hardRight > 0 && medAcc < 0.4) {
+        coherence = "Média";
+        badgeClass = "media";
+        pointsHard *= 0.65; // Penalidade moderada
+        desc = "Coerência moderada: oscilações entre acertos difíceis e erros em itens médios.";
+      } else if (easyAcc >= 0.7 && medAcc >= 0.5) {
+        coherence = "Alta";
+        badgeClass = "alta";
+        desc = "Padrão consistente e robusto segundo a escala de proficiência do ENEM.";
+      }
+
+      let finalScore = Math.round(baseScore + pointsEasy + pointsMed + pointsHard);
+
+      // Trava dentro dos limites realistas do ENEM
+      finalScore = Math.max(350, Math.min(985, finalScore));
+
+      return {
+        score: finalScore,
+        coherence,
+        badgeClass,
+        desc
+      };
+    }
+    const questionView = document.getElementById('questionView');
+    const footerBar = document.getElementById('footerBar');
+    const streakCountEl = document.getElementById('streakCount');
+    const heartsCountEl = document.getElementById('heartsCount');
+    const timerBadgeEl = document.getElementById('timerBadge');
+    const timerCountEl = document.getElementById('timerCount');
+    const progressBarEl = document.getElementById('progressBar');
+    const tagCategoryEl = document.getElementById('tagCategory');
+    const tagTopicEl = document.getElementById('tagTopic');
+    const questionTitleEl = document.getElementById('questionTitle');
+    const questionContextEl = document.getElementById('questionContext');
+    const optionsListEl = document.getElementById('optionsList');
+    const checkBtnEl = document.getElementById('checkBtn');
+    const feedbackSheetEl = document.getElementById('feedbackSheet');
+    const feedbackIconEl = document.getElementById('feedbackIcon');
+    const feedbackTitleEl = document.getElementById('feedbackTitle');
+    const feedbackExplanationEl = document.getElementById('feedbackExplanation');
+    const streakModalEl = document.getElementById('streakModal');
+    const heroStreakCountEl = document.getElementById('heroStreakCount');
+
+    // Persistência das Estatísticas por Disciplina
+    function getSubjectStats() {
+      try {
+        return JSON.parse(localStorage.getItem('enem_duo_subject_stats') || JSON.stringify({
+          linguagens: { name: "Português / Linguagens", icon: "📖", correct: 0, total: 0 },
+          humanas: { name: "Ciências Humanas (Hist/Geo/Fil/Soc)", icon: "🏛️", correct: 0, total: 0 },
+          matematica: { name: "Matemática e suas Tecnologias", icon: "📐", correct: 0, total: 0 },
+          natureza: { name: "Ciências da Natureza (Bio/Fís/Quím)", icon: "🔬", correct: 0, total: 0 }
+        }));
+      } catch (e) {
+        return {
+          linguagens: { name: "Português / Linguagens", icon: "📖", correct: 0, total: 0 },
+          humanas: { name: "Ciências Humanas (Hist/Geo/Fil/Soc)", icon: "🏛️", correct: 0, total: 0 },
+          matematica: { name: "Matemática e suas Tecnologias", icon: "📐", correct: 0, total: 0 },
+          natureza: { name: "Ciências da Natureza (Bio/Fís/Quím)", icon: "🔬", correct: 0, total: 0 }
+        };
+      }
+    }
+
+    function recordQuestionStat(categoryString, isCorrect) {
+      const stats = getSubjectStats();
+      const cat = (categoryString || "").toLowerCase();
+
+      let key = "linguagens";
+      if (cat.includes("humanas") || cat.includes("história") || cat.includes("geografia") || cat.includes("filosofia") || cat.includes("sociologia")) {
+        key = "humanas";
+      } else if (cat.includes("matemática")) {
+        key = "matematica";
+      } else if (cat.includes("natureza") || cat.includes("biologia") || cat.includes("física") || cat.includes("química")) {
+        key = "natureza";
+      } else if (cat.includes("linguagens") || cat.includes("interpretação")) {
+        key = "linguagens";
+      }
+
+      if (stats[key]) {
+        stats[key].total += 1;
+        if (isCorrect) {
+          stats[key].correct += 1;
+        }
+        localStorage.setItem('enem_duo_subject_stats', JSON.stringify(stats));
+      }
+    }
+
+    function openStatsScreen() {
+      const statsScreen = document.getElementById('statsScreenView');
+      const container = document.getElementById('statsCardsContainer');
+      const stats = getSubjectStats();
+
+      // Esconde menu inicial
+      areaSelectorScreen.style.display = 'none';
+      statsScreen.style.display = 'flex';
+
+      container.innerHTML = "";
+
+      Object.values(stats).forEach(item => {
+        const percent = item.total > 0 ? Math.round((item.correct / item.total) * 100) : 0;
+        
+        let barColor = "#38bdf8";
+        if (item.total > 0) {
+          if (percent >= 70) barColor = "#58cc02";
+          else if (percent <= 40) barColor = "#ff4b4b";
+          else barColor = "#facc15";
+        }
+
+        const card = document.createElement('div');
+        card.className = 'stat-subject-card';
+        card.innerHTML = `
+          <div class="stat-subject-top">
+            <div class="stat-subject-title">
+              <span>${item.icon}</span>
+              <span>${item.name}</span>
+            </div>
+            <div class="stat-subject-percent" style="color: ${barColor}">${percent}%</div>
+          </div>
+          <div class="stat-bar-track">
+            <div class="stat-bar-fill" style="width: ${percent}%; background: ${barColor}"></div>
+          </div>
+          <div class="stat-counts">
+            <span>Acertos: <strong>${item.correct}</strong> de ${item.total}</span>
+            <span>${item.total === 0 ? "Ainda não testado" : (percent >= 70 ? "🔥 Nível Forte" : (percent <= 40 ? "⚠️ Prioridade" : "Em evolução"))}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function closeStatsScreen() {
+      document.getElementById('statsScreenView').style.display = 'none';
+      areaSelectorScreen.style.display = 'flex';
+    }
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function initApp() {
+      streakCountEl.textContent = streak;
+      heartsCountEl.textContent = hearts;
+      progressBarEl.style.width = "0%";
+      updateWeakPointsButtonState();
+    }
+
+    function getPersistentWeakPoints() {
+      try {
+        return JSON.parse(localStorage.getItem('enem_duo_weak_points') || "[]");
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function savePersistentWeakPoints(wrongs) {
+      const current = getPersistentWeakPoints();
+      wrongs.forEach(w => {
+        if (!current.some(item => item.title === w.title)) {
+          current.push(w);
+        }
+      });
+      localStorage.setItem('enem_duo_weak_points', JSON.stringify(current));
+      updateWeakPointsButtonState();
+    }
+
+    function updateWeakPointsButtonState() {
+      const weakList = getPersistentWeakPoints();
+      const descEl = document.getElementById('weakPointsBtnDesc');
+      if (descEl) {
+        if (weakList.length > 0) {
+          descEl.textContent = `${weakList.length} conteúdo(s) pendente(s) para reforçar!`;
+        } else {
+          descEl.textContent = "Nenhum erro registrado ainda. Treine nos cadernos acima!";
+        }
+      }
+    }
+
+    function startWeakPointsQuiz() {
+      const weakList = getPersistentWeakPoints();
+      
+      // Se ainda não houver pontos fracos salvos, pega questões mais desafiadoras das duas áreas
+      let targetQuestions = [];
+      if (weakList.length > 0) {
+        // Encontra as questões originais correspondentes aos pontos fracos
+        const allQuestions = [
+          ...QUESTION_DATABASE.humanas_linguagens,
+          ...QUESTION_DATABASE.natureza_matematica
+        ];
+        targetQuestions = allQuestions.filter(q => weakList.some(w => w.title === q.title));
+      }
+      
+      if (targetQuestions.length === 0) {
+        // Caso ainda não tenha errado, seleciona uma mescla inteligente de temas complexos
+        const allQuestions = [
+          ...QUESTION_DATABASE.humanas_linguagens,
+          ...QUESTION_DATABASE.natureza_matematica
+        ];
+        targetQuestions = shuffleArray(allQuestions).slice(0, 5);
+      }
+
+      const sidePanel = document.getElementById('sideAnalysisPanel');
+      if (sidePanel) {
+        sidePanel.style.display = 'none';
+      }
+
+      userAnswersHistory = [];
+      activeQuestionList = shuffleArray(targetQuestions).map(q => {
+        return {
+          ...q,
+          shuffledOptions: shuffleArray(q.options)
+        };
+      });
+
+      currentQuestionIndex = 0;
+      hearts = 3;
+      heartsCountEl.textContent = hearts;
+      
+      areaSelectorScreen.style.display = "none";
+      questionView.style.display = "flex";
+      footerBar.style.display = "block";
+      
+      loadQuestion();
+    }
+
+    function startQuiz(areaKey) {
+      // Garante que o painel lateral direito esteja oculto durante o teste
+      const sidePanel = document.getElementById('sideAnalysisPanel');
+      if (sidePanel) {
+        sidePanel.style.display = 'none';
+      }
+
+      userAnswersHistory = [];
+      const rawQuestions = QUESTION_DATABASE[areaKey];
+      // Sorteia questões e embaralha as 5 opções de cada questão entre A e E
+      activeQuestionList = shuffleArray(rawQuestions).slice(0, 6).map(q => {
+        return {
+          ...q,
+          shuffledOptions: shuffleArray(q.options)
+        };
+      });
+
+      currentQuestionIndex = 0;
+      hearts = 3;
+      heartsCountEl.textContent = hearts;
+      
+      areaSelectorScreen.style.display = "none";
+      questionView.style.display = "flex";
+      footerBar.style.display = "block";
+      
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      stopTimer();
+      selectedOptionIndex = null;
+      checkBtnEl.disabled = true;
+      checkBtnEl.textContent = "Verificar";
+      feedbackSheetEl.className = "feedback-sheet";
+
+      const q = activeQuestionList[currentQuestionIndex];
+      tagCategoryEl.textContent = formatEnemText(q.category);
+      tagTopicEl.textContent = formatEnemText(q.topic);
+      questionTitleEl.textContent = formatEnemText(q.title);
+      questionContextEl.textContent = formatEnemText(q.context + " " + q.question);
+
+      // Barra de progresso proporcional
+      const progress = (currentQuestionIndex / activeQuestionList.length) * 100;
+      progressBarEl.style.width = `${progress}%`;
+
+      // Renderiza alternativas de A a E
+      const letters = ['A', 'B', 'C', 'D', 'E'];
+      optionsListEl.innerHTML = "";
+
+      q.shuffledOptions.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `
+          <div class="option-letter">${letters[idx]}</div>
+          <div>${formatEnemText(opt.text)}</div>
+        `;
+        btn.onclick = () => selectOption(idx);
+        optionsListEl.appendChild(btn);
+      });
+
+      startTimer();
+    }
+
+    function selectOption(index) {
+      selectedOptionIndex = index;
+      const buttons = optionsListEl.querySelectorAll('.option-btn');
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle('selected', i === index);
+      });
+      checkBtnEl.disabled = false;
+    }
+
+    function checkAnswer() {
+      if (selectedOptionIndex === null) return;
+      stopTimer();
+
+      const q = activeQuestionList[currentQuestionIndex];
+      const selectedOption = q.shuffledOptions[selectedOptionIndex];
+      const isCorrect = selectedOption.isCorrect;
+      
+      const correctIdx = q.shuffledOptions.findIndex(o => o.isCorrect);
+      const correctLetter = ['A', 'B', 'C', 'D', 'E'][correctIdx];
+
+      const buttons = optionsListEl.querySelectorAll('.option-btn');
+      buttons.forEach(btn => btn.style.pointerEvents = 'none');
+
+      userAnswersHistory.push({
+        topic: q.topic || q.category,
+        title: q.title,
+        difficulty: q.difficulty || 'medio',
+        isCorrect: isCorrect,
+        timedOut: false
+      });
+
+      // Registra estatística por disciplina
+      recordQuestionStat(q.category, isCorrect);
+
+      if (isCorrect) {
+        feedbackSheetEl.className = "feedback-sheet correct show";
+        feedbackIconEl.textContent = "🔥 Excelente!";
+        feedbackTitleEl.textContent = "Você acertou!";
+        feedbackExplanationEl.textContent = formatEnemText(q.explanation);
+      } else {
+        hearts = Math.max(0, hearts - 1);
+        heartsCountEl.textContent = hearts;
+        feedbackSheetEl.className = "feedback-sheet wrong show";
+        feedbackIconEl.textContent = "💔 Quase lá!";
+        feedbackTitleEl.textContent = `A correta era a (${correctLetter})`;
+        feedbackExplanationEl.textContent = formatEnemText(q.explanation);
+      }
+    }
+
+    function nextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < activeQuestionList.length) {
+        loadQuestion();
+      } else {
+        // Concluiu a rodada de exercícios do dia!
+        progressBarEl.style.width = "100%";
+        concludeQuizWithStreak();
+      }
+    }
+
+    function concludeQuizWithStreak() {
+      stopTimer();
+      timerBadgeEl.style.display = "none";
+      streak += 1;
+      localStorage.setItem('enem_duo_streak', streak.toString());
+      streakCountEl.textContent = streak;
+      heroStreakCountEl.textContent = `${streak} DIAS!`;
+
+      // Torna a tela lateral direita visível apenas no final do teste
+      const sidePanel = document.getElementById('sideAnalysisPanel');
+      if (sidePanel) {
+        sidePanel.style.display = 'flex';
+      }
+
+      // Gera Relatório de Análise de Pontos Fortes e Fracos
+      renderPerformanceReport();
+
+      streakModalEl.style.display = "flex";
+    }
+
+    function renderPerformanceReport() {
+      const total = userAnswersHistory.length;
+      const corrects = userAnswersHistory.filter(item => item.isCorrect);
+      const wrongs = userAnswersHistory.filter(item => !item.isCorrect);
+      const scorePercent = total > 0 ? Math.round((corrects.length / total) * 100) : 0;
+
+      // Cálculo da Nota TRI e Coerência Pedagógica (INEP)
+      const triResult = calculateTRIScore(userAnswersHistory);
+
+      // Elementos do Modal do Celular
+      const triScoreVal = document.getElementById('triScoreVal');
+      const triBadgeCoherence = document.getElementById('triBadgeCoherence');
+      const triDescCoherence = document.getElementById('triDescCoherence');
+
+      if (triScoreVal) triScoreVal.textContent = triResult.score;
+      if (triBadgeCoherence) {
+        triBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
+        triBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
+      }
+      if (triDescCoherence) triDescCoherence.textContent = triResult.desc;
+
+      const scoreEl = document.getElementById('performanceScore');
+      const listStrongEl = document.getElementById('listStrong');
+      const listWeakEl = document.getElementById('listWeak');
+      const secStrongEl = document.getElementById('sectionStrong');
+      const secWeakEl = document.getElementById('sectionWeak');
+
+      // Renderiza no Modal do Celular
+      scoreEl.textContent = `Desempenho Geral: ${corrects.length}/${total} acertos (${scorePercent}%)`;
+
+      // Persiste os pontos fracos para alimentar o botão especial "Treinar Pontos Fracos"
+      if (wrongs.length > 0) {
+        savePersistentWeakPoints(wrongs);
+      } else {
+        // Se acertou tudo no teste, remove os que foram dominados
+        const currentWeak = getPersistentWeakPoints();
+        const filtered = currentWeak.filter(w => !corrects.some(c => c.title === w.title));
+        localStorage.setItem('enem_duo_weak_points', JSON.stringify(filtered));
+        updateWeakPointsButtonState();
+      }
+
+      // Atualiza também o Painel Lateral Direito
+      const sideEmptyState = document.getElementById('sideEmptyState');
+      const sideContentFilled = document.getElementById('sideContentFilled');
+      const sideScoreEl = document.getElementById('sidePerformanceScore');
+      const sideListStrongEl = document.getElementById('sideListStrong');
+      const sideListWeakEl = document.getElementById('sideListWeak');
+      const sideSecStrongEl = document.getElementById('sectionStrong');
+      const sideSecWeakEl = document.getElementById('sectionWeak');
+
+      // Elementos TRI do Painel Lateral
+      const sideTriScoreVal = document.getElementById('sideTriScoreVal');
+      const sideTriBadgeCoherence = document.getElementById('sideTriBadgeCoherence');
+      const sideTriDescCoherence = document.getElementById('sideTriDescCoherence');
+
+      if (sideTriScoreVal) sideTriScoreVal.textContent = triResult.score;
+      if (sideTriBadgeCoherence) {
+        sideTriBadgeCoherence.textContent = `Coerência ${triResult.coherence}`;
+        sideTriBadgeCoherence.className = `tri-coherence-badge ${triResult.badgeClass}`;
+      }
+      if (sideTriDescCoherence) sideTriDescCoherence.textContent = triResult.desc;
+
+      sideEmptyState.style.display = 'none';
+      sideContentFilled.style.display = 'flex';
+      sideScoreEl.textContent = `Aproveitamento: ${corrects.length}/${total} acertos (${scorePercent}%)`;
+
+      // Renderiza Pontos Fortes
+      listStrongEl.innerHTML = "";
+      sideListStrongEl.innerHTML = "";
+      if (corrects.length > 0) {
+        secStrongEl.style.display = "block";
+        sideSecStrongEl.style.display = "block";
+        corrects.forEach(item => {
+          const div1 = document.createElement('div');
+          div1.className = 'report-item';
+          div1.innerHTML = `<strong>${formatEnemText(item.title)}</strong><br><span style="color:#94a3b8; font-size:11.5px;">${formatEnemText(item.topic)}</span>`;
+          listStrongEl.appendChild(div1);
+
+          const div2 = document.createElement('div');
+          div2.className = 'report-item';
+          div2.innerHTML = `<strong>${formatEnemText(item.title)}</strong><br><span style="color:#94a3b8; font-size:11.5px;">${formatEnemText(item.topic)}</span>`;
+          sideListStrongEl.appendChild(div2);
+        });
+      } else {
+        secStrongEl.style.display = "none";
+        sideSecStrongEl.style.display = "none";
+      }
+
+      // Renderiza Pontos Fracos
+      listWeakEl.innerHTML = "";
+      sideListWeakEl.innerHTML = "";
+      if (wrongs.length > 0) {
+        secWeakEl.style.display = "block";
+        sideSecWeakEl.style.display = "block";
+        wrongs.forEach(item => {
+          const reason = item.timedOut ? " (Tempo esgotado)" : "";
+
+          const div1 = document.createElement('div');
+          div1.className = 'report-item';
+          div1.innerHTML = `<strong>${formatEnemText(item.title)}${reason}</strong><br><span style="color:#94a3b8; font-size:11.5px;">Revisar: ${formatEnemText(item.topic)}</span>`;
+          listWeakEl.appendChild(div1);
+
+          const div2 = document.createElement('div');
+          div2.className = 'report-item';
+          div2.innerHTML = `<strong>${formatEnemText(item.title)}${reason}</strong><br><span style="color:#94a3b8; font-size:11.5px;">Revisar: ${formatEnemText(item.topic)}</span>`;
+          sideListWeakEl.appendChild(div2);
+        });
+      } else {
+        secWeakEl.style.display = "none";
+        sideSecWeakEl.style.display = "none";
+      }
+    }
+
+    function backToMenu() {
+      stopTimer();
+      timerBadgeEl.style.display = "none";
+      streakModalEl.style.display = "none";
+      const statsScreen = document.getElementById('statsScreenView');
+      if (statsScreen) statsScreen.style.display = 'none';
+      const sidePanel = document.getElementById('sideAnalysisPanel');
+      if (sidePanel) {
+        sidePanel.style.display = 'none';
+      }
+      feedbackSheetEl.className = "feedback-sheet";
+      questionView.style.display = "none";
+      footerBar.style.display = "none";
+      areaSelectorScreen.style.display = "flex";
+      progressBarEl.style.width = "0%";
+      initApp();
+    }
+
+    // Inicialização
+    initApp();
+  </script>
+</body>
+</html>
