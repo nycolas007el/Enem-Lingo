@@ -15,11 +15,11 @@ const QUESTION_DATABASE = {
       context: "Com a proliferação de grandes modelos de linguagem (LLMs) capazes de emular estilos líricos e produzir crônicas em segundos, teóricos da literatura discutem o deslocamento da experiência humana de fruição e subjetividade na criação artística.",
       question: "No debate contemporâneo de Linguagens do ENEM 2025, a especificidade irredutível da autoria humana diante de textos gerados por IA reside na:",
       options: [
-        { text: "Velocidade superior dos poetas humanos para processar bancos de dados lexicais em tempo real.", isCorrect: false },
+        { text: "Velocidade superior dos poetas humanos para processar e recombinar bancos de dados lexicais em tempo real.", isCorrect: false },
         { text: "Experiência sensível corporificada, intenção ética e engajamento histórico com o sofrimento e a memória social.", isCorrect: true },
-        { text: "Obrigação legal de rimar todas as estrofes em decassílabos estritos.", isCorrect: false },
-        { text: "Recusa deliberada de qualquer metáfora ou ambiguidade semântica na literatura.", isCorrect: false },
-        { text: "Inexistência de erros gramaticais ou lapsos sintáticos nos manuscritos originais.", isCorrect: false }
+        { text: "Capacidade computacional algorítmica para memorizar todas as figuras de sintaxe da tradição ocidental clássica.", isCorrect: false },
+        { text: "Recusa deliberada e permanente de qualquer recurso metafórico ou ambiguidade polissêmica na criação literária.", isCorrect: false },
+        { text: "Isenção infalível de desvios normativos e lapsos sintáticos formais na estruturação dos manuscritos poéticos.", isCorrect: false }
       ],
       explanation: "A IA recombina padrões probabilísticos de texto, enquanto a literatura humana emerge da experiência corpórea, afetiva e histórica."
     },
@@ -49,11 +49,11 @@ const QUESTION_DATABASE = {
       context: "A disseminação em larga escala de deepfakes hiper-realistas e conteúdos sintéticos manipulados durante períodos de consulta popular desafia os sistemas eleitorais e os tribunais constitucionais.",
       question: "No contexto dos direitos de cidadania analisados pelo ENEM 2025, o impacto mais danoso das deepfakes consiste em:",
       options: [
-        { text: "Aumentar a velocidade de navegação na internet de banda larga em áreas periféricas.", isCorrect: false },
+        { text: "Acelerar a velocidade de navegação na internet de banda larga e democratizar a circulação digital de dados.", isCorrect: false },
         { text: "Corroer a confiança pública na verdade factual e polarizar o debate cívico através do engano programado.", isCorrect: true },
-        { text: "Eliminar a necessidade de debates políticos televisionados e sessões legislativas.", isCorrect: false },
-        { text: "Obrigar o uso de cabines eleitorais analógicas de madeira em todas as capitais.", isCorrect: false },
-        { text: "Diminuir o interesse dos jovens por celulares e jogos eletrônicos online.", isCorrect: false }
+        { text: "Eliminar a necessidade de debates eleitorais televisivos e suprimir o funcionamento de assembleias legislativas.", isCorrect: false },
+        { text: "Tornar compulsório o uso exclusivo de cédulas manuais e cabines analógicas de madeira em todas as eleições.", isCorrect: false },
+        { text: "Reduzir o engajamento juvenil com dispositivos eletrônicos conectados e desestimular o consumo de mídias.", isCorrect: false }
       ],
       explanation: "A falsificação profunda (deepfake) desestabiliza o discernimento factual dos eleitores, ameaçando a soberania democrática."
     },
@@ -142,11 +142,11 @@ const QUESTION_DATABASE = {
       context: "Após a assinatura da Lei Áurea em 1888, o Estado brasileiro não desenvolveu políticas públicas de indenização, acesso à terra ou educação formal para a população recém-liberta, privilegiando o subsídio à imigração europeia.",
       question: "No contexto da Primeira República (1889-1930), a principal consequência dessa omissão estatal foi:",
       options: [
-        { text: "A ascensão socioeconômica imediata e homogênea dos libertos à elite cafeeira paulista.", isCorrect: false },
+        { text: "A ascensão socioeconômica célere e homogênea das famílias libertas aos quadros proprietários da cafeicultura paulista.", isCorrect: false },
         { text: "A marginalização estrutural da população negra e o recurso a redes de solidariedade comunitária e religiosidade.", isCorrect: true },
-        { text: "A concessão de títulos de propriedade agrícola pública em todas as fronteiras nacionais.", isCorrect: false },
-        { text: "A extinção espontânea do racismo e das hierarquias de cor nas corporações de ofício.", isCorrect: false },
-        { text: "A nomeação paritária de homens e mulheres negras para os ministérios civis federais.", isCorrect: false }
+        { text: "A outorga generalizada de títulos de propriedade fundiária e subsídios estatais para assentamento agrícola no sertão.", isCorrect: false },
+        { text: "A dissolução espontânea dos estigmas raciais e a integração paritária de trabalhadores negros nas corporações industriais.", isCorrect: false },
+        { text: "A garantia constitucional de paridade racial e de gênero no preenchimento dos cargos de chefia do funcionalismo civil.", isCorrect: false }
       ],
       explanation: "A ausência de reformas estruturantes no pós-abolição empurrou os negros para a informalidade e a periferização social."
     },
@@ -1526,11 +1526,11 @@ const QUESTION_DATABASE = {
       context: "Um drone sobrevoa uma pista circular plana no solo realizando uma trajetória helicoidal cilíndrica vertical: ele sobe com velocidade vertical constante enquanto gira em torno do eixo central do círculo.",
       question: "A projeção ortogonal da trajetória desse drone sobre a superfície plana horizontal do solo (plano da pista visto exatamente de cima para baixo) e sobre uma parede vertical lateral corresponde, respectivamente, a uma:",
       options: [
-        { text: "Circunferência no plano horizontal do solo e uma Senoide (curva ondulada) na parede vertical.", isCorrect: true },
-        { text: "Reta horizontal no solo e uma Elipse na parede.", isCorrect: false },
-        { text: "Espiral convergente no solo e um ponto estático na parede.", isCorrect: false },
-        { text: "Parábola no solo e uma Hipérbole na parede.", isCorrect: false },
-        { text: "Reta vertical perpendicular no solo e uma Circunferência na parede.", isCorrect: false }
+        { text: "Circunferência no plano horizontal do solo e uma Senoide ondulada contínua projetada na parede vertical.", isCorrect: true },
+        { text: "Segmento de reta horizontal plano no solo e uma Elipse deformada pelo ângulo zenital na parede vertical.", isCorrect: false },
+        { text: "Espiral plana logarítmica convergente no solo e uma Trajetória parabólica ascendente na parede vertical.", isCorrect: false },
+        { text: "Arco de parábola simétrica aberta no solo e um Ramo de hipérbole equilátera descontínua na parede vertical.", isCorrect: false },
+        { text: "Ponto singular estático fixado no solo e uma Circunferência concêntrica fechada na parede vertical.", isCorrect: false }
       ],
       explanation: "Visto estritamente de cima (projeção no plano do solo), o movimento circular é projetado como uma circunferência perfeita. Visto lateralmente (projeção na parede), a combinação do movimento circular com a subida linear gera a clássica onda senoidal."
     },
@@ -1587,11 +1587,11 @@ const QUESTION_DATABASE = {
       context: "O Brasil tem consolidado plantas industriais para a produção de 'hidrogênio verde' (H₂V), obtido por meio da eletrólise da água alimentada exclusivamente por energia eólica e solar fotovoltaica.",
       question: "Diferente do hidrogênio 'cinza' ou 'marrom', a classificação do hidrogênio como 'verde' decorre prioritariamente do fato de:",
       options: [
-        { text: "Possuir coloração esmeralda visível que facilita a detecção de vazamentos em gasodutos.", isCorrect: false },
+        { text: "Apresentar pigmentação esmeralda visível que viabiliza a rápida inspeção óptica de vazamentos em dutos industriais.", isCorrect: false },
         { text: "Ser produzido a partir de eletrólise com eletricidade 100% renovável, sem emissão líquida de carbono em sua cadeia.", isCorrect: true },
-        { text: "Reagir com o oxigênio atmosférico liberando monóxido de carbono e fuligem pesada.", isCorrect: false },
-        { text: "Apresentar densidade energética inferior à da lenha de reflorestamento comum.", isCorrect: false },
-        { text: "Ser sintetizado unicamente a partir de rejeitos plásticos descartados em aterros sanitários.", isCorrect: false }
+        { text: "Produzir combustão térmica com liberação de monóxido de carbono tóxico e fuligem particulada no meio circundante.", isCorrect: false },
+        { text: "Apresentar densidade energética intrínseca inferior ao poder calorífico da queima direta de lenha de eucalipto.", isCorrect: false },
+        { text: "Resultar unicamente da pirólise catalítica de resíduos poliméricos sintéticos descartados em aterros metropolitanos.", isCorrect: false }
       ],
       explanation: "O H₂V é 'verde' pelo processo de obtenção limpo: a eletrólise (2 H₂O -> 2 H₂ + O₂) utiliza energia solar/eólica sem emitir gases estufa."
     },
@@ -1642,11 +1642,11 @@ const QUESTION_DATABASE = {
       context: "As intensas queimadas em biomas brasileiros no ano de 2024 geraram plumas densas de fumaça carregadas de material particulado fino (PM₂,₅), que encobriu cidades a milhares de quilômetros das áreas florestais.",
       question: "A inalação crônica desse material particulado fino atinge as regiões mais profundas do aparelho respiratório humano, provocando danos primordiais nos(as):",
       options: [
-        { text: "Cartilagens da laringe, impedindo a produção de saliva.", isCorrect: false },
+        { text: "Cartilagens da laringe, paralisando as cordas vocais e cessando a produção basal de saliva.", isCorrect: false },
         { text: "Alvéolos pulmonares, comprometendo a hematose e provocando inflamações vasculares sistêmicas.", isCorrect: true },
-        { text: "Células hepáticas responsáveis pela digestão de lipídios da dieta.", isCorrect: false },
-        { text: "Glândulas salivares parótidas, anulando a quebra mecânica dos carboidratos.", isCorrect: false },
-        { text: "Músculos esqueléticos da tíbia, impedindo a locomoção voluntária.", isCorrect: false }
+        { text: "Hepatócitos glandulares, bloqueando a secreção de sais biliares essenciais à digestão lipídica.", isCorrect: false },
+        { text: "Glândulas parótidas, inviabilizando a quebra mecânica inicial de amiláceos na cavidade bucal.", isCorrect: false },
+        { text: "Fibras musculares da tíbia, provocando atrofia periférica e perda da motricidade voluntária.", isCorrect: false }
       ],
       explanation: "O material PM₂,₅ ultrapassa os cílios respiratórios e penetra nos alvéolos, dificultando a difusão do oxigênio para os capilares sanguíneos (hematose)."
     },
@@ -1714,11 +1714,11 @@ const QUESTION_DATABASE = {
       context: "O aumento das emissões antrópicas de CO₂ faz com que mais gás se dissolva nos oceanos, formando ácido carbônico (H₂CO₃) que se dissocia liberando íons H+, que reagem com o carbonato (CO₃²⁻).",
       question: "A diminuição da disponibilidade de íons carbonato no meio aquático afeta de forma letal os recifes de coral porque:",
       options: [
-        { text: "Aumenta drasticamente a salinidade da água congelando os oceanos equatoriais.", isCorrect: false },
+        { text: "Eleva desproporcionalmente a salinidade marinha, provocando o congelamento forçado de mares tropicais.", isCorrect: false },
         { text: "Dificulta a síntese do exoesqueleto calcário de carbonato de cálcio (CaCO₃) de corais e moluscos.", isCorrect: true },
-        { text: "Impede que os animais aquáticos realizem a excreção de ureia pelas brânquias.", isCorrect: false },
-        { text: "Acelera a fotossíntese dos tubarões carnívoros do topo da cadeia trófica.", isCorrect: false },
-        { text: "Neutraliza completamente a luz solar na zona fótica costeira.", isCorrect: false }
+        { text: "Bloqueia a atividade osmorreguladora branquial, impedindo a eliminação de escórias nitrogenadas solúveis.", isCorrect: false },
+        { text: "Estimula a taxa fotossintética de peixes predadores carnívoros situados no ápice da pirâmide ecológica.", isCorrect: false },
+        { text: "Impede a penetração de radiações luminosas na coluna d'água, extinguindo a zona fótica litorânea.", isCorrect: false }
       ],
       explanation: "A acidificação rouba íons carbonato livres da água, impedindo os corais de formar e manter seus esqueletos de CaCO₃."
     },
@@ -1752,11 +1752,11 @@ const QUESTION_DATABASE = {
       context: "A implementação das redes de telefonia celular 5G utiliza faixas de radiofrequência mais elevadas (como 3,5 GHz) em comparação com as tecnologias 4G anteriores (cerca de 700 MHz a 2,5 GHz).",
       question: "Sabendo que todas as ondas eletromagnéticas viajam na velocidade da luz no vácuo (c ≈ 3 x 10⁸ m/s), o aumento da frequência na transmissão do sinal 5G acarreta:",
       options: [
-        { text: "Aumento na mesma proporção do comprimento de onda da radiação emitida.", isCorrect: false },
+        { text: "Aumento proporcional do comprimento de onda da radiação emitida, ampliando o raio de cobertura das antenas.", isCorrect: false },
         { text: "Redução do comprimento de onda, exigindo maior quantidade de antenas repetidoras com menor raio de alcance.", isCorrect: true },
-        { text: "Redução da velocidade de propagação do sinal eletromagnético para zero no ar.", isCorrect: false },
-        { text: "Inversão do campo gravitacional nas proximidades das torres de transmissão.", isCorrect: false },
-        { text: "Transformação espontânea das ondas de rádio em partículas alfa e gama ionizantes.", isCorrect: false }
+        { text: "Queda imediata da velocidade de propagação do pacote eletromagnético para valores nulos no meio aéreo.", isCorrect: false },
+        { text: "Inversão da polaridade das linhas do campo gravitacional terrestre em torno das estações de transmissão.", isCorrect: false },
+        { text: "Transmutação espontânea de pulsos de rádio em emissões corpusculares alfa e feixes gama altamente ionizantes.", isCorrect: false }
       ],
       explanation: "Como v = λ * f é constante no meio, se a frequência (f) sobe, o comprimento de onda (λ) diminui, o que reduz o poder de contornar obstáculos e exige mais antenas."
     },
@@ -1769,11 +1769,11 @@ const QUESTION_DATABASE = {
       context: "Uma indústria de laticínios desenha caixas de leite no formato de paralelepípedo reto-retângulo com base medindo 10 cm por 5 cm e altura de 20 cm.",
       question: "Sabendo que 1 cm³ equivale a 1 mL, o volume total de líquido que essa caixa comporta completamente cheia é de:",
       options: [
-        { text: "500 mL", isCorrect: false },
-        { text: "750 mL", isCorrect: false },
-        { text: "1.000 mL (1 litro)", isCorrect: true },
-        { text: "1.500 mL", isCorrect: false },
-        { text: "2.000 mL", isCorrect: false }
+        { text: "500 mL (0,5 L)", isCorrect: false },
+        { text: "750 mL (0,75 L)", isCorrect: false },
+        { text: "1.000 mL (1,0 L)", isCorrect: true },
+        { text: "1.500 mL (1,5 L)", isCorrect: false },
+        { text: "2.000 mL (2,0 L)", isCorrect: false }
       ],
       explanation: "V = comprimento × largura × altura = 10 cm × 5 cm × 20 cm = 1.000 cm³ = 1.000 mL = 1 Litro!"
     },
@@ -1790,11 +1790,11 @@ const QUESTION_DATABASE = {
       context: "Durante a pandemia de COVID-19, vacinas inovadoras de RNA mensageiro sintético foram desenvolvidas para instruir células do hospedeiro a produzir a proteína spike do coronavírus.",
       question: "Nas células humanas inoculadas com essa vacina, a síntese temporária da proteína viral ocorre na organela denominada:",
       options: [
-        { text: "Lisossomo primário autofágico.", isCorrect: false },
-        { text: "Ribossomo citoplasmático durante o processo de tradução do mRNA.", isCorrect: true },
-        { text: "Centríolo organizador do fuso mitótico celular.", isCorrect: false },
-        { text: "Complexo de Golgi exclusivamente durante a mitose nuclear.", isCorrect: false },
-        { text: "Vacúolo de suco celular vegetal com cloroplasto.", isCorrect: false }
+        { text: "Lisossomo digestivo, no interior de vesículas de degradação enzimática.", isCorrect: false },
+        { text: "Ribossomo citoplasmático, durante o processo de tradução do mRNA.", isCorrect: true },
+        { text: "Centríolo celular, no sítio de polimerização dos microtúbulos de divisão.", isCorrect: false },
+        { text: "Complexo golgiense, no processamento final de secreções glicídicas.", isCorrect: false },
+        { text: "Vacúolo autofágico, durante o armazenamento de pigmentos hidrossolúveis.", isCorrect: false }
       ],
       explanation: "Os ribossomos leem a fita de mRNA vacinal no citoplasma e sintetizam o antígeno viral que ativa a resposta dos linfócitos."
     },
@@ -1845,11 +1845,11 @@ const QUESTION_DATABASE = {
       context: "Em um grupo de 100 pacientes com sintomas gripais, 40 estão infectados com o vírus influenza e 60 não estão. Entre os infectados, 36 testaram positivo no exame rápido; entre os não infectados, 6 testaram positivo (falsos positivos).",
       question: "Sorteando-se ao acaso um paciente cujo resultado do teste foi positivo, a probabilidade de ele realmente estar infectado pelo vírus é de:",
       options: [
-        { text: "36 / 100 (36%)", isCorrect: false },
+        { text: "36 / 100 (exatamente 36,0%)", isCorrect: false },
         { text: "36 / 42 (aproximadamente 85,7%)", isCorrect: true },
-        { text: "40 / 100 (40%)", isCorrect: false },
+        { text: "40 / 100 (exatamente 40,0%)", isCorrect: false },
         { text: "6 / 42 (aproximadamente 14,3%)", isCorrect: false },
-        { text: "36 / 40 (90%)", isCorrect: false }
+        { text: "36 / 40 (exatamente 90,0%)", isCorrect: false }
       ],
       explanation: "Espaço amostral reduzido (todos os positivos): 36 (infectados) + 6 (falsos positivos) = 42 pessoas. Casos favoráveis (realmente infectados): 36. Probabilidade = 36 / 42 ≈ 85,7%!"
     }
@@ -3079,9 +3079,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Na estrutura temática e estilística da obra 'O Quinze', a força dramática do romance apoia-se:",
       options: [
         { text: "Na sobriedade e crueza da prosa que retrata o sofrimento dos retirantes sem apelos sentimentais artificiais, fundindo dor coletiva e afeto familiar.", isCorrect: true },
-        { text: "Na exaltação da fuga para os seringais da Amazônia como única solução pacífica e próspera para todo o campesinato.", isCorrect: false },
-        { text: "No uso de alegorias mitológicas greco-romanas para mascarar a situação de penúria dos sertanejos nos abarracamentos.", isCorrect: false },
-        { text: "No ponto de vista do fazendeiro autoritário que recusa socorrer afilhados e louva a seca como punição divina.", isCorrect: false }
+        { text: "Na exaltação da migração compulsória aos seringais amazônicos como desfecho triunfante e enriquecedor para toda a classe trabalhadora sertaneja.", isCorrect: false },
+        { text: "No emprego frequente de alegorias mitológicas clássicas com o propósito de sublimar poeticamente a miséria concreta nos campos de concentração.", isCorrect: false },
+        { text: "Na adoção da perspectiva moral do proprietário latifundiário que celebra a aridez climática como provação purificadora imposta pela Providência.", isCorrect: false }
       ],
       explanation: "Rachel de Queiroz revolucionou o romance de 30 com estilo direto, límpido e conciso ao narrar a migração forçada e o abandono dos retirantes no Ceará de 1915."
     },
@@ -3158,9 +3158,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A respeito do contexto sociopolítico da Sedição de Juazeiro (1914), é correto afirmar que o movimento:",
       options: [
         { text: "Articulou o fervor religioso das massas camponesas e sertanejas aos interesses de oligarquias depostas, resultando na queda do governador interventor Franco Rabelo.", isCorrect: true },
-        { text: "Foi uma rebelião camponesa de caráter estritamente comunista que visava à desapropriação das terras do Cariri.", isCorrect: false },
-        { text: "Tinha por objetivo imediato restabelecer o Império do Brasil e entregar o governo do Ceará à Família Real em exílio.", isCorrect: false },
-        { text: "Originou-se de uma cisão irreconciliável entre o Padre Cícero e os coronéis da família Acioly.", isCorrect: false }
+        { text: "Constituiu uma revolta camponesa autônoma de inspiração marxista, voltada à abolição imediata da propriedade privada e à partilha coletiva dos vales agrícolas.", isCorrect: false },
+        { text: "Perseguiu como meta prioritária a restauração monárquica bragantina, pretendendo aclamar príncipes imperiais exilados no comando político da província cearense.", isCorrect: false },
+        { text: "Decorreu de uma ruptura beligerante e irrevogável entre as lideranças clericais do Juazeiro e os clãs oligárquicos liderados pelo comendador Nogueira Acioly.", isCorrect: false }
       ],
       explanation: "A Sedição de Juazeiro (1914) uniu a liderança carismática de Padre Cícero/Floro Bartolomeu às forças oligárquicas para sitiar Fortaleza e destituir o interventor federal Franco Rabelo."
     },
@@ -3173,9 +3173,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A destruição violenta da comunidade do Caldeirão pelas forças policiais e aviação militar, durante o governo Vargas, foi motivada:",
       options: [
         { text: "Pelo temor dos latifundiários e autoridades de que a comunidade constituísse um 'reduto comunista' perigoso e desestabilizador da mão de obra regional.", isCorrect: true },
-        { text: "Pelo fato de José Lourenço ter liderado assaltos armados recorrentes aos bancos e comércios da cidade de Fortaleza.", isCorrect: false },
-        { text: "Pela recusa dos camponeses do Caldeirão em realizar qualquer tipo de prece ou prática religiosa cristã.", isCorrect: false },
-        { text: "Por um conflito territorial diplomático entre os estados do Ceará e de Pernambuco sobre a posse da Chapada do Araripe.", isCorrect: false }
+        { text: "Pela constatação policial de que o beato José Lourenço comandava incursões armadas sistemáticas para pilhagem do centro comercial da capital cearense.", isCorrect: false },
+        { text: "Pelo banimento expresso de cultos religiosos no sítio e pela propagação militante de postulados ateístas revolucionários contrários à Sé diocesana.", isCorrect: false },
+        { text: "Por uma disputa fronteiriça armada entre milícias estaduais cearenses e pernambucanas pelo domínio tributário dos mananciais do alto Araripe.", isCorrect: false }
       ],
       explanation: "O sucesso da economia comunitária do Caldeirão atraía milhares de sertanejos, incomodando latifundiários e a Igreja tradicional, sendo massacrado em 1937 sob a paranoia do 'perigo vermelho'."
     },
@@ -3188,9 +3188,9 @@ const UECE_QUESTION_DATABASE = {
       question: "O papel desempenhado pelo prático e jangadeiro Francisco José do Nascimento (o 'Dragão do Mar') na antecipação da abolição no Ceará consistiu em:",
       options: [
         { text: "Liderar a paralisação do embarque de escravizados no porto de Fortaleza, fechando o tráfico interprovincial pelo mar sob o lema 'No porto do Ceará não se embarcam mais escravos'.", isCorrect: true },
-        { text: "Financiar a compra das cartas de alforria de todos os negros do Vale do Jaguaribe com recursos da Coroa Britânica.", isCorrect: false },
-        { text: "Comandar a guerrilha armada dos quilombolas da Serra da Ibiapaba contra as tropas do Exército imperial.", isCorrect: false },
-        { text: "Redigir a petição que levou à renúncia do presidente da Província do Ceará em troca da libertação dos escravos.", isCorrect: false }
+        { text: "Custear com donativos do parlamento britânico a emissão compulsória de cartas de alforria para a totalidade dos cativos residentes nas bacias sertanejas.", isCorrect: false },
+        { text: "Capitanear uma insurreição bélica quilombola articulada nas matas serranas de Ibiapaba com o propósito de sitiar guarnições militares do Exército imperial.", isCorrect: false },
+        { text: "Encabeçar a comissão jurídica que condicionou a posse do novo mandatário da província à outorga de alvará geral de emancipação da força de trabalho negra.", isCorrect: false }
       ],
       explanation: "Em janeiro de 1881, Dragão do Mar e os jangadeiros se recusaram a transportar negros escravizados para os navios negreiros com destino ao Sul, sufocando o comércio e acelerando a abolição em 1884."
     },
@@ -3222,9 +3222,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A integração das águas do Rio São Francisco à bacia do Jaguaribe por meio do Eixão das Águas e do Cinturão das Águas do Ceará (CAC) objetiva principalmente:",
       options: [
         { text: "Garantir a segurança hídrica para o consumo humano da Região Metropolitana de Fortaleza e viabilizar a agricultura irrigada e o Polo Industrial do Pecém.", isCorrect: true },
-        { text: "Substituir a navegação comercial marítima por hidrovias fluviais que conectem Juazeiro do Norte ao porto de Santos.", isCorrect: false },
-        { text: "Drenar permanentemente os manguezais do litoral leste cearense para criação exclusiva de camarão em cativeiro.", isCorrect: false },
-        { text: "Eliminar os períodos de estiagem natural por meio da modificação forçada do clima semiárido cearense.", isCorrect: false }
+        { text: "Implantar uma malha hidroviária navegável perene interligando polos do interior do Cariri aos terminais portuários da Bacia do Prata no Sudeste.", isCorrect: false },
+        { text: "Dessecar de forma sistemática as áreas de mangue do litoral leste para destinação exclusiva de solos à carcinicultura industrial de exportação.", isCorrect: false },
+        { text: "Extinguir a dinâmica pluviométrica do semiárido mediante tecnologias de semeadura de nuvens voltadas à alteração definitiva do macroclima regional.", isCorrect: false }
       ],
       explanation: "O Castanhão e o sistema de transposição do São Francisco canalizam água pelo Eixão para o abastecimento da RMF (Fortaleza), suporte industrial no Pecém e perímetros irrigados no Baixo Jaguaribe."
     },
@@ -3237,9 +3237,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Os dois mais expressivos e vulneráveis núcleos de desertificação no território cearense situam-se nos municípios/regiões de:",
       options: [
         { text: "Irauçuba e Médio Jaguaribe/Inhamuns, decorrentes do desmatamento da Caatinga para pecuária extensiva, queima de lenha e solos rasos propensos à erosão.", isCorrect: true },
-        { text: "Serra de Baturité e Chapada da Ibiapaba, provocados pelas neves e geadas frequentes de inverno sobre as plantações de café.", isCorrect: false },
-        { text: "Litoral de Aracati e Jericoacoara, em virtude do excesso de água doce retida nas dunas móveis costeiras.", isCorrect: false },
-        { text: "Guaramiranga e Pacoti, provocados pelo avanço da urbanização costeira e das marés de equinócio.", isCorrect: false }
+        { text: "Maciço de Baturité e Planalto da Ibiapaba, condicionados por geadas sazonais atípicas e precipitações níveas que expõem cafezais sombreados à lixiviação.", isCorrect: false },
+        { text: "Faixas costeiras de Jericoacoara e Aracati, originadas do aprisionamento de lençóis de água doce que fragmentam os cordões arenosos em períodos de estio.", isCorrect: false },
+        { text: "Serras úmidas de Pacoti e Guaramiranga, impulsionadas pelo impacto direto de ressacas marítimas e espraiamento urbano de balneários metropolitanos.", isCorrect: false }
       ],
       explanation: "O município de Irauçuba e áreas dos Inhamuns são notórios núcleos de desertificação no Ceará, onde solos cristalinos rasos sofrem intensa degradação pelo sobrepastoreio e queima de vegetação nativa."
     },
@@ -3252,9 +3252,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Do ponto de vista socioeconômico e previdenciário, o estreitamento da base da pirâmide etária e o alargamento do topo no Ceará demandam:",
       options: [
         { text: "Reestruturação das políticas de saúde voltadas a doenças crônico-degenerativas e adaptação do sistema previdenciário ao aumento da razão de dependência de idosos.", isCorrect: true },
-        { text: "Fechamento imediato de todas as maternidades e universidades para transferir recursos à exploração de carvão mineral.", isCorrect: false },
-        { text: "Abertura irrestrita de escolas infantis para conter a explosão de nascimentos observada nas áreas rurais cearenses.", isCorrect: false },
-        { text: "Diminuição forçada da idade de aposentadoria de trabalhadores rurais para os 35 anos de idade.", isCorrect: false }
+        { text: "Extinção imediata da rede hospitalar materno-infantil com remanejamento orçamentário compulsório para subsídios à extração carbonífera nos vales sedimentares.", isCorrect: false },
+        { text: "Ampliação massiva de vagas em creches de primeira infância motivada pelo repique atípico das taxas brutas de natalidade nas zonas campesinas do semiárido.", isCorrect: false },
+        { text: "Redução uniforme dos limites etários de elegibilidade aos benefícios previdenciários rurais com fixação do direito à inatividade aos 35 anos de idade.", isCorrect: false }
       ],
       explanation: "O envelhecimento populacional (aumento do percentual de idosos e redução de jovens) exige ajustes orçamentários na saúde geriátrica e nos fundos de previdência social."
     },
@@ -3286,9 +3286,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Essa proposição expressa a concepção wittgensteiniana de que o papel da linguagem rigorosa consiste em:",
       options: [
         { text: "Delimitar o domínio dos fatos empiricamente figuráveis pelo pensamento lógico, reconhecendo que a ética, a mística e o sentido da vida ultrapassam a linguagem proposicional científica.", isCorrect: true },
-        { text: "Proibir o uso da poesia e declarar que apenas a fala cotidiana dos camponeses tem validade existencial.", isCorrect: false },
-        { text: "Exigir que todas as teorias científicas sejam convertidas em dogmas teológicos imutáveis.", isCorrect: false },
-        { text: "Demonstrar que as palavras não possuem qualquer ligação conceitual com os objetos do mundo material.", isCorrect: false }
+        { text: "Interditar a expressão lírica ficcional, sustentando que somente o linguajar prático de subsistência possui autenticidade epistêmica no mundo empírico.", isCorrect: false },
+        { text: "Impor que os enunciados das ciências da natureza sejam reformulados como preceitos metafísicos definitivos subordinados à revelação eclesiástica.", isCorrect: false },
+        { text: "Comprovar que os signos lexicais constituem entidades desprovidas de qualquer conexão formal com os estados de coisas observáveis no espaço lógico.", isCorrect: false }
       ],
       explanation: "Para o 'primeiro Wittgenstein', a proposição com sentido afigura estados de coisas no mundo empírico. Temas metafísicos e éticos pertencem ao indizível, devendo ser mostrados, e não teoretizados em proposições falsas."
     },
@@ -3301,9 +3301,9 @@ const UECE_QUESTION_DATABASE = {
       question: "De acordo com Aristóteles, a capacidade humana singular que justifica a vida política e a diferencia dos demais animais gregários é:",
       options: [
         { text: "A posse do 'logos' (discurso/razão), permitindo discernir e deliberar sobre o justo e o injusto, o conveniente e o prejudicial.", isCorrect: true },
-        { text: "A força física superior para aniquilar as feras silvestres e erguer muralhas de bronze.", isCorrect: false },
-        { text: "O instinto biológico cego de submissão aos líderes mais fortes da horda.", isCorrect: false },
-        { text: "A capacidade exclusiva de acumular riquezas monetárias e cobrar juros em transações comerciais.", isCorrect: false }
+        { text: "A compleição física avantajada que capacita a espécie à caça de grandes predadores e à construção de fortalezas defensivas.", isCorrect: false },
+        { text: "A inclinação instintiva automática à obediência hierárquica incondicional em relação aos chefes guerreiros do clã ancestral.", isCorrect: false },
+        { text: "A aptidão intrínseca para a entesouramento pecuniário e para a estipulação mercantil de dividendos em praças públicas de comércio.", isCorrect: false }
       ],
       explanation: "Aristóteles defende que o animal humano possui linguagem racional (logos), com a qual compartilha a percepção do bem, do mal, da justiça e constrói a comunidade política na pólis."
     },
@@ -3316,9 +3316,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Para superar a instabilidade do estado de natureza, os indivíduos hobbesianos realizam um pacto no qual:",
       options: [
         { text: "Transferem seu direito natural de autogoverno a um soberano absoluto, capaz de instituir leis, garantir a paz e a segurança coletiva.", isCorrect: true },
-        { text: "Aboliram todo tipo de governo e passaram a conviver pacificamente sem regras ou tribunais.", isCorrect: false },
-        { text: "Dividiram equitativamente a terra entre todas as famílias sob supervisão da Igreja Católica.", isCorrect: false },
-        { text: "Promoveram votações mensais diretas para destituir os governantes sempre que houvesse descontentamento popular.", isCorrect: false }
+        { text: "Renunciam voluntariamente a qualquer aparato judiciário formal, estabelecendo uma convivência harmônica desprovida de coerção estatal.", isCorrect: false },
+        { text: "Instituem a partilha coletiva de propriedades territoriais sob a égide tutelar irrevogável das autoridades do alto clero romano.", isCorrect: false },
+        { text: "Organizam sufrágios diretos periódicos para revogação imediata de mandatos executivos perante qualquer insatisfação da maioria cidadã.", isCorrect: false }
       ],
       explanation: "No contrato social hobbesiano, a renúncia mútua da liberdade natural em favor do Estado Soberano (Leviatã) tem como fim supremo a garantia da ordem, sobrevivência física e segurança coletiva."
     }
@@ -3336,9 +3336,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Sob a ótica da renovação estética das letras cearenses no final do século XIX, essa encenação carnavalesca dos membros da Padaria tinha por objetivo:",
       options: [
         { text: "Desmistificar a figura intocável do escritor acadêmico e democratizar o debate literário com forte senso de ironia e crítica social.", isCorrect: true },
-        { text: "Impor a censura prévia aos jornais operários fortalezenses e proibir qualquer influência do Simbolismo francês.", isCorrect: false },
-        { text: "Exaltar a monarquia portuguesa e restabelecer os cânones medievais da poesia trovadoresca.", isCorrect: false },
-        { text: "Limitar a circulação literária aos salões aristocráticos da alta burguesia cearense.", isCorrect: false }
+        { text: "Submeter periódicos populares de trabalhadores à censura moralizadora, interditando a entrada de inovações poéticas de matriz simbolista.", isCorrect: false },
+        { text: "Exaltar os laços políticos com a Coroa bragantina e resgatar o formalismo cortesão do cancioneiro galaico-português da Idade Média.", isCorrect: false },
+        { text: "Restringir o consumo estético aos recintos privados da elite mercantil fortalezense, repudiando manifestações artísticas do povo simples.", isCorrect: false }
       ],
       explanation: "A Padaria Espiritual usava o sarcasmo e a paródia institucional para dessacralizar a erudição vazia e aproximar a criação artística do cotidiano urbano e popular de Fortaleza."
     },
@@ -3351,9 +3351,9 @@ const UECE_QUESTION_DATABASE = {
       question: "O desenlace afetivo entre Conceição e Vicente traduz na narrativa de Rachel de Queiroz:",
       options: [
         { text: "A distância psicológica e cultural que separa o universo urbano ilustrado da intransigência e do pragmatismo da vida tradicional no sertão.", isCorrect: true },
-        { text: "A vitória militar das tropas legalistas sobre os cangaceiros que assolavam Quixadá.", isCorrect: false },
-        { text: "A conversão religiosa repentina de ambos os personagens ao misticismo messiânico de Juazeiro.", isCorrect: false },
-        { text: "A migração definitiva do casal para a Europa em busca de investimentos ferroviários.", isCorrect: false }
+        { text: "O triunfo estratégico das forças policiais estaduais frente aos bandos de salteadores que aterrorizavam os sertões centrais de Quixadá.", isCorrect: false },
+        { text: "A adesão fervorosa e incontestável de ambos os protagonistas às peregrinações místicas conduzidas pelos beatos em torno do Juazeiro.", isCorrect: false },
+        { text: "O embarque dos noivos para a Europa com o objetivo de captar empréstimos bancários destinados à expansão da malha férrea de Baturité.", isCorrect: false }
       ],
       explanation: "O descompasso entre a sensibilidade intelectual/urbana de Conceição e a rusticidade resignada de Vicente revela os limites de conciliação afetiva entre dois Brasis expostos pela seca."
     },
@@ -3380,10 +3380,10 @@ const UECE_QUESTION_DATABASE = {
       context: "Leia o fragmento lírico: 'Ah, que dor dilacerante sinto no peito! Toda a minha alma sangra desamparada nesta noite de desespero imenso!'",
       question: "A ênfase expressiva colocada na interioridade do emissor, marcada por interjeições e pontuação exclamativa intensa, caracteriza predominantemente a:",
       options: [
-        { text: "Função emotiva (ou expressiva).", isCorrect: true },
-        { text: "Função fática.", isCorrect: false },
-        { text: "Função referencial.", isCorrect: false },
-        { text: "Função conativa (ou apelativa).", isCorrect: false }
+        { text: "Função emotiva (ou expressiva, focada na subjetividade do eu-lírico).", isCorrect: true },
+        { text: "Função fática (focada na verificação contínua do canal de contato).", isCorrect: false },
+        { text: "Função referencial (focada na exposição objetiva e neutra do contexto).", isCorrect: false },
+        { text: "Função conativa (ou apelativa, voltada a coagir a conduta do leitor).", isCorrect: false }
       ],
       explanation: "A função emotiva ou expressiva centra-se na primeira pessoa (eu), evidenciando os sentimentos, emoções e estados psicológicos do próprio locutor."
     },
@@ -3396,9 +3396,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Nessas obras de feição indianista, Alencar constrói o protagonista autóctone como:",
       options: [
         { text: "Um herói cavalheiresco e nobre que encarna as virtudes éticas e o sentimento de honra característicos da fundação mítica nacional.", isCorrect: true },
-        { text: "Um bárbaro destituído de espiritualidade cuja civilização só tem início após a catequese jesuítica.", isCorrect: false },
-        { text: "Um mero coadjuvante cômico subordinado às determinações científicas do Iluminismo europeu.", isCorrect: false },
-        { text: "Um mercador pragmático focado no escambo de pau-brasil com piratas franceses.", isCorrect: false }
+        { text: "Um selvagem embrutecido e amoral cuja sociabilidade civilizada decorre exclusivamente do batismo imposto pelas missões da Companhia de Jesus.", isCorrect: false },
+        { text: "Um personagem jocoso desprovido de solenidade, inteiramente subjugado aos axiomas taxonômicos da antropologia iluminista francesa.", isCorrect: false },
+        { text: "Um intermediário mercantil calculista dedicado à permuta ilícita de madeiras tintoriais com corsários bretões ancorados no litoral norte.", isCorrect: false }
       ],
       explanation: "No Romantismo alencarino, o indígena é idealizado à semelhança dos cavaleiros medievais europeus, representando o símbolo imaculado e nobre da nacionalidade brasileira."
     },
@@ -3426,9 +3426,9 @@ const UECE_QUESTION_DATABASE = {
       question: "O principal propósito do 'Pacto dos Coronéis' no cenário político cearense da Primeira República foi:",
       options: [
         { text: "Cessar os conflitos sangrentos entre as oligarquias regionais, assegurando a hegemonia conservadora e o apoio coeso ao governo Nogueira Accioly.", isCorrect: true },
-        { text: "Abolir o latifúndio no Ceará e implementar a reforma agrária popular nas encostas da Chapada do Araripe.", isCorrect: false },
-        { text: "Proclamar a independência do Cariri em relação ao restante do território brasileiro.", isCorrect: false },
-        { text: "Entregar a administração fiscal de Juazeiro do Norte ao Exército federal legalista.", isCorrect: false }
+        { text: "Extinguir a concentração fundiária no Ceará, viabilizando o loteamento gratuito dos brejos de encosta aos pequenos lavradores caririenses.", isCorrect: false },
+        { text: "Decretar a secessão do Vale do Cariri em relação à federação brasileira com vistas à formação de uma república soberana independente.", isCorrect: false },
+        { text: "Transferir a arrecadação de tributos municipais de Juazeiro para o controle direto das guarnições federais do Ministério da Guerra.", isCorrect: false }
       ],
       explanation: "O Pacto de 1911 unificou os coronéis do Cariri sob a liderança pacificadora de Padre Cícero e Floro Bartolomeu, consolidando a influência política de Juazeiro perante a capital Fortaleza."
     },
@@ -3441,9 +3441,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Essa prosperidade autônoma do Caldeirão causou grande apreensão entre os coronéis cearenses porque:",
       options: [
         { text: "Esvaziava os latifúndios vizinhos ao atrair a mão de obra sertaneja que fugia da exploração do sistema tradicional de meação e cambão.", isCorrect: true },
-        { text: "Exigia a destruição de todas as igrejas e oratórios católicos de Juazeiro do Norte.", isCorrect: false },
-        { text: "Financiava a importação ilegal de armamentos pesados da Alemanha nazista.", isCorrect: false },
-        { text: "Monopolizava as exportações de café brasileiro para a América do Norte.", isCorrect: false }
+        { text: "Promovia o saque e a demolição sistemática de templos católicos tradicionais e oratórios devocionais nos distritos vizinhos do Cariri.", isCorrect: false },
+        { text: "Operava esquemas clandestinos de contrabando bélico transcontinental com fornecimento de fuzis e munições de artilharia alemã.", isCorrect: false },
+        { text: "Assumia o controle monopolista sobre os embarques cafeeiros do porto de Santos voltados ao abastecimento do mercado consumidor norte-americano.", isCorrect: false }
       ],
       explanation: "A abundância e autonomia comunitária do Caldeirão minavam a sujeição dos trabalhadores rurais aos coronéis, que viam na comunidade um péssimo exemplo para a subserviência do campesinato sertanejo."
     },
@@ -3456,9 +3456,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A estratégia adotada pelo movimento abolicionista no Ceará que viabilizou a libertação antecipada dos escravizados em 1884 combinava:",
       options: [
         { text: "Mobilização popular urbana, pressão sobre a alfândega portuária e arrecadação contínua de fundos para compra de alforrias município a município.", isCorrect: true },
-        { text: "Invasão militar de senzalas com apoio direto de canhoneiras da marinha real britânica.", isCorrect: false },
-        { text: "Submissão cega às ordens dos cafeicultores escravistas do Vale do Paraíba fluminense.", isCorrect: false },
-        { text: "Exclusão sumária das mulheres e dos jangadeiros de qualquer passeata cívica em Fortaleza.", isCorrect: false }
+        { text: "Bombardeio e invasão de propriedades rurais por frotas da marinha de guerra britânica no estuário do Ceará para tomada forçada de cativos.", isCorrect: false },
+        { text: "Alinhamento incondicional com os interesses dos barões escravistas do Vale do Paraíba, aceitando o adiamento da abolição para o século seguinte.", isCorrect: false },
+        { text: "Interdição absoluta da presença de lideranças femininas e de pescadores jangadeiros nos comícios e agremiações libertárias de Fortaleza.", isCorrect: false }
       ],
       explanation: "O Ceará articulou a ação de massa (greve de jangadeiros liderada por Dragão do Mar), imprensa combativa e fundos de emancipação de Redenção a Fortaleza, tornando-se pioneiro nacional."
     },
@@ -3471,9 +3471,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A atuação feminina e republicana de Bárbara de Alencar destacou-se por ter sido:",
       options: [
         { text: "A primeira presa política do Brasil, desafiando a monarquia em defesa do autogoverno do Nordeste e dos ideais republicanos iluministas.", isCorrect: true },
-        { text: "A comandante da Guarda Imperial encarregada de dissolver a Constituinte no Rio de Janeiro.", isCorrect: false },
-        { text: "A negociadora que solicitou a anexação da Província do Ceará ao Reino Unido de Portugal.", isCorrect: false },
-        { text: "Uma defensora ferrenha do absolutismo e do Poder Moderador de D. Pedro I no Cariri.", isCorrect: false }
+        { text: "A oficial monarquista incumbida pelo imperador de liderar o destacamento militar que cercou o edifício da Assembleia Constituinte em 1823.", isCorrect: false },
+        { text: "A diplomata aristocrata responsável pelas tratativas com Lisboa para reintegração da Capitania do Siará ao Reino Unido português.", isCorrect: false },
+        { text: "Uma paladina intransigente das prerrogativas absolutistas da Coroa e da prevalência do Poder Moderador sobre as províncias do Norte.", isCorrect: false }
       ],
       explanation: "Bárbara de Alencar é reconhecida como a primeira presa política da história brasileira por seu heroico engajamento nas revoltas republicanas de 1817 e 1824 no Crato e em Fortaleza."
     },
@@ -3486,9 +3486,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A construção das grandes barragens no leito do Rio Jaguaribe teve por objetivo geoestratégico primordial:",
       options: [
         { text: "Perenizar o curso d'água outrora intermitente e amortecer os impactos catastróficos dos ciclos periódicos de seca sobre a população sertaneja.", isCorrect: true },
-        { text: "Interromper totalmente a irrigação no interior para destinar água exclusivamente à produção de celulose no exterior.", isCorrect: false },
-        { text: "Transformar a Caatinga em uma densa floresta de coníferas com clima subtropical de altitude.", isCorrect: false },
-        { text: "Secar as lagoas naturais do litoral para permitir a mineração de carvão mineral fóssil.", isCorrect: false }
+        { text: "Suspender a captação agrícola no semiárido para canalizar a totalidade do fluxo hídrico à exportação industrial de pasta de celulose branqueada.", isCorrect: false },
+        { text: "Substituir o ecossistema arbóreo da Caatinga por reflorestamento maciço de pinus temperado, climatizando artificialmente o interior nordestino.", isCorrect: false },
+        { text: "Drenar completamente as restingas e lagoas do litoral cearense para viabilizar cavas de mineração a céu aberto de linhito mineral fóssil.", isCorrect: false }
       ],
       explanation: "A política hidráulica no Ceará (DNOCS e COGERH) construiu açudes como Orós e Castanhão para regularizar a vazão do Jaguaribe, perenizando o rio e abastecendo comunidades agrícolas e cidades."
     },
@@ -3516,9 +3516,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Entre os fatores demográficos e espaciais que explicam esse fenômeno de arrefecimento demográfico nas metrópoles tradicionais, inclui-se:",
       options: [
         { text: "A queda histórica da taxa de fecundidade e a desconcentração populacional para municípios polo do interior (como Sobral e Juazeiro do Norte) e periferias metropolitanas.", isCorrect: true },
-        { text: "A migração em massa de toda a população cearense de volta para a agricultura cafeeira do interior paulista.", isCorrect: false },
-        { text: "A promulgação de leis estaduais que proíbem o casamento civil e a natalidade urbana.", isCorrect: false },
-        { text: "A elevação da mortalidade infantil para os maiores índices registrados desde o século XIX.", isCorrect: false }
+        { text: "O êxodo integral das famílias metropolitanas cearenses rumo aos circuitos agrícolas cafeeiros do interior de São Paulo e do norte paranaense.", isCorrect: false },
+        { text: "A aprovação de decretos normativos que limitam o matrimônio civil e instituem penalidades financeiras à reprodução familiar em áreas urbanas.", isCorrect: false },
+        { text: "O recrudescimento desenfreado das taxas brutas de óbitos de recém-nascidos aos piores patamares sanitários experimentados no século XIX.", isCorrect: false }
       ],
       explanation: "A transição demográfica (queda expressiva na taxa de fecundidade) somada ao transbordamento demográfico para cidades médias dinamizadas no interior explica o menor ritmo de crescimento das metrópoles."
     },
@@ -3531,9 +3531,9 @@ const UECE_QUESTION_DATABASE = {
       question: "O princípio estrutural do Panóptico foucaultiano repousa na:",
       options: [
         { text: "Sensação permanente de visibilidade e vigilância exercida sobre o indivíduo, induzindo a autodisciplina e a docilização dos corpos.", isCorrect: true },
-        { text: "Tortura física permanente televisionada para incutir o terror nas praças públicas.", isCorrect: false },
-        { text: "Libertação irrestrita de todos os encarcerados para garantir o pleno livre-arbítrio.", isCorrect: false },
-        { text: "Subordinação de todas as fábricas e prisões à autoridade teológica do Vaticano.", isCorrect: false }
+        { text: "Aplicação diária e espetacular de castigos corporais mutiladores nas arenas públicas com a finalidade de atemorizar a população espectadora.", isCorrect: false },
+        { text: "Extinção imediata dos regimes prisionais em favor da total autodeterminação individual sem supervisão de conduta ou normas carcerárias.", isCorrect: false },
+        { text: "Tutela confessional e doutrinária obrigatória sobre o regime operacional de oficinas fabris e reformatórios penais pelo magistério papal.", isCorrect: false }
       ],
       explanation: "O Panóptico baseia-se na vigilância invisível e contínua: sabendo que pode ser visto a qualquer instante, o vigiado interioriza a norma e vigia o próprio comportamento (corpo dócil)."
     },
@@ -3560,10 +3560,10 @@ const UECE_QUESTION_DATABASE = {
       context: "Em 'Ética a Nicômaco', Aristóteles investiga a natureza da virtude moral (aretê), definindo-a como um hábito deliberativo situado entre dois extremos viciosos (excesso e falta).",
       question: "A doutrina aristotélica da virtude como 'justo meio' (mesotês) exemplifica-se pelo fato de que a coragem é o equilíbrio entre:",
       options: [
-        { text: "A covardia (deficiência/falta de ânimo) e a temeridade irrefletida (excesso de audácia).", isCorrect: true },
-        { text: "A avareza desmedida e a miséria forçada.", isCorrect: false },
-        { text: "O amor incondicional e o ódio visceral sem justificativa.", isCorrect: false },
-        { text: "A preguiça contemplativa e o suicídio sacrificial perante o exército inimigo.", isCorrect: false }
+        { text: "A covardia (deficiência e falta de ânimo) e a temeridade irrefletida (excesso imprudente de audácia).", isCorrect: true },
+        { text: "A sovinice acumuladora patológica e a mendicância indigente desprovida de qualquer recurso material.", isCorrect: false },
+        { text: "O apego passional cego aos afetos e o rancor visceral destrutivo alimentado contra os concidadãos.", isCorrect: false },
+        { text: "O comodismo contemplativo paralisante e o sacrifício suicida em combate sem prévia ponderação do dever.", isCorrect: false }
       ],
       explanation: "Para Aristóteles, a virtude moral reside no caminho do meio (justa medida ponderada pela prudência racional): a coragem é a justa postura entre a covardia e a imprudência temerária."
     },
@@ -3576,9 +3576,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Para Hobbes, a divisão da autoridade soberana entre diferentes poderes autônomos constitui um risco fatal porque:",
       options: [
         { text: "Gera facções rivais e instabilidade jurídica, recriando as condições que conduzem a sociedade de volta à guerra civil do estado de natureza.", isCorrect: true },
-        { text: "Impede que o clero católico assuma o comando do exército permanente nacional.", isCorrect: false },
-        { text: "Torna obrigatória a distribuição gratuita de terras a todos os cidadãos sem tributos.", isCorrect: false },
-        { text: "Viola as prescrições biológicas da teoria evolucionista de Darwin.", isCorrect: false }
+        { text: "Impossibilita a transferência do comando das forças armadas regulares para a tutela direta de tribunais eclesiásticos pontifícios.", isCorrect: false },
+        { text: "Obriga o erário régio à outorga incondicional de propriedades fundiárias a cada família sem cobrança de contribuições fiscais.", isCorrect: false },
+        { text: "Contradiz princípios biológicos da seleção natural e da evolução anatômica das espécies formulados pelo darwinismo social.", isCorrect: false }
       ],
       explanation: "Hobbes temia que a fragmentação do poder político (como ocorrido na Guerra Civil Inglesa) destruísse a eficácia do pacto protetivo, mergulhando a sociedade novamente no caos da violência e do medo."
     },
@@ -3627,9 +3627,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Em um sistema gasoso fechado a uma dada temperatura T, a igualdade numérica Kp = Kc ocorre estritamente quando:",
       options: [
         { text: "O somatório dos coeficientes estequiométricos gasosos dos reagentes for rigorosamente igual ao dos produtos (Δn = 0).", isCorrect: true },
-        { text: "A temperatura absoluta do reator for exatamente igual a 0 Kelvin (-273,15 °C).", isCorrect: false },
-        { text: "A reação for exclusivamente endotérmica com catalisador heterogêneo sólido.", isCorrect: false },
-        { text: "A pressão total no interior do sistema atingir 0 atm em vácuo absoluto.", isCorrect: false }
+        { text: "A temperatura absoluta do meio reacional for resfriada até a escala hipotética de zero Kelvin (-273,15 °C).", isCorrect: false },
+        { text: "A cinética do processo for exclusivamente endotérmica e auxiliada por leito catalítico sólido poroso heterogêneo.", isCorrect: false },
+        { text: "A pressão barométrica interna manométrica for evacuada integralmente até o regime assintótico de vácuo absoluto.", isCorrect: false }
       ],
       explanation: "Como Kp = Kc · (R·T)^(Δn), para qualquer valor de R e T > 0, teremos (R·T)^0 = 1 se e somente se Δn = 0 (isto é, quando o número de mols de gás nos reagentes é igual ao dos produtos)."
     },
@@ -3721,9 +3721,9 @@ const UECE_QUESTION_DATABASE = {
       question: "De acordo com as Leis de Faraday e Lenz, a aproximação do polo Norte do ímã gera na espira:",
       options: [
         { text: "Uma corrente elétrica induzida no sentido anti-horário, criando um polo magnético Norte frontal que repele a aproximação do ímã.", isCorrect: true },
-        { text: "Uma corrente induzida no sentido horário que atrai intensamente o ímã em queda livre perpétua.", isCorrect: false },
-        { text: "Nenhuma corrente elétrica induzida, pois a espira encontra-se eletricamente neutra.", isCorrect: false },
-        { text: "Um campo elétrico nulo em todos os pontos do espaço delimitado pela espira.", isCorrect: false }
+        { text: "Uma corrente induzida no sentido horário, induzindo um polo Sul frontal que atrai continuamente o ímã em queda contínua.", isCorrect: false },
+        { text: "Nenhuma corrente circulante no circuito condutor, haja vista que a espira se conserva em regime de estrita neutralidade de carga.", isCorrect: false },
+        { text: "Um vetor indução elétrica estritamente nulo em todas as posições do plano cartesiano coplanar à borda externa da espira.", isCorrect: false }
       ],
       explanation: "Lei de Lenz: o sentido da corrente induzida é tal que seus efeitos magnéticos se opõem à variação de fluxo que a originou. Ao aproximar o polo Norte (aumento do fluxo), a espira gera um polo Norte na face frontal (repulsão), correspondente ao sentido anti-horário da corrente induzida."
     },
@@ -3740,9 +3740,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Um indivíduo portador do tipo sanguíneo AB positivo (AB+) é considerado classicamente 'receptor universal' porque:",
       options: [
         { text: "Suas hemácias não possuem aglutininas anti-A nem anti-B no plasma sanguíneo, e o fator Rh positivo aceita sangue com ou sem antígeno D.", isCorrect: true },
-        { text: "Não possui nenhuma proteína antigênica nas membranas de suas hemácias, impedindo a coagulação.", isCorrect: false },
-        { text: "Seu organismo produz anticorpos que destroem imediatamente as hemácias de qualquer outro doador.", isCorrect: false },
-        { text: "O plasma sanguíneo contém simultaneamente anticorpos anti-A, anti-B e anti-Rh de alta afinidade.", isCorrect: false }
+        { text: "Não exibe nenhuma glicoproteína aglutinogênica na superfície de suas hemácias, anulando qualquer reação com anticorpos do receptor.", isCorrect: false },
+        { text: "Produz títulos elevados de anticorpos citotóxicos capazes de fagocitar hemácias estranhas antes de qualquer resposta imune.", isCorrect: false },
+        { text: "Apresenta concentrações basais equimolares de aglutininas anti-A, anti-B e anti-D no soro circulante sem risco de hemólise.", isCorrect: false }
       ],
       explanation: "O sangue AB não possui anticorpos anti-A nem anti-B no plasma circulante, permitindo que a pessoa receba hemácias de qualquer tipo sanguíneo do sistema ABO sem sofrer aglutinação primária."
     },
@@ -3770,9 +3770,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Dentre as adaptações morfológicas e fisiológicas comuns apresentadas pelas plantas xerófitas da Caatinga (como juazeiro, mandacaru e xique-xique), destaca-se:",
       options: [
         { text: "Presença de cutícula cerosa espessa, folhas reduzidas ou modificadas em espinhos, estômatos protegidos e parênquima aquífero para reserva hídrica.", isCorrect: true },
-        { text: "Desenvolvimento de folhas largas e tênues sem estômatos para acelerar ao máximo a perda de água por transpiração diurna.", isCorrect: false },
-        { text: "Sistemas radiculares totalmente superficiais incapazes de absorver orvalho matinal ou umidade freática.", isCorrect: false },
-        { text: "Fixação biológica de oxigênio gasoso puro diretamente nos caules fotossintetizantes lenhosos.", isCorrect: false }
+        { text: "Expansão de limbos foliares membranosos hiperdelgados e desprovidos de cera com o intuito de maximizar a evapotranspiração estomática ao meio-dia.", isCorrect: false },
+        { text: "Estruturação de raízes radiculares atrofiadas e exclusivamente aéreas, inaptas à captação de umidade capilar ou de condensações de orvalho.", isCorrect: false },
+        { text: "Absorção direta de oxigênio gasoso atmosférico nos meristemas caulinares lignificados para conversão energética anaeróbia estrita.", isCorrect: false }
       ],
       explanation: "Xerófitas da Caatinga reduzem a transpiração com folhas transformadas em espinhos, cutícula impermeabilizante e caules suculentos (parênquima aquífero) para armazenamento de água."
     },
@@ -3785,9 +3785,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A atuação direta do ADH nos néfrons dos rins humanos resulta em:",
       options: [
         { text: "Aumento da permeabilidade dos túbulos coletores à água pela inserção de aquaporinas, produzindo urina mais concentrada e de menor volume.", isCorrect: true },
-        { text: "Bloqueio da reabsorção de sódio, provocando diurese copiosa de urina extremamente diluída.", isCorrect: false },
-        { text: "Paralisação completa da filtração glomerular na cápsula renal de Bowman.", isCorrect: false },
-        { text: "Dilatação das artérias renais com destruição irreversível dos túbulos contorcidos distais.", isCorrect: false }
+        { text: "Inibição do transporte ativo de cloreto de sódio na alça de Henle, forçando uma diurese aquosa profusa e acentuada perda volumétrica.", isCorrect: false },
+        { text: "Interrupção drástica do influxo plasmático glomerular na cápsula renal de Bowman pela vasoconstrição total da arteríola aferente.", isCorrect: false },
+        { text: "Dilatação reflexa do leito arterial renal associada à necrose tubular isquêmica irreversível no córtex dos néfrons justamedulares.", isCorrect: false }
       ],
       explanation: "O ADH (vasopressina) atua nos ductos coletores aumentando a translocação de aquaporinas, permitindo que a água retorne ao sangue por osmose, concentrando a urina e evitando a desidratação."
     },
@@ -3899,9 +3899,9 @@ const UECE_QUESTION_DATABASE = {
       question: "O aumento na velocidade de liberação gasosa no caso do comprimido triturado é explicado cinematicamente pelo:",
       options: [
         { text: "Aumento da área superficial de contato, multiplicando o número de choques efetivos por unidade de tempo entre os reagentes.", isCorrect: true },
-        { text: "Aumento expressivo do calor de reação que dobra o valor da entalpia padrão (ΔH).", isCorrect: false },
-        { text: "Abaixamento forçado da constante de velocidade k de Arrhenius.", isCorrect: false },
-        { text: "Consumo prematuro da água do solvente por eletrólise espontânea.", isCorrect: false }
+        { text: "Elevação sensível do calor latente de transformação, duplicando o valor numérico da variação de entalpia molar padrão (ΔH).", isCorrect: false },
+        { text: "Redução forçada do coeficiente pré-exponencial de Arrhenius acompanhada do aumento da energia de ativação do sistema químico.", isCorrect: false },
+        { text: "Degradação eletrolítica espontânea das moléculas do solvente com quebra homolítica de ligações e liberação de radicais livres.", isCorrect: false }
       ],
       explanation: "Quanto maior o estado de divisão de um reagente sólido (maior superfície de contato), maior é a exposição das partículas às colisões moleculares favoráveis, elevando a velocidade reacional."
     },
@@ -3959,9 +3959,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A eficácia biológica do salgamento na conservação dos alimentos baseia-se no princípio físico-químico da:",
       options: [
         { text: "Osmose, promovendo a perda maciça de água por desidratação das células dos micro-organismos decompositores devido ao meio hipertônico.", isCorrect: true },
-        { text: "Condensação de vapor que resfria a carne abaixo do ponto crioscópico.", isCorrect: false },
-        { text: "Polimerização de proteínas que transforma gordura em quitina sólida.", isCorrect: false },
-        { text: "Liberação de radiação ultravioleta esterilizante pelos cristais de NaCl.", isCorrect: false }
+        { text: "Condensação crioscópica de vapor saturado, provocando o resfriamento superficial do alimento abaixo do ponto de congelamento celular.", isCorrect: false },
+        { text: "Polimerização peptídica anômala que converte os depósitos de triglicerídeos musculares em carapaças rígidas de quitina protetora.", isCorrect: false },
+        { text: "Emissão de radiações eletromagnéticas ionizantes pelo retículo cristalino do cloreto de sódio na faixa ultravioleta germicida.", isCorrect: false }
       ],
       explanation: "A alta concentração de sal gera meio hipertônico; a água do interior das células bacterianas migra para o exterior por osmose, provocando plasmólise e inviabilizando sua proliferação."
     },
@@ -3974,9 +3974,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Ao submeter essa amostra equimolar ao feixe de luz de um polarímetro, constata-se que ela:",
       options: [
         { text: "É opticamente inativa por compensação externa, pois o desvio para a direita de um enantiômero é anulado pelo desvio para a esquerda do outro.", isCorrect: true },
-        { text: "Desvia a luz polarizada a 90 graus no plano vertical por ressonância magnética.", isCorrect: false },
-        { text: "Converte-se espontaneamente em um alcano cíclico desprovido de isomeria plana.", isCorrect: false },
-        { text: "Apresenta atividade óptica dobrada em relação aos isômeros puros.", isCorrect: false }
+        { text: "Gira o plano de vibração da luz polarizada a noventa graus perpendiculares devido ao efeito de acoplamento magnético intramolecular.", isCorrect: false },
+        { text: "Transforma-se espontaneamente em um anel hidrocarboneto aromático plano, extinguindo os centros quirais da molécula farmacêutica.", isCorrect: false },
+        { text: "Manifesta um ângulo de rotação óptica específica multiplicado por dois quando confrontada com amostras dos isômeros purificados.", isCorrect: false }
       ],
       explanation: "Uma mistura racêmica é formada por partes iguais de enantiômeros d e l, resultando em desvio óptico nulo ($lpha = 0$) devido à compensação externa mútua."
     },
@@ -3989,9 +3989,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A opção técnica pela geometria convexa nos espelhos retrovisores justifica-se pelo fato de que eles formam imagens:",
       options: [
         { text: "Virtuais, direitas e menores que o objeto, proporcionando um campo visual muito mais amplo ao motorista.", isCorrect: true },
-        { text: "Reais, invertidas e ampliadas, projetadas diretamente na retina do condutor.", isCorrect: false },
-        { text: "Completamente deformadas e destituídas de foco geométrico estável.", isCorrect: false },
-        { text: "Dotadas de inversão cromática com ampliação de sombras noturnas.", isCorrect: false }
+        { text: "Reais, invertidas e ampliadas, projetando os feixes luminosos diretamente sobre o plano anatômico do cristalino.", isCorrect: false },
+        { text: "Intrinsecamente anamórficas e desprovidas de foco principal, impossibilitando a convergência óptica nítida dos raios.", isCorrect: false },
+        { text: "Caracterizadas por dispersão refrativa cromática que distorce a silhueta geométrica de obstáculos durante a noite.", isCorrect: false }
       ],
       explanation: "Espelhos convexos formam, para qualquer objeto real, imagens virtuais, direitas e reduzidas. A redução das imagens permite enquadrar um campo de visão consideravelmente maior."
     },
@@ -4049,9 +4049,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Sobre o fluxo energético e biogeoquímico nas teias ecológicas, é correto afirmar que:",
       options: [
         { text: "A energia flui de modo unidirecional e decrescente a cada nível trófico, enquanto a matéria é ciclada continuamente no ecossistema.", isCorrect: true },
-        { text: "A energia acumula-se ciclicamente aumentando a cada nível em direção aos produtores.", isCorrect: false },
-        { text: "A matéria desaparece completamente no nível dos carnívoros sem retorno ao solo.", isCorrect: false },
-        { text: "Os decompositores produzem nova energia a partir do nada contrariando a termodinâmica.", isCorrect: false }
+        { text: "A energia estoca-se ciclicamente na teia, ampliando sua magnitude líquida à medida que transita em direção aos produtores basais.", isCorrect: false },
+        { text: "A matéria elementar aniquila-se definitivamente ao atingir o topo da cadeia trófica, sem possibilidade de retorno biogeoquímico.", isCorrect: false },
+        { text: "Os agentes decompositores sintetizam energia primária de modo independente a partir do vácuo, refutando a primeira lei da termodinâmica.", isCorrect: false }
       ],
       explanation: "A energia dissipa-se como calor (fluxo unidirecional decrescente), ao passo que os elementos químicos (carbono, nitrogênio, fósforo) são reciclados pelos decompositores."
     },
@@ -4064,9 +4064,9 @@ const UECE_QUESTION_DATABASE = {
       question: "A queda estacional das folhas (caducifólia) representa para a planta do semiárido:",
       options: [
         { text: "Um mecanismo fisiológico de economia hídrica que cessa a perda de água por transpiração foliar estomática.", isCorrect: true },
-        { text: "Um ataque viral letal que causa a decomposição instantânea das raízes axiais.", isCorrect: false },
-        { text: "Um processo que impede a fecundação de flores polinizadas pelo vento.", isCorrect: false },
-        { text: "Uma mutação aleatória que diminui o teor de amido no parênquima radicular.", isCorrect: false }
+        { text: "Uma patologia viral letal de ação fulminante que desintegra os tecidos meristemáticos do sistema radicular pivotante.", isCorrect: false },
+        { text: "Uma barreira mecânica que obstaculiza permanentemente a polinização anemófila das estruturas reprodutivas florais.", isCorrect: false },
+        { text: "Uma alteração cromossômica randômica que bloqueia a polimerização de glicose em grânulos de amido nas células de reserva.", isCorrect: false }
       ],
       explanation: "A perda das folhas (abscisão foliar) elimina a principal superfície de evapotranspiração da planta, permitindo que a árvore sobreviva aos meses secos com a água estocada nos troncos e raízes."
     },
@@ -4079,9 +4079,9 @@ const UECE_QUESTION_DATABASE = {
       question: "Esse efeito diurético imediato provocado pelo etanol decorre do fato de que o álcool:",
       options: [
         { text: "Inibe a secreção do hormônio antidiurético (ADH) pela hipófise posterior, diminuindo a reabsorção renal de água nos ductos coletores.", isCorrect: true },
-        { text: "Estimula a síntese acelerada de insulina destruindo as ilhotas pancreáticas.", isCorrect: false },
-        { text: "Provoca vasoconstrição renal total com necrose glomerular hemorrágica.", isCorrect: false },
-        { text: "Aumenta drasticamente o teor de sódio no sangue atraindo água para a bexiga por capilaridade.", isCorrect: false }
+        { text: "Promove a hiperativação das células beta pancreáticas com necrose exógena dos tecidos insulino-dependentes no parênquima.", isCorrect: false },
+        { text: "Induz vasoespasmo generalizado nas artérias renais, culminando em necrose hemorrágica dos capilares glomerulares de Malpighi.", isCorrect: false },
+        { text: "Provoca hipernatremia osmótica aguda, drenando fluidos vasculares para a luz vesical por efeito exclusivo de capilaridade.", isCorrect: false }
       ],
       explanation: "O álcool etílico inibe a liberação de ADH pelo hipotálamo/neuroipófise. Sem ADH, os túbulos coletores reabsorvem menos água, levando à diurese intensa e desidratação (ressaca)."
     },
