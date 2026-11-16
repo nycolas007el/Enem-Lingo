@@ -1,9 +1,8 @@
 // ============================================================================
 // MOTOR DE QUESTÕES INFINITAS PROCEDURAIS (ENEM & UECE) - DIA 1 & DIA 2
-// Gera infinitas variações em tempo real:
-// - DIA 1: Figuras de Linguagem, Funções da Linguagem, Constituições/Cidadania e Teoria Política.
-// - DIA 2: Eletrodinâmica, Geometria Espacial, Cinemática, Soluções Químicas, Financeira e Probabilidade.
-// Recalcula gabarito, distratores calibrados e explicações passo a passo.
+// Sistema com Anti-Repetição Estrita:
+// 1. Nenhum conteúdo se repete na mesma rodada (unicidade estrita).
+// 2. Os conteúdos usados ficam bloqueados por pelo menos 3 rodadas consecutivas (cooldown via localStorage).
 // ============================================================================
 
 const INFINITE_GENERATORS = [
@@ -11,10 +10,12 @@ const INFINITE_GENERATORS = [
   // BLOCO DIA 2: NATUREZA & MATEMÁTICA
   // ==========================================================================
 
-  // 1. FÍSICA: Consumo de Energia Elétrica e Custo em Fatura Residencial (E = P . Δt)
+  // 1. FÍSICA: Consumo de Energia Elétrica e Potência Residencial
   {
+    id: "fis_consumo_eletrico",
     category: "Ciências da Natureza • Física (Eletrodinâmica)",
-    topic: "GERADOR INFINITO: CONSUMO ELÉTRICO E POTÊNCIA RESIDENCIAL",
+    topic: "CONSUMO ELÉTRICO E POTÊNCIA RESIDENCIAL",
+    day: 2,
     generate: (numOptions) => {
       const appliances = [
         { name: "um aparelho de ar-condicionado inverter", potMin: 900, potMax: 1800, hoursMin: 6, hoursMax: 10 },
@@ -26,13 +27,13 @@ const INFINITE_GENERATORS = [
       const powerW = Math.floor(Math.random() * ((app.potMax - app.potMin) / 100) + app.potMin / 100) * 100;
       const hoursPerDay = Math.round((Math.random() * (app.hoursMax - app.hoursMin) + app.hoursMin) * 2) / 2;
       const days = 30;
-      const tariff = Math.round((Math.random() * 0.4 + 0.65) * 100) / 100; // R$ 0,65 a R$ 1,05 por kWh
+      const tariff = Math.round((Math.random() * 0.4 + 0.65) * 100) / 100;
 
       const monthlyKwh = Math.round(((powerW / 1000) * hoursPerDay * days) * 10) / 10;
       const totalCost = Math.round((monthlyKwh * tariff) * 100) / 100;
 
       const title = `Custo Mensal de Consumo de Energia em ${app.name.split(" ")[1]}`;
-      const context = `Em uma residência atendida pela rede de distribuição elétrica, ${app.name} possui potência elétrica nominal de ${powerW.toLocaleString('pt-BR')} W e opera, em média, durante ${hoursPerDay} horas diárias ao longo de um mês de ${days} dias. A concessionária de energia cobra uma tarifa padrão de R$ ${tariff.toFixed(2).replace('.', ',')} por cada quilowatt-hora (kWh) consumido (já inclusos impostos e encargos setoriais).`;
+      const context = `Em uma residência atendida pela rede de distribuição elétrica, ${app.name} possui potência elétrica nominal de ${powerW.toLocaleString('pt-BR')} W e opera, em média, durante ${hoursPerDay} horas diárias ao longo de um mês de ${days} dias. A concessionária de energia cobra uma tarifa padrão de R$ ${tariff.toFixed(2).replace('.', ',')} por cada quilowatt-hora (kWh) consumido.`;
       const question = `O valor financeiro aproximado acrescido à fatura de energia elétrica dessa família exclusivamente devido à utilização mensal desse equipamento é de:`;
 
       const correctText = `R$ ${totalCost.toFixed(2).replace('.', ',')}`;
@@ -57,7 +58,7 @@ const INFINITE_GENERATORS = [
       return {
         difficulty: "medio",
         category: "Ciências da Natureza • Física (Eletrodinâmica)",
-        topic: "GERADOR INFINITO: CONSUMO ELÉTRICO E POTÊNCIA",
+        topic: "CONSUMO ELÉTRICO E POTÊNCIA",
         title: title,
         context: context,
         question: question,
@@ -67,21 +68,23 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 2. MATEMÁTICA: Geometria Espacial e Volume de Caixas / Reservatórios
+  // 2. MATEMÁTICA: Geometria Espacial e Volume de Reservatórios
   {
+    id: "mat_volume_reservatorios",
     category: "Matemática • Geometria Espacial",
-    topic: "GERADOR INFINITO: VOLUME E CAPACIDADE VOLUMÉTRICA",
+    topic: "VOLUME E CAPACIDADE VOLUMÉTRICA",
+    day: 2,
     generate: (numOptions) => {
-      const lengthM = Math.floor(Math.random() * 3 + 2); // 2 a 4 m
-      const widthM = Math.floor(Math.random() * 2 + 1);  // 1 a 2 m
-      const heightM = Math.round((Math.random() * 1.5 + 1.0) * 10) / 10; // 1.0 a 2.5 m
+      const lengthM = Math.floor(Math.random() * 3 + 2);
+      const widthM = Math.floor(Math.random() * 2 + 1);
+      const heightM = Math.round((Math.random() * 1.5 + 1.0) * 10) / 10;
 
       const volM3 = Math.round((lengthM * widthM * heightM) * 100) / 100;
       const liters = Math.round(volM3 * 1000);
 
       const title = `Capacidade Volumétrica de Reservatório Paralelepipédico`;
-      const context = `Uma escola pública planeja construir um reservatório de água potável no formato de paralelepípedo reto-retângulo para garantir segurança hídrica em períodos de estiagem. As dimensões internas do projeto estrutural preveem comprimento de ${lengthM} metros, largura de ${widthM} metro(s) e profundidade vertical de ${heightM.toFixed(1).replace('.', ',')} metro(s).`;
-      const question = `Considerando que 1 metro cúbico (m³) tem capacidade volumétrica exata de 1.000 litros de água, o volume máximo comportado por esse reservatório quando totalmente cheio corresponde a:`;
+      const context = `Uma escola pública planeja construir um reservatório de água potável no formato de paralelepípedo reto-retângulo para garantir segurança hídrica em períodos de estiagem. As dimensões internas preveem comprimento de ${lengthM} metros, largura de ${widthM} metro(s) e profundidade vertical de ${heightM.toFixed(1).replace('.', ',')} metro(s).`;
+      const question = `Considerando que 1 metro cúbico (m³) equivale a 1.000 litros de água, o volume máximo comportado por esse reservatório quando totalmente cheio corresponde a:`;
 
       const correctText = `${liters.toLocaleString('pt-BR')} litros`;
       const wrongList = [
@@ -100,12 +103,12 @@ const INFINITE_GENERATORS = [
       }
       chosen.forEach(w => opts.push({ text: `${w.toLocaleString('pt-BR')} litros`, isCorrect: false }));
 
-      const explanation = `Volume = Comprimento × Largura × Altura = ${lengthM} m × ${widthM} m × ${heightM} m = ${volM3} m³. Como cada 1 m³ = 1.000 L, Capacidade = ${volM3} × 1.000 = ${liters.toLocaleString('pt-BR')} litros.`;
+      const explanation = `Volume = Comprimento × Largura × Altura = ${lengthM} m × ${widthM} m × ${heightM} m = ${volM3} m³. Capacidade = ${volM3} × 1.000 = ${liters.toLocaleString('pt-BR')} litros.`;
 
       return {
         difficulty: "facil",
         category: "Matemática • Geometria Espacial",
-        topic: "GERADOR INFINITO: VOLUME E CAPACIDADE",
+        topic: "VOLUME E CAPACIDADE",
         title: title,
         context: context,
         question: question,
@@ -115,10 +118,12 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 3. FÍSICA: Velocidade Média e Cinemática Escalar (Δs = v . Δt)
+  // 3. FÍSICA: Cinemática Escalar e Velocidade Média
   {
+    id: "fis_velocidade_media",
     category: "Ciências da Natureza • Física (Cinemática)",
-    topic: "GERADOR INFINITO: VELOCIDADE MÉDIA E DESLOCAMENTO",
+    topic: "VELOCIDADE MÉDIA E DESLOCAMENTO",
+    day: 2,
     generate: (numOptions) => {
       const routes = [
         { orig: "Fortaleza", dest: "Sobral", distKm: 240 },
@@ -128,8 +133,8 @@ const INFINITE_GENERATORS = [
         { orig: "Recife", dest: "Caruaru", distKm: 135 }
       ];
       const route = routes[Math.floor(Math.random() * routes.length)];
-      const avgSpeedKmH = Math.floor(Math.random() * 4 + 6) * 10; // 60 a 90 km/h
-      const stopMinutes = Math.floor(Math.random() * 4 + 1) * 15; // 15 a 60 min
+      const avgSpeedKmH = Math.floor(Math.random() * 4 + 6) * 10;
+      const stopMinutes = Math.floor(Math.random() * 4 + 1) * 15;
 
       const travelHours = route.distKm / avgSpeedKmH;
       const totalMinutes = Math.round(travelHours * 60 + stopMinutes);
@@ -137,7 +142,7 @@ const INFINITE_GENERATORS = [
       const minPart = totalMinutes % 60;
 
       const title = `Duração de Viagem Rodoviária entre ${route.orig} e ${route.dest}`;
-      const context = `Um caminhoneiro realiza o transporte rodoviário de cargas entre as cidades de ${route.orig} e ${route.dest}, percorrendo um trajeto total de ${route.distKm} km. Durante o percurso em movimento, o veículo mantém uma velocidade escalar média constante de ${avgSpeedKmH} km/h. Além disso, o motorista faz uma parada obrigatória de ${stopMinutes} minutos em um posto de fiscalização rodoviária para descanso e conferência de notas.`;
+      const context = `Um caminhoneiro realiza o transporte rodoviário de cargas entre as cidades de ${route.orig} e ${route.dest}, percorrendo um trajeto total de ${route.distKm} km. O veículo mantém uma velocidade escalar média constante de ${avgSpeedKmH} km/h durante a rodagem e realiza uma parada obrigatória de ${stopMinutes} minutos em um posto fiscal.`;
       const question = `O tempo total decorrido desde a partida em ${route.orig} até a chegada ao destino final em ${route.dest} é igual a:`;
 
       const correctText = minPart === 0 ? `${hoursPart} horas` : `${hoursPart} horas e ${minPart} minutos`;
@@ -162,12 +167,12 @@ const INFINITE_GENERATORS = [
         opts.push({ text: txt, isCorrect: false });
       });
 
-      const explanation = `Tempo em movimento = ${route.distKm} km / ${avgSpeedKmH} km/h = ${travelHours.toFixed(2)} h = ${Math.round(travelHours * 60)} min. Tempo total = ${Math.round(travelHours * 60)} min + ${stopMinutes} min de parada = ${totalMinutes} minutos (${hoursPart}h e ${minPart}min).`;
+      const explanation = `Tempo em movimento = ${route.distKm} / ${avgSpeedKmH} = ${travelHours.toFixed(2)} h = ${Math.round(travelHours * 60)} min. Tempo total = ${Math.round(travelHours * 60)} min + ${stopMinutes} min = ${totalMinutes} min (${hoursPart}h e ${minPart}min).`;
 
       return {
         difficulty: "medio",
         category: "Ciências da Natureza • Física (Cinemática)",
-        topic: "GERADOR INFINITO: VELOCIDADE MÉDIA",
+        topic: "VELOCIDADE MÉDIA",
         title: title,
         context: context,
         question: question,
@@ -179,8 +184,10 @@ const INFINITE_GENERATORS = [
 
   // 4. QUÍMICA: Concentração Comum de Soluções (C = m / V)
   {
+    id: "qui_concentracao_solucoes",
     category: "Ciências da Natureza • Físico-Química",
-    topic: "GERADOR INFINITO: CONCENTRAÇÃO DE SOLUÇÕES QUÍMICAS",
+    topic: "CONCENTRAÇÃO DE SOLUÇÕES QUÍMICAS",
+    day: 2,
     generate: (numOptions) => {
       const salts = [
         { name: "cloreto de sódio (sal de cozinha)", formula: "NaCl" },
@@ -189,8 +196,8 @@ const INFINITE_GENERATORS = [
         { name: "glicose pura", formula: "C₆H₁₂O₆" }
       ];
       const salt = salts[Math.floor(Math.random() * salts.length)];
-      const massG = Math.floor(Math.random() * 8 + 2) * 5; // 10g a 50g
-      const volumeMl = Math.floor(Math.random() * 4 + 2) * 100; // 200 mL a 500 mL
+      const massG = Math.floor(Math.random() * 8 + 2) * 5;
+      const volumeMl = Math.floor(Math.random() * 4 + 2) * 100;
       const volumeL = volumeMl / 1000;
 
       const concentrationGL = Math.round((massG / volumeL) * 10) / 10;
@@ -216,12 +223,12 @@ const INFINITE_GENERATORS = [
       }
       chosen.forEach(w => opts.push({ text: `${w} g/L`, isCorrect: false }));
 
-      const explanation = `Concentração Comum C = massa do soluto (g) / volume da solução (L). Volume em litros = ${volumeMl} mL / 1000 = ${volumeL} L. Logo: C = ${massG} g / ${volumeL} L = ${concentrationGL.toFixed(1).replace('.', ',')} g/L.`;
+      const explanation = `Concentração Comum C = massa (g) / volume (L). Volume em litros = ${volumeMl} mL / 1000 = ${volumeL} L. Logo: C = ${massG} g / ${volumeL} L = ${concentrationGL.toFixed(1).replace('.', ',')} g/L.`;
 
       return {
         difficulty: "facil",
         category: "Ciências da Natureza • Físico-Química",
-        topic: "GERADOR INFINITO: CONCENTRAÇÃO DE SOLUÇÕES",
+        topic: "CONCENTRAÇÃO DE SOLUÇÕES",
         title: title,
         context: context,
         question: question,
@@ -231,10 +238,12 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 5. MATEMÁTICA: Porcentagem e Descontos Comerciais
+  // 5. MATEMÁTICA: Matemática Financeira e Porcentagem
   {
+    id: "mat_porcentagem_descontos",
     category: "Matemática • Matemática Financeira e Porcentagem",
-    topic: "GERADOR INFINITO: DESCONTOS E AUMENTOS PERCENTUAIS",
+    topic: "PORCENTAGEM E DESCONTOS",
+    day: 2,
     generate: (numOptions) => {
       const items = [
         "um computador portátil para estudos",
@@ -243,8 +252,8 @@ const INFINITE_GENERATORS = [
         "um pacote de materiais escolares técnicos"
       ];
       const item = items[Math.floor(Math.random() * items.length)];
-      const originalPrice = Math.floor(Math.random() * 8 + 4) * 50; // R$ 200 a R$ 600
-      const discountPct = Math.floor(Math.random() * 4 + 2) * 5; // 10%, 15%, 20%, 25%
+      const originalPrice = Math.floor(Math.random() * 8 + 4) * 50;
+      const discountPct = Math.floor(Math.random() * 4 + 2) * 5;
 
       const finalPrice = originalPrice * (1 - discountPct / 100);
       const discountVal = originalPrice * (discountPct / 100);
@@ -270,12 +279,12 @@ const INFINITE_GENERATORS = [
       }
       chosen.forEach(w => opts.push({ text: w, isCorrect: false }));
 
-      const explanation = `Cálculo: Desconto = ${discountPct}% de R$ ${originalPrice.toFixed(2).replace('.', ',')} = R$ ${discountVal.toFixed(2).replace('.', ',')}. Valor final = R$ ${originalPrice.toFixed(2).replace('.', ',')} - R$ ${discountVal.toFixed(2).replace('.', ',')} = R$ ${finalPrice.toFixed(2).replace('.', ',')}.`;
+      const explanation = `Desconto = ${discountPct}% de R$ ${originalPrice.toFixed(2).replace('.', ',')} = R$ ${discountVal.toFixed(2).replace('.', ',')}. Valor final = R$ ${originalPrice.toFixed(2).replace('.', ',')} - R$ ${discountVal.toFixed(2).replace('.', ',')} = R$ ${finalPrice.toFixed(2).replace('.', ',')}.`;
 
       return {
         difficulty: "facil",
         category: "Matemática • Matemática Financeira e Porcentagem",
-        topic: "GERADOR INFINITO: PORCENTAGEM E DESCONTOS",
+        topic: "PORCENTAGEM E DESCONTOS",
         title: title,
         context: context,
         question: question,
@@ -287,10 +296,12 @@ const INFINITE_GENERATORS = [
 
   // 6. MATEMÁTICA: Probabilidade Clássica e Sorteios
   {
+    id: "mat_probabilidade_classica",
     category: "Matemática • Probabilidade e Estatística",
-    topic: "GERADOR INFINITO: PROBABILIDADE CLÁSSICA E SORTEIOS",
+    topic: "PROBABILIDADE CLÁSSICA",
+    day: 2,
     generate: (numOptions) => {
-      const totalBalls = Math.floor(Math.random() * 3 + 2) * 10; // 20, 30, 40 bolas
+      const totalBalls = Math.floor(Math.random() * 3 + 2) * 10;
       const blueBalls = Math.floor(Math.random() * (totalBalls / 2 - 4) + 4);
       const otherBalls = totalBalls - blueBalls;
 
@@ -325,7 +336,106 @@ const INFINITE_GENERATORS = [
       return {
         difficulty: "medio",
         category: "Matemática • Probabilidade e Estatística",
-        topic: "GERADOR INFINITO: PROBABILIDADE CLÁSSICA",
+        topic: "PROBABILIDADE CLÁSSICA",
+        title: title,
+        context: context,
+        question: question,
+        options: opts,
+        explanation: explanation
+      };
+    }
+  },
+
+  // 7. FÍSICA: Calorimetria e Quantidade de Calor Sensível (Q = m . c . ΔT)
+  {
+    id: "fis_calorimetria_sensivel",
+    category: "Ciências da Natureza • Física (Termologia)",
+    topic: "CALORIMETRIA E EQUAÇÃO FUNDAMENTAL",
+    day: 2,
+    generate: (numOptions) => {
+      const massG = Math.floor(Math.random() * 4 + 2) * 100; // 200 a 500 g
+      const deltaT = Math.floor(Math.random() * 4 + 2) * 10; // 20 a 50 °C
+      const heatCap = 1.0; // água cal/(g·°C)
+      const calories = massG * heatCap * deltaT;
+      const joules = Math.round(calories * 4.2);
+
+      const title = `Aquecimento Térmico de Massa de Água Pura`;
+      const context = `Em um experimento de termologia, uma massa de ${massG} gramas de água pura no estado líquido (calor específico c = 1,0 cal/(g·°C)) é aquecida em um recipiente isolado termicamente, sofrendo uma elevação de temperatura de exatamente ${deltaT} °C sem que ocorra mudança de estado físico. Adote 1 caloria = 4,2 Joules.`;
+      const question = `A quantidade total de energia térmica absorvida pela água durante esse aquecimento, expressa no Sistema Internacional em Joules (J), é igual a:`;
+
+      const correctText = `${joules.toLocaleString('pt-BR')} J`;
+      const wrongList = [
+        `${calories.toLocaleString('pt-BR')} J`,
+        `${Math.round(joules * 1.5).toLocaleString('pt-BR')} J`,
+        `${Math.round(joules / 2).toLocaleString('pt-BR')} J`,
+        `${Math.round(joules * 2).toLocaleString('pt-BR')} J`
+      ].filter(v => v !== correctText);
+
+      const opts = [{ text: correctText, isCorrect: true }];
+      const neededWrongs = numOptions - 1;
+      const chosen = Array.from(new Set(wrongList)).slice(0, neededWrongs);
+      while (chosen.length < neededWrongs) {
+        const fake = `${Math.round(joules * (0.3 + Math.random() * 1.5)).toLocaleString('pt-BR')} J`;
+        if (fake !== correctText && !chosen.includes(fake)) chosen.push(fake);
+      }
+      chosen.forEach(w => opts.push({ text: w, isCorrect: false }));
+
+      const explanation = `Q = m · c · ΔT = ${massG} g × 1,0 cal/(g·°C) × ${deltaT} °C = ${calories} calorias. Convertendo para Joules: E = ${calories} × 4,2 J = ${joules.toLocaleString('pt-BR')} J.`;
+
+      return {
+        difficulty: "medio",
+        category: "Ciências da Natureza • Física (Termologia)",
+        topic: "CALORIMETRIA",
+        title: title,
+        context: context,
+        question: question,
+        options: opts,
+        explanation: explanation
+      };
+    }
+  },
+
+  // 8. BIOLOGIA: Ecologia e Pirâmides Ecológicas de Biomassa e Energia
+  {
+    id: "bio_fluxo_energia_ecologia",
+    category: "Ciências da Natureza • Biologia (Ecologia)",
+    topic: "FLUXO DE ENERGIA E PIRÂMIDES TRÓFICAS",
+    day: 2,
+    generate: (numOptions) => {
+      const efficiencies = [
+        { prod: 20000, herb: 2000, carn: 200 },
+        { prod: 50000, herb: 5000, carn: 500 },
+        { prod: 80000, herb: 8000, carn: 800 }
+      ];
+      const eff = efficiencies[Math.floor(Math.random() * efficiencies.length)];
+
+      const title = `Transferência Energética ao Longo de Cadeia Trófica`;
+      const context = `Em um ecossistema terrestre preservado, a produtividade primária líquida gerada pelos produtores fotossintetizantes atinge ${eff.prod.toLocaleString('pt-BR')} kcal/(m²·ano). Sabe-se que a eficiência ecológica média de transferência energética entre níveis tróficos consecutivos é de aproximadamente 10%.`;
+      const question = `A quantidade de energia disponível que atinge os consumidores secundários (carnívoros) nessa cadeia alimentar corresponde a:`;
+
+      const correctText = `${eff.carn.toLocaleString('pt-BR')} kcal/(m²·ano)`;
+      const wrongList = [
+        `${eff.herb.toLocaleString('pt-BR')} kcal/(m²·ano)`,
+        `${(eff.carn / 10).toLocaleString('pt-BR')} kcal/(m²·ano)`,
+        `${(eff.prod / 2).toLocaleString('pt-BR')} kcal/(m²·ano)`,
+        `${(eff.carn * 2).toLocaleString('pt-BR')} kcal/(m²·ano)`
+      ].filter(v => v !== correctText);
+
+      const opts = [{ text: correctText, isCorrect: true }];
+      const neededWrongs = numOptions - 1;
+      const chosen = Array.from(new Set(wrongList)).slice(0, neededWrongs);
+      while (chosen.length < neededWrongs) {
+        const fake = `${Math.round(eff.carn * (0.3 + Math.random() * 1.6)).toLocaleString('pt-BR')} kcal/(m²·ano)`;
+        if (fake !== correctText && !chosen.includes(fake)) chosen.push(fake);
+      }
+      chosen.forEach(w => opts.push({ text: w, isCorrect: false }));
+
+      const explanation = `Produtores: ${eff.prod} kcal. Consumidores primários (herbívoros): 10% = ${eff.herb} kcal. Consumidores secundários (carnívoros): 10% de ${eff.herb} = ${eff.carn} kcal/(m²·ano).`;
+
+      return {
+        difficulty: "medio",
+        category: "Ciências da Natureza • Biologia (Ecologia)",
+        topic: "FLUXO DE ENERGIA",
         title: title,
         context: context,
         question: question,
@@ -339,10 +449,12 @@ const INFINITE_GENERATORS = [
   // BLOCO DIA 1: LINGUAGENS, LITERATURA, HUMANAS E FILOSOFIA
   // ==========================================================================
 
-  // 7. LINGUAGENS: Figuras de Linguagem e Recursos Expressivos
+  // 9. LINGUAGENS: Figuras de Linguagem e Recursos Expressivos
   {
+    id: "ling_figuras_linguagem",
     category: "Linguagens • Semântica e Figuras de Linguagem",
-    topic: "GERADOR INFINITO: RECURSOS EXPRESSIVOS E FIGURAS DE ESTILO",
+    topic: "FIGURAS DE LINGUAGEM",
+    day: 1,
     generate: (numOptions) => {
       const bank = [
         {
@@ -411,12 +523,12 @@ const INFINITE_GENERATORS = [
       const neededWrongs = numOptions - 1;
       item.distractors.slice(0, neededWrongs).forEach(d => opts.push({ text: d, isCorrect: false }));
 
-      const explanation = `Análise estilística: O fragmento explora a figura ${item.type.toUpperCase()}, na qual ${item.correct.toLowerCase()}`;
+      const explanation = `O fragmento explora a figura ${item.type.toUpperCase()}, na qual ${item.correct.toLowerCase()}`;
 
       return {
         difficulty: "medio",
         category: "Linguagens • Semântica e Figuras de Linguagem",
-        topic: "GERADOR INFINITO: FIGURAS DE LINGUAGEM",
+        topic: "FIGURAS DE LINGUAGEM",
         title: title,
         context: context,
         question: question,
@@ -426,15 +538,17 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 8. LINGUAGENS: Funções da Linguagem de Roman Jakobson
+  // 10. LINGUAGENS: Funções da Linguagem de Roman Jakobson
   {
+    id: "ling_funcoes_linguagem",
     category: "Linguagens • Comunicação e Funções da Linguagem",
-    topic: "GERADOR INFINITO: FUNÇÕES DA LINGUAGEM DE JAKOBSON",
+    topic: "FUNÇÕES DA LINGUAGEM DE JAKOBSON",
+    day: 1,
     generate: (numOptions) => {
       const situations = [
         {
           textSample: "Atenção consumidor! Não perca esta oportunidade imperdível! Garanta hoje mesmo sua vaga com condições exclusivas e transforme sua carreira profissional!",
-          correct: "Função conativa (ou apelativa), cujo objetivo primordial é convencer, persuadir e influenciar o comportamento do interlocutor.",
+          correct: "Função conativa ou apelativa, cujo objetivo primordial é convencer, persuadir e influenciar o comportamento do interlocutor.",
           type: "conativa",
           distractors: [
             "Função emotiva, cujo centro de gravidade reside na expressão subjetiva dos sentimentos íntimos do emissor.",
@@ -467,7 +581,7 @@ const INFINITE_GENERATORS = [
         },
         {
           textSample: "Segundo o relatório do IPCC divulgado pela ONU, as temperaturas médias globais na superfície terrestre elevaram-se em 1,1 °C acima dos níveis pré-industriais no último século.",
-          correct: "Função referencial (ou informativa), focada no contexto e na transmissão objetiva, impessoal e documental de dados científicos.",
+          correct: "Função referencial ou informativa, focada no contexto e na transmissão objetiva, impessoal e documental de dados científicos.",
           type: "referencial",
           distractors: [
             "Função emotiva, que expressa primordialmente os desabafos e impressões líricas subjetivas do narrador.",
@@ -492,7 +606,7 @@ const INFINITE_GENERATORS = [
       return {
         difficulty: "facil",
         category: "Linguagens • Comunicação e Funções da Linguagem",
-        topic: "GERADOR INFINITO: FUNÇÕES DA LINGUAGEM",
+        topic: "FUNÇÕES DA LINGUAGEM",
         title: title,
         context: context,
         question: question,
@@ -502,10 +616,12 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 9. CIÊNCIAS HUMANAS: Constituições Brasileiras e Cidadania
+  // 11. CIÊNCIAS HUMANAS: Constituições Brasileiras e Cidadania
   {
+    id: "hum_constituicoes_cidadania",
     category: "Ciências Humanas • História do Brasil e Cidadania",
-    topic: "GERADOR INFINITO: CIDADANIA E CONSTITUIÇÕES BRASILEIRAS",
+    topic: "CIDADANIA E CONSTITUIÇÕES BRASILEIRAS",
+    day: 1,
     generate: (numOptions) => {
       const consts = [
         {
@@ -572,7 +688,7 @@ const INFINITE_GENERATORS = [
       return {
         difficulty: "medio",
         category: "Ciências Humanas • História do Brasil e Cidadania",
-        topic: "GERADOR INFINITO: CIDADANIA E CONSTITUIÇÕES",
+        topic: "CIDADANIA E CONSTITUIÇÕES",
         title: title,
         context: context,
         question: question,
@@ -582,10 +698,12 @@ const INFINITE_GENERATORS = [
     }
   },
 
-  // 10. CIÊNCIAS HUMANAS: Filosofia Política e Sociologia
+  // 12. CIÊNCIAS HUMANAS: Filosofia Política e Sociologia
   {
+    id: "hum_teoria_politica_social",
     category: "Ciências Humanas • Filosofia Política e Sociologia",
-    topic: "GERADOR INFINITO: CONTRATUALISMO E TEORIA SOCIAL",
+    topic: "CONTRATUALISMO E TEORIA SOCIAL",
+    day: 1,
     generate: (numOptions) => {
       const thinkers = [
         {
@@ -652,7 +770,7 @@ const INFINITE_GENERATORS = [
       return {
         difficulty: "medio",
         category: "Ciências Humanas • Filosofia Política e Sociologia",
-        topic: "GERADOR INFINITO: TEORIA POLÍTICA E SOCIAL",
+        topic: "TEORIA POLÍTICA E SOCIAL",
         title: title,
         context: context,
         question: question,
@@ -660,35 +778,202 @@ const INFINITE_GENERATORS = [
         explanation: explanation
       };
     }
+  },
+
+  // 13. LINGUAGENS: Variação Linguística e Níveis de Linguagem
+  {
+    id: "ling_variacao_linguistica",
+    category: "Linguagens • Variação Linguística e Preconceito Linguístico",
+    topic: "VARIAÇÃO LINGUÍSTICA REGIONAL E SOCIAL",
+    day: 1,
+    generate: (numOptions) => {
+      const examples = [
+        {
+          phenom: "uso de termos como 'oxente', 'arretado' e 'aperreado' no cotidiano nordestino",
+          correct: "Variação diatópica ou regional, que evidencia a riqueza cultural e as marcas identitárias geográficas dos falantes.",
+          type: "diatopica",
+          distractors: [
+            "Variação diafásica ou de estilo, determinada unicamente pelo grau de formalidade em documentos jurídicos.",
+            "Erro gramatical imperdoável que deve ser eliminado compulsoriamente do repertório oral dos cidadãos.",
+            "Variação diacrônica ou histórica, verificada apenas na linguagem arcaica de textos medievais em latim.",
+            "Incapacidade cognitiva individual de apreensão da norma padrão prescrita pela gramática tradicional."
+          ]
+        },
+        {
+          phenom: "emprego de jargões técnicos em medicina, como 'estridor laríngeo' e 'dispneia paroxística'",
+          correct: "Variação diastrática ou social de grupo, caracterizada pelo léxico profissional técnico compartilhado por especialistas.",
+          type: "diastratica",
+          distractors: [
+            "Variação regional costeira, própria das comunidades ribeirinhas de pescadores artesanais.",
+            "Desvio ortográfico fonético provocado pelo desconhecimento das regras de acentuação.",
+            "Variação de gênero etário restrita à comunicação informal e gírias de adolescentes nas redes.",
+            "Manifestação exclusiva de preconceito linguístico sem qualquer funcionalidade prática profissional."
+          ]
+        }
+      ];
+
+      const item = examples[Math.floor(Math.random() * examples.length)];
+      const title = `Adequação e Diversidade Linguística na Sociedade`;
+      const context = `A língua portuguesa no Brasil é caracterizada por sua rica heterogeneidade funcional. Ao analisar o ${item.phenom}:`;
+      const question = `Do ponto de vista da sociolinguística moderna e da matriz de habilidades do ENEM, essa manifestação corresponde a uma:`;
+
+      const opts = [{ text: item.correct, isCorrect: true }];
+      const neededWrongs = numOptions - 1;
+      item.distractors.slice(0, neededWrongs).forEach(d => opts.push({ text: d, isCorrect: false }));
+
+      const explanation = `A sociolinguística reconhece a ${item.type.toUpperCase()}, na qual ${item.correct.toLowerCase()}`;
+
+      return {
+        difficulty: "facil",
+        category: "Linguagens • Variação Linguística e Preconceito Linguístico",
+        topic: "VARIAÇÃO LINGUÍSTICA",
+        title: title,
+        context: context,
+        question: question,
+        options: opts,
+        explanation: explanation
+      };
+    }
+  },
+
+  // 14. CIÊNCIAS HUMANAS: Globalização e Divisão Internacional do Trabalho (DIT)
+  {
+    id: "hum_globalizacao_dit",
+    category: "Ciências Humanas • Geografia Econômica e Globalização",
+    topic: "GLOBALIZAÇÃO E DIVISÃO INTERNACIONAL DO TRABALHO",
+    day: 1,
+    generate: (numOptions) => {
+      const title = `A Nova Divisão Internacional do Trabalho (DIT) e as Cadeias Globais`;
+      const context = `Na fase atual da globalização técnico-científico-informacional, a fragmentação geográfica da produção industrial permite que transnacionais instalem filiais produtivas em países emergentes, enquanto centros de pesquisa e tomada de decisão estratégica permanecem sediados em metrópoles globais centrais.`;
+      const question = `Essa nova configuração da Divisão Internacional do Trabalho (DIT) apoia-se predominantemente na:`;
+
+      const correct = "Busca por vantagens comparativas em países periféricos (isenções fiscais, mão de obra mais barata) combinada à rapidez dos fluxos de transporte e telecomunicação.";
+      const distractors = [
+        "Eliminação total das desigualdades tecnológicas entre nações centrais desenvolvidas e os países do Sul global.",
+        "Fixação compulsória de todas as etapas industriais em um único país sede sem qualquer dispersão geográfica.",
+        "Proibição do trânsito de capitais financeiros especulativos através dos sistemas informatizados mundiais.",
+        "Substituição integral da automação robótica fabril pelo trabalho artesanal tradicional dos séculos anteriores."
+      ];
+
+      const opts = [{ text: correct, isCorrect: true }];
+      const neededWrongs = numOptions - 1;
+      distractors.slice(0, neededWrongs).forEach(d => opts.push({ text: d, isCorrect: false }));
+
+      return {
+        difficulty: "medio",
+        category: "Ciências Humanas • Geografia Econômica e Globalização",
+        topic: "GLOBALIZAÇÃO E DIT",
+        title: title,
+        context: context,
+        question: question,
+        options: opts,
+        explanation: "A Nova DIT baseia-se na descentralização territorial da montagem em busca de custos operacionais reduzidos, mantendo a concepção tecnológica nos países ricos."
+      };
+    }
   }
 ];
 
-// OPÇÃO A: Função que gera uma rodada mista completa mesclando questões do Dia 1 e Dia 2
+// ============================================================================
+// SISTEMA DE HISTÓRICO DE RODADAS E COOLDOWN ANTI-REPETIÇÃO (3 RODADAS)
+// ============================================================================
+const RECENT_TOPICS_STORAGE_KEY = 'enem_duo_infinite_recent_topics';
+
+// Recupera a lista de histórico de rodadas recentes: [ [id1, id2, ...], [id3, id4, ...], ... ]
+function getRecentRoundsHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(RECENT_TOPICS_STORAGE_KEY) || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+// Salva os tópicos da rodada concluída, mantendo apenas as últimas 3 rodadas na memória
+function recordInfiniteRoundTopics(topicIds) {
+  const history = getRecentRoundsHistory();
+  history.push(topicIds);
+  // Mantém no máximo 3 rodadas no histórico de cooldown
+  while (history.length > 3) {
+    history.shift();
+  }
+  try {
+    localStorage.setItem(RECENT_TOPICS_STORAGE_KEY, JSON.stringify(history));
+  } catch (e) {}
+}
+
+// Retorna o conjunto de IDs bloqueados pelas últimas 3 rodadas
+function getCoolingDownTopicIds() {
+  const history = getRecentRoundsHistory();
+  const blocked = new Set();
+  history.forEach(round => {
+    if (Array.isArray(round)) {
+      round.forEach(id => blocked.add(id));
+    }
+  });
+  return blocked;
+}
+
+// OPÇÃO A: GERAÇÃO MISTA COM ANTI-REPETIÇÃO ESTATÍSTICA (SEM REPETIÇÃO NA RODADA E COOLDOWN DE 3 RODADAS)
 function generateInfiniteQuizBatch(count = 6, examMode = 'enem') {
   const numOptions = examMode === 'uece' ? 4 : 5;
-  const questions = [];
+  const coolingDownIds = getCoolingDownTopicIds();
 
-  // Separa os geradores do Dia 1 e do Dia 2
-  const day1Gens = INFINITE_GENERATORS.filter(g => g.category.includes('Linguagens') || g.category.includes('Humanas'));
-  const day2Gens = INFINITE_GENERATORS.filter(g => g.category.includes('Natureza') || g.category.includes('Matemática'));
+  // Filtra geradores elegíveis (que não caíram nas últimas 3 rodadas)
+  let eligibleGens = INFINITE_GENERATORS.filter(g => !coolingDownIds.has(g.id));
 
-  // Embaralha aleatoriamente
-  const shuff1 = [...day1Gens].sort(() => Math.random() - 0.5);
-  const shuff2 = [...day2Gens].sort(() => Math.random() - 0.5);
+  // Caso o conjunto elegível fique menor que a contagem necessária, libera geradores mais antigos gradualmente
+  if (eligibleGens.length < count) {
+    eligibleGens = [...INFINITE_GENERATORS];
+  }
 
-  // Monta uma seleção mista balanceada: metade Dia 1 e metade Dia 2
+  // Separa elegíveis entre Dia 1 e Dia 2 para assegurar equilíbrio
+  let day1Eligible = eligibleGens.filter(g => g.day === 1);
+  let day2Eligible = eligibleGens.filter(g => g.day === 2);
+
+  // Fallback caso um dos lados fique sem candidatos devido a bloqueios anteriores
+  if (day1Eligible.length === 0) day1Eligible = INFINITE_GENERATORS.filter(g => g.day === 1);
+  if (day2Eligible.length === 0) day2Eligible = INFINITE_GENERATORS.filter(g => g.day === 2);
+
+  // Embaralha ambos
+  const shuff1 = [...day1Eligible].sort(() => Math.random() - 0.5);
+  const shuff2 = [...day2Eligible].sort(() => Math.random() - 0.5);
+
   const half = Math.floor(count / 2);
-  const selected = [];
+  const selectedGenerators = [];
+  const chosenIdsInRound = new Set();
 
-  for (let i = 0; i < half; i++) {
-    selected.push(shuff1[i % shuff1.length]);
-  }
-  for (let i = 0; i < (count - half); i++) {
-    selected.push(shuff2[i % shuff2.length]);
+  // 1. Seleciona questões do Dia 1 SEM REPETIR na mesma rodada
+  for (const g of shuff1) {
+    if (!chosenIdsInRound.has(g.id) && selectedGenerators.length < half) {
+      selectedGenerators.push(g);
+      chosenIdsInRound.add(g.id);
+    }
   }
 
-  // Embaralha a ordem final das questões para o simulado
-  selected.sort(() => Math.random() - 0.5).forEach(gen => {
+  // 2. Seleciona questões do Dia 2 SEM REPETIR na mesma rodada
+  for (const g of shuff2) {
+    if (!chosenIdsInRound.has(g.id) && selectedGenerators.length < count) {
+      selectedGenerators.push(g);
+      chosenIdsInRound.add(g.id);
+    }
+  }
+
+  // 3. Caso ainda falte para completar count (por raridade de filtros), completa com geradores não usados na rodada
+  if (selectedGenerators.length < count) {
+    const allShuffled = [...INFINITE_GENERATORS].sort(() => Math.random() - 0.5);
+    for (const g of allShuffled) {
+      if (!chosenIdsInRound.has(g.id) && selectedGenerators.length < count) {
+        selectedGenerators.push(g);
+        chosenIdsInRound.add(g.id);
+      }
+    }
+  }
+
+  // Registra os tópicos usados nesta rodada no histórico de cooldown de 3 rodadas
+  recordInfiniteRoundTopics(Array.from(chosenIdsInRound));
+
+  // Embaralha a ordem final das questões para que Dia 1 e Dia 2 fiquem mesclados dinamicamente
+  const questions = [];
+  selectedGenerators.sort(() => Math.random() - 0.5).forEach(gen => {
     questions.push(gen.generate(numOptions));
   });
 
