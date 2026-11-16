@@ -247,11 +247,25 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 22px 18px;
-      justify-content: center;
-      gap: 16px;
+      padding: 18px 18px 120px; /* Amplo respiro inferior (120px) para subir tudo confortavelmente acima das bordas e barras do celular */
+      justify-content: flex-start; /* Permite rolar livremente do topo até o fim sem travar no centro */
+      gap: 14px;
       text-align: center;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch; /* Rolagem fluida no iOS e Android */
+      overscroll-behavior-y: contain;
+    }
+
+    /* Scrollbar sutil e estilizada para o menu inicial */
+    .area-selector-screen::-webkit-scrollbar {
+      width: 6px;
+    }
+    .area-selector-screen::-webkit-scrollbar-track {
+      background: #142026;
+    }
+    .area-selector-screen::-webkit-scrollbar-thumb {
+      background: #233c47;
+      border-radius: 4px;
     }
 
     .selector-hero-icon {
