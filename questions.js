@@ -1343,6 +1343,236 @@ const QUESTION_DATABASE = {
   ],
 
   natureza_matematica: [
+
+    // ============================================================================
+    // QUESTÕES VISUAIS E DE ALTA INTERPRETAÇÃO - DIA 2 ENEM (GRÁFICOS, CIRCUITOS, HEREDOGRAMAS, TABELAS)
+    // ============================================================================
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Física (Eletrodinâmica)",
+      topic: "CAMPEÃ DO ENEM DIA 2: ANÁLISE DE CIRCUITOS E BRILHO DE LÂMPADAS",
+      title: "Associação Mista e Queima de Lâmpada no Circuito",
+      context: "Um estudante monta um circuito elétrico residencial contendo uma fonte de tensão constante U e três lâmpadas incandescentes idênticas L₁, L₂ e L₃ (de mesma resistência R). As lâmpadas L₂ e L₃ estão ligadas em paralelo entre si, e esse conjunto está ligado em série com a lâmpada L₁.",
+      question: "Se a lâmpada L₂ queimar repentinamente (abrindo seu filamento), o que ocorrerá com o brilho (potência dissipada) da lâmpada L₁ e da lâmpada L₃ remanescente?",
+      visualHtml: `<svg viewBox="0 0 360 160" width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#131f24" rx="10"/>
+        <!-- Linhas condutoras -->
+        <path d="M 40 80 L 100 80" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <!-- Fonte U -->
+        <circle cx="40" cy="80" r="16" fill="#1e3541" stroke="#38bdf8" stroke-width="2"/>
+        <text x="40" y="85" fill="#f8fafc" font-size="12" font-weight="bold" text-anchor="middle">U</text>
+        <!-- Lâmpada L1 em série -->
+        <circle cx="130" cy="80" r="15" fill="#facc15" fill-opacity="0.25" stroke="#facc15" stroke-width="2.5"/>
+        <text x="130" y="84" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">L₁</text>
+        <path d="M 145 80 L 190 80" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <!-- Divisão do paralelo -->
+        <path d="M 190 40 L 190 120" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <path d="M 190 40 L 230 40" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <path d="M 190 120 L 230 120" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <!-- Lâmpadas L2 e L3 -->
+        <circle cx="250" cy="40" r="15" fill="#facc15" fill-opacity="0.25" stroke="#facc15" stroke-width="2.5"/>
+        <text x="250" y="44" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">L₂</text>
+        <circle cx="250" cy="120" r="15" fill="#facc15" fill-opacity="0.25" stroke="#facc15" stroke-width="2.5"/>
+        <text x="250" y="124" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">L₃</text>
+        <!-- Fechamento do circuito -->
+        <path d="M 270 40 L 310 40 L 310 80" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <path d="M 270 120 L 310 120 L 310 80" stroke="#38bdf8" stroke-width="3" fill="none"/>
+        <path d="M 310 80 L 310 145 L 40 145 L 40 96" stroke="#38bdf8" stroke-width="3" fill="none"/>
+      </svg><div class="enem-visual-caption">Figura: Circuito elétrico misto com chave e lâmpadas incandescentes idênticas.</div>`,
+      options: [
+        { text: "O brilho de L₁ diminui, e o brilho de L₃ aumenta.", isCorrect: true },
+        { text: "O brilho de L₁ aumenta, e o brilho de L₃ apaga completamente.", isCorrect: false },
+        { text: "O brilho de ambas permanece rigorosamente inalterado.", isCorrect: false },
+        { text: "As duas lâmpadas restantes queimam instantaneamente por sobretensão.", isCorrect: false },
+        { text: "O brilho de L₁ aumenta e o de L₃ diminui proporcionalmente.", isCorrect: false }
+      ],
+      explanation: "Inicialmente Req = R + R/2 = 1,5R. Com a queima de L₂, o circuito passa a ser série simples (L₁ e L₃), aumentando Req para 2R. Como a resistência total aumenta, a corrente total diminui (L₁ brilha menos). Como a tensão antes dividia-se em (2/3)U em L₁ e (1/3)U no paralelo, agora divide-se meio a meio (U/2 cada). Logo, a tensão em L₃ salta de 0,33U para 0,5U, aumentando seu brilho!"
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Biologia (Genética)",
+      topic: "CAMPEÃ DO ENEM DIA 2: INTERPRETAÇÃO DE HEREDOGRAMAS",
+      title: "Padrão de Herança Genética Familiar",
+      context: "O heredograma a seguir ilustra a transmissão de uma anomalia genética rara ao longo de três gerações em uma família. Os símbolos escuros representam indivíduos fenotipicamente afetados pela condição.",
+      question: "A análise rigorosa do cruzamento entre os indivíduos II-1 e II-2 que gerou a filha afetada III-2 permite concluir com certeza que o padrão de herança dessa anomalia é:",
+      visualHtml: `<svg viewBox="0 0 340 170" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#131f24" rx="10"/>
+        <!-- Geração I -->
+        <text x="25" y="45" fill="#94a3b8" font-size="12" font-weight="bold">I</text>
+        <rect x="70" y="30" width="22" height="22" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="92" y1="41" x2="130" y2="41" stroke="#f8fafc" stroke-width="2"/>
+        <circle cx="140" cy="41" r="11" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        
+        <!-- Conexão Pais I para Filhos II -->
+        <line x1="111" y1="41" x2="111" y2="70" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="111" y1="70" x2="160" y2="70" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="160" y1="70" x2="160" y2="90" stroke="#f8fafc" stroke-width="2"/>
+        
+        <!-- Geração II -->
+        <text x="25" y="105" fill="#94a3b8" font-size="12" font-weight="bold">II</text>
+        <!-- II-1 (Mulher normal) -->
+        <circle cx="160" cy="100" r="11" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        <text x="160" y="125" fill="#94a3b8" font-size="10" text-anchor="middle">1</text>
+        <!-- Casamento com II-2 (Homem normal) -->
+        <line x1="171" y1="100" x2="209" y2="100" stroke="#f8fafc" stroke-width="2"/>
+        <rect x="209" y="89" width="22" height="22" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        <text x="220" y="125" fill="#94a3b8" font-size="10" text-anchor="middle">2</text>
+        
+        <!-- Descendentes Geração III -->
+        <line x1="190" y1="100" x2="190" y2="135" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="140" y1="135" x2="240" y2="135" stroke="#f8fafc" stroke-width="2"/>
+        
+        <!-- Geração III -->
+        <text x="25" y="155" fill="#94a3b8" font-size="12" font-weight="bold">III</text>
+        <!-- III-1 Normal -->
+        <rect x="129" y="140" width="22" height="22" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="140" y1="135" x2="140" y2="140" stroke="#f8fafc" stroke-width="2"/>
+        <!-- III-2 AFETADA (Círculo Preto/Vermelho) -->
+        <circle cx="190" cy="151" r="11" fill="#ef4444" stroke="#ffffff" stroke-width="2.5"/>
+        <line x1="190" y1="135" x2="190" y2="140" stroke="#f8fafc" stroke-width="2"/>
+        <!-- III-3 Normal -->
+        <circle cx="240" cy="151" r="11" fill="#38bdf8" stroke="#f8fafc" stroke-width="2"/>
+        <line x1="240" y1="135" x2="240" y2="140" stroke="#f8fafc" stroke-width="2"/>
+      </svg><div class="enem-visual-caption">Heredograma genético. Círculo vermelho (III-2): mulher afetada nascida de pais normais (II-1 e II-2).</div>`,
+      options: [
+        { text: "Autossômica recessiva, pois pais normais geraram uma descendente do sexo feminino afetada.", isCorrect: true },
+        { text: "Autossômica dominante, pois a condição manifesta-se em todas as gerações sem interrupção.", isCorrect: false },
+        { text: "Ligada ao cromossomo Y (holândrica), pois atinge predominantemente os machos da família.", isCorrect: false },
+        { text: "Dominante ligada ao cromossomo X, obrigatoriamente transmitida pelo pai afetado.", isCorrect: false },
+        { text: "Herança puramente mitocondrial transmitida exclusivamente pela linhagem paterna.", isCorrect: false }
+      ],
+      explanation: "Regra clássica do ENEM: quando pais não afetados (normais) geram uma filha ou filho afetado, a característica é obrigatoriamente RECESSIVA (pais heterozigotos Aa). Sendo a filha afetada (aa) e o pai normal (A_), a anomalia só pode ser autossômica (se fosse ligada ao X recessiva, o pai precisaria ser afetado XᵃY)."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Físico-Química",
+      topic: "CAMPEÃ DO ENEM DIA 2: LEITURA DE CURVAS DE SOLUBILIDADE",
+      title: "Precipitação de Soluto por Resfriamento Térmico",
+      context: "O gráfico a seguir representa as curvas de solubilidade (em gramas de soluto por 100 g de água) de três sais inorgânicos (Sal A, Sal B e Sal C) em função da variação de temperatura (°C).",
+      question: "Uma solução aquosa saturada contendo 60 g do Sal A dissolvidos em 100 g de H₂O a 60 °C é resfriada lentamente até atingir 20 °C. Consultando a curva do Sal A, a massa de sólido que precipitará no fundo do béquer como corpo de chão (sedimento) será de:",
+      visualHtml: `<svg viewBox="0 0 350 170" width="100%" height="160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#131f24" rx="10"/>
+        <!-- Eixos -->
+        <line x1="50" y1="130" x2="320" y2="130" stroke="#94a3b8" stroke-width="2"/>
+        <line x1="50" y1="130" x2="50" y2="20" stroke="#94a3b8" stroke-width="2"/>
+        <!-- Legendas eixos -->
+        <text x="180" y="152" fill="#94a3b8" font-size="11" text-anchor="middle">Temperatura (°C)</text>
+        <text x="15" y="75" fill="#94a3b8" font-size="10" transform="rotate(-90 15,75)" text-anchor="middle">g soluto / 100 g H₂O</text>
+        <!-- Marcadores Eixo X -->
+        <text x="100" y="143" fill="#cbd5e1" font-size="10" text-anchor="middle">20</text>
+        <text x="180" y="143" fill="#cbd5e1" font-size="10" text-anchor="middle">40</text>
+        <text x="260" y="143" fill="#cbd5e1" font-size="10" text-anchor="middle">60</text>
+        <!-- Marcadores Eixo Y -->
+        <text x="42" y="105" fill="#cbd5e1" font-size="10" text-anchor="end">20</text>
+        <text x="42" y="70" fill="#cbd5e1" font-size="10" text-anchor="end">40</text>
+        <text x="42" y="35" fill="#cbd5e1" font-size="10" text-anchor="end">60</text>
+        <!-- Curva Sal A (Ascendente acentuada) -->
+        <path d="M 50 115 Q 150 100 260 35" stroke="#38bdf8" stroke-width="3.5" fill="none"/>
+        <circle cx="100" cy="105" r="4.5" fill="#facc15"/>
+        <circle cx="260" cy="35" r="4.5" fill="#facc15"/>
+        <text x="270" y="30" fill="#38bdf8" font-size="11" font-weight="bold">Sal A</text>
+        <!-- Curva Sal B (Quase horizontal) -->
+        <line x1="50" y1="75" x2="310" y2="70" stroke="#a855f7" stroke-width="2" stroke-dasharray="4"/>
+        <text x="315" y="73" fill="#a855f7" font-size="10">Sal B</text>
+      </svg><div class="enem-visual-caption">Gráfico: Curvas de solubilidade. Sal A atinge 20 g a 20 °C e 60 g a 60 °C por 100 g de H₂O.</div>`,
+      options: [
+        { text: "40 gramas de precipitado.", isCorrect: true },
+        { text: "20 gramas de precipitado.", isCorrect: false },
+        { text: "60 gramas de precipitado.", isCorrect: false },
+        { text: "Zero gramas, pois a solução permanecerá insaturada.", isCorrect: false },
+        { text: "80 gramas de precipitado.", isCorrect: false }
+      ],
+      explanation: "Leitura gráfica direta: a 60 °C, a solubilidade do Sal A é de 60 g / 100 g H₂O. Ao resfriar para 20 °C, o gráfico mostra que a água só consegue manter dissolvidos 20 g do sal. A diferença que não cabe mais dissolvida precipita: 60 g - 20 g = 40 g de corpo de fundo."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Física (Cinemática / Energia)",
+      topic: "CAMPEÃ DO ENEM DIA 2: INTERPRETAÇÃO DE DADOS EM TABELAS",
+      title: "Consumo Energético e Eficiência de Eletrodomésticos",
+      context: "Uma família planeja reduzir sua fatura mensal de energia elétrica substituindo um aparelho antigo de alto consumo. A tabela a seguir registra as potências elétricas e o tempo diário médio de utilização de cinco aparelhos residenciais.",
+      question: "Considerando uma tarifa de R$ 0,80 por kWh consumido em um mês padrão de 30 dias, o eletrodoméstico responsável pelo MAIOR custo financeiro na conta de luz dessa família é o(a):",
+      visualHtml: `<table class="enem-table">
+        <thead>
+          <tr>
+            <th>Aparelho</th>
+            <th>Potência (W)</th>
+            <th>Uso Diário Médio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Chuveiro Elétrico</td><td>5.500 W</td><td>40 minutos (0,67 h)</td></tr>
+          <tr><td>Ar-Condicionado</td><td>1.200 W</td><td>8 horas</td></tr>
+          <tr><td>Geladeira Frost-Free</td><td>250 W</td><td>24 horas (motor cicla 10 h)</td></tr>
+          <tr><td>Televisor LED</td><td>100 W</td><td>5 horas</td></tr>
+          <tr><td>Forno Micro-ondas</td><td>1.400 W</td><td>15 minutos (0,25 h)</td></tr>
+        </tbody>
+      </table><div class="enem-visual-caption">Tabela técnica: Potência nominal e tempo de uso de eletrodomésticos residenciais.</div>`,
+      options: [
+        { text: "Ar-Condicionado (9,6 kWh/dia).", isCorrect: true },
+        { text: "Chuveiro Elétrico (3,67 kWh/dia).", isCorrect: false },
+        { text: "Geladeira Frost-Free (2,5 kWh/dia).", isCorrect: false },
+        { text: "Forno Micro-ondas (0,35 kWh/dia).", isCorrect: false },
+        { text: "Televisor LED (0,5 kWh/dia).", isCorrect: false }
+      ],
+      explanation: "Pegadinha clássica do ENEM: o chuveiro tem a maior potência (5.500 W), mas é usado por pouco tempo: 5,5 kW × 0,67 h ≈ 3,68 kWh/dia. O ar-condicionado tem menor potência (1.200 W), mas fica ligado 8 horas: 1,2 kW × 8 h = 9,6 kWh/dia! O ar-condicionado é o grande vilão da conta."
+    },
+    {
+      difficulty: "facil",
+      category: "Matemática • Geometria Espacial e Projeção",
+      topic: "CAMPEÃ DO ENEM DIA 2: VISTAS ORTOGONAIS E PROJEÇÃO 3D",
+      title: "Projeção Ortogonal de Trajetória Espacial",
+      context: "Um drone sobrevoa uma pista circular plana no solo realizando uma trajetória helicoidal cilíndrica vertical: ele sobe com velocidade vertical constante enquanto gira em torno do eixo central do círculo.",
+      question: "A projeção ortogonal da trajetória desse drone sobre a superfície plana horizontal do solo (plano da pista visto exatamente de cima para baixo) e sobre uma parede vertical lateral corresponde, respectivamente, a uma:",
+      options: [
+        { text: "Circunferência no plano horizontal do solo e uma Senoide (curva ondulada) na parede vertical.", isCorrect: true },
+        { text: "Reta horizontal no solo e uma Elipse na parede.", isCorrect: false },
+        { text: "Espiral convergente no solo e um ponto estático na parede.", isCorrect: false },
+        { text: "Parábola no solo e uma Hipérbole na parede.", isCorrect: false },
+        { text: "Reta vertical perpendicular no solo e uma Circunferência na parede.", isCorrect: false }
+      ],
+      explanation: "Visto estritamente de cima (projeção no plano do solo), o movimento circular é projetado como uma circunferência perfeita. Visto lateralmente (projeção na parede), a combinação do movimento circular com a subida linear gera a clássica onda senoidal."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Estatística e Interpretação de Gráficos",
+      topic: "CAMPEÃ DO ENEM DIA 2: GRÁFICOS DE BARRAS E MÉDIA PONDERADA",
+      title: "Distribuição Salarial em Histograma",
+      context: "O gráfico de colunas a seguir resume a distribuição do número de funcionários de uma empresa de logística de acordo com suas faixas salariais em salários mínimos (SM).",
+      question: "Com base na leitura dos dados do gráfico (10 funcionários ganham 2 SM; 20 ganham 3 SM; 15 ganham 4 SM; 5 ganham 8 SM), o salário médio pago por essa empresa, expresso em salários mínimos, é de:",
+      visualHtml: `<svg viewBox="0 0 320 160" width="100%" height="150" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#131f24" rx="10"/>
+        <!-- Eixos -->
+        <line x1="45" y1="125" x2="300" y2="125" stroke="#94a3b8" stroke-width="2"/>
+        <line x1="45" y1="125" x2="45" y2="20" stroke="#94a3b8" stroke-width="2"/>
+        <text x="180" y="145" fill="#94a3b8" font-size="11" text-anchor="middle">Salário (em Salários Mínimos)</text>
+        <!-- Barras -->
+        <!-- Barra 2 SM: 10 func (altura 40) -->
+        <rect x="65" y="85" width="35" height="40" fill="#38bdf8" rx="3"/>
+        <text x="82" y="80" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">10</text>
+        <text x="82" y="137" fill="#cbd5e1" font-size="10" text-anchor="middle">2 SM</text>
+        <!-- Barra 3 SM: 20 func (altura 80) -->
+        <rect x="125" y="45" width="35" height="80" fill="#38bdf8" rx="3"/>
+        <text x="142" y="40" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">20</text>
+        <text x="142" y="137" fill="#cbd5e1" font-size="10" text-anchor="middle">3 SM</text>
+        <!-- Barra 4 SM: 15 func (altura 60) -->
+        <rect x="185" y="65" width="35" height="60" fill="#38bdf8" rx="3"/>
+        <text x="202" y="60" fill="#38bdf8" font-size="11" font-weight="bold" text-anchor="middle">15</text>
+        <text x="202" y="137" fill="#cbd5e1" font-size="10" text-anchor="middle">4 SM</text>
+        <!-- Barra 8 SM: 5 func (altura 20) -->
+        <rect x="245" y="105" width="35" height="20" fill="#facc15" rx="3"/>
+        <text x="262" y="100" fill="#facc15" font-size="11" font-weight="bold" text-anchor="middle">5</text>
+        <text x="262" y="137" fill="#cbd5e1" font-size="10" text-anchor="middle">8 SM</text>
+      </svg><div class="enem-visual-caption">Gráfico: Frequência de funcionários por faixa de remuneração salarial.</div>`,
+      options: [
+        { text: "3,6 salários mínimos.", isCorrect: true },
+        { text: "4,25 salários mínimos.", isCorrect: false },
+        { text: "3,0 salários mínimos.", isCorrect: false },
+        { text: "4,0 salários mínimos.", isCorrect: false },
+        { text: "2,8 salários mínimos.", isCorrect: false }
+      ],
+      explanation: "Média ponderada do ENEM: Total de funcionários = 10 + 20 + 15 + 5 = 50 funcionários. Massa salarial total = (10 × 2) + (20 × 3) + (15 × 4) + (5 × 8) = 20 + 60 + 60 + 40 = 180 SM. Média = 180 / 50 = 3,6 salários mínimos."
+    },
+
     // ==========================================
     // ENEM 2025 - NATUREZA & MATEMÁTICA
     // ==========================================

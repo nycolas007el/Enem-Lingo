@@ -495,6 +495,66 @@
       color: #f1f7fb;
     }
 
+    
+    /* Suporte a Elementos Visuais do ENEM (Diagramas, SVGs, Gráficos e Tabelas) */
+    .question-visual-box {
+      display: none;
+      width: 100%;
+      background: #13222a;
+      border: 1.5px solid #233c47;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 14px;
+      text-align: center;
+      overflow-x: auto;
+    }
+
+    .question-visual-box svg {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Estilo de Tabelas Técnicas Oficiais do ENEM */
+    .enem-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 4px 0;
+      font-size: 12.5px;
+      color: #e2e8f0;
+    }
+
+    .enem-table th, .enem-table td {
+      border: 1px solid #284452;
+      padding: 7px 10px;
+      text-align: center;
+    }
+
+    .enem-table th {
+      background: #1e3541;
+      color: #38bdf8;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 11px;
+    }
+
+    .enem-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .enem-table tr:hover {
+      background: rgba(56, 189, 248, 0.06);
+    }
+
+    .enem-visual-caption {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
     .question-context {
       font-size: 13.5px;
       line-height: 1.45;
@@ -1058,6 +1118,9 @@
       </div>
       <h2 class="question-title" id="questionTitle">Carregando pergunta...</h2>
       <div class="question-context" id="questionContext">...</div>
+
+      <!-- Container para Diagramas Visuais, Gráficos SVG e Tabelas Técnicas -->
+      <div class="question-visual-box" id="questionVisualBox"></div>
       
       <div class="options-list" id="optionsList">
         <!-- Alternativas de A até E embaralhadas -->
@@ -1703,6 +1766,18 @@
       tagTopicEl.textContent = formatEnemText(q.topic);
       questionTitleEl.textContent = formatEnemText(q.title);
       questionContextEl.textContent = formatEnemText(q.context + " " + q.question);
+
+      // Renderização de Elementos Visuais do ENEM (SVG, Gráficos, Circuitos, Tabelas)
+      const visualBox = document.getElementById('questionVisualBox');
+      if (visualBox) {
+        if (q.visualHtml) {
+          visualBox.innerHTML = q.visualHtml;
+          visualBox.style.display = "block";
+        } else {
+          visualBox.innerHTML = "";
+          visualBox.style.display = "none";
+        }
+      }
 
       // Barra de progresso proporcional
       const progress = (currentQuestionIndex / activeQuestionList.length) * 100;
