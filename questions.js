@@ -1437,7 +1437,7 @@ const QUESTION_DATABASE = {
       options: [
         { text: "Autossômica recessiva, pois pais normais geraram uma descendente do sexo feminino afetada.", isCorrect: true },
         { text: "Autossômica dominante, pois a condição manifesta-se em todas as gerações sem interrupção.", isCorrect: false },
-        { text: "Ligada ao cromossomo Y (holândrica), pois atinge predominantemente os machos da família.", isCorrect: false },
+        { text: "Ligada ao cromossomo Y, pois atinge predominantemente os machos da família.", isCorrect: false },
         { text: "Dominante ligada ao cromossomo X, obrigatoriamente transmitida pelo pai afetado.", isCorrect: false },
         { text: "Herança puramente mitocondrial transmitida exclusivamente pela linhagem paterna.", isCorrect: false }
       ],
@@ -1510,11 +1510,11 @@ const QUESTION_DATABASE = {
         </table>
       </div><div class="enem-visual-caption"><span>📊</span> Tabela técnica: Potência nominal e tempo de uso diário.</div>`,
       options: [
-        { text: "Ar-Condicionado (9,6 kWh/dia).", isCorrect: true },
-        { text: "Chuveiro Elétrico (3,67 kWh/dia).", isCorrect: false },
-        { text: "Geladeira Frost-Free (2,5 kWh/dia).", isCorrect: false },
-        { text: "Forno Micro-ondas (0,35 kWh/dia).", isCorrect: false },
-        { text: "Televisor LED (0,5 kWh/dia).", isCorrect: false }
+        { text: "Ar-Condicionado.", isCorrect: true },
+        { text: "Chuveiro Elétrico.", isCorrect: false },
+        { text: "Geladeira Frost-Free.", isCorrect: false },
+        { text: "Forno Micro-ondas.", isCorrect: false },
+        { text: "Televisor LED.", isCorrect: false }
       ],
       explanation: "Pegadinha clássica do ENEM: o chuveiro tem a maior potência (5.500 W), mas é usado por pouco tempo: 5,5 kW × 0,67 h ≈ 3,68 kWh/dia. O ar-condicionado tem menor potência (1.200 W), mas fica ligado 8 horas: 1,2 kW × 8 h = 9,6 kWh/dia! O ar-condicionado é o grande vilão da conta."
     },
@@ -1715,7 +1715,7 @@ const QUESTION_DATABASE = {
       question: "A diminuição da disponibilidade de íons carbonato no meio aquático afeta de forma letal os recifes de coral porque:",
       options: [
         { text: "Eleva desproporcionalmente a salinidade marinha, provocando o congelamento forçado de mares tropicais.", isCorrect: false },
-        { text: "Dificulta a síntese do exoesqueleto calcário de carbonato de cálcio (CaCO₃) de corais e moluscos.", isCorrect: true },
+        { text: "Dificulta a síntese do exoesqueleto calcário de carbonato de cálcio de corais e moluscos.", isCorrect: true },
         { text: "Bloqueia a atividade osmorreguladora branquial, impedindo a eliminação de escórias nitrogenadas solúveis.", isCorrect: false },
         { text: "Estimula a taxa fotossintética de peixes predadores carnívoros situados no ápice da pirâmide ecológica.", isCorrect: false },
         { text: "Impede a penetração de radiações luminosas na coluna d'água, extinguindo a zona fótica litorânea.", isCorrect: false }
@@ -1769,11 +1769,11 @@ const QUESTION_DATABASE = {
       context: "Uma indústria de laticínios desenha caixas de leite no formato de paralelepípedo reto-retângulo com base medindo 10 cm por 5 cm e altura de 20 cm.",
       question: "Sabendo que 1 cm³ equivale a 1 mL, o volume total de líquido que essa caixa comporta completamente cheia é de:",
       options: [
-        { text: "500 mL (0,5 L)", isCorrect: false },
-        { text: "750 mL (0,75 L)", isCorrect: false },
-        { text: "1.000 mL (1,0 L)", isCorrect: true },
-        { text: "1.500 mL (1,5 L)", isCorrect: false },
-        { text: "2.000 mL (2,0 L)", isCorrect: false }
+        { text: "500 mL", isCorrect: false },
+        { text: "750 mL", isCorrect: false },
+        { text: "1.000 mL", isCorrect: true },
+        { text: "1.500 mL", isCorrect: false },
+        { text: "2.000 mL", isCorrect: false }
       ],
       explanation: "V = comprimento × largura × altura = 10 cm × 5 cm × 20 cm = 1.000 cm³ = 1.000 mL = 1 Litro!"
     },
@@ -1845,11 +1845,11 @@ const QUESTION_DATABASE = {
       context: "Em um grupo de 100 pacientes com sintomas gripais, 40 estão infectados com o vírus influenza e 60 não estão. Entre os infectados, 36 testaram positivo no exame rápido; entre os não infectados, 6 testaram positivo (falsos positivos).",
       question: "Sorteando-se ao acaso um paciente cujo resultado do teste foi positivo, a probabilidade de ele realmente estar infectado pelo vírus é de:",
       options: [
-        { text: "36 / 100 (exatamente 36,0%)", isCorrect: false },
-        { text: "36 / 42 (aproximadamente 85,7%)", isCorrect: true },
-        { text: "40 / 100 (exatamente 40,0%)", isCorrect: false },
-        { text: "6 / 42 (aproximadamente 14,3%)", isCorrect: false },
-        { text: "36 / 40 (exatamente 90,0%)", isCorrect: false }
+        { text: "36 / 100", isCorrect: false },
+        { text: "36 / 42", isCorrect: true },
+        { text: "40 / 100", isCorrect: false },
+        { text: "6 / 42", isCorrect: false },
+        { text: "36 / 40", isCorrect: false }
       ],
       explanation: "Espaço amostral reduzido (todos os positivos): 36 (infectados) + 6 (falsos positivos) = 42 pessoas. Casos favoráveis (realmente infectados): 36. Probabilidade = 36 / 42 ≈ 85,7%!"
     }
@@ -3300,7 +3300,7 @@ const UECE_QUESTION_DATABASE = {
       context: "Em 'A Política', Aristóteles postula que o ser humano é por natureza um 'zoon politikon' (animal político) e que a pólis (cidade-estado) é anterior ao indivíduo por natureza.",
       question: "De acordo com Aristóteles, a capacidade humana singular que justifica a vida política e a diferencia dos demais animais gregários é:",
       options: [
-        { text: "A posse do 'logos' (discurso/razão), permitindo discernir e deliberar sobre o justo e o injusto, o conveniente e o prejudicial.", isCorrect: true },
+        { text: "A posse da razão e da linguagem articulada, permitindo deliberar sobre o justo e o injusto, o conveniente e o prejudicial.", isCorrect: true },
         { text: "A compleição física avantajada que capacita a espécie à caça de grandes predadores e à construção de fortalezas defensivas.", isCorrect: false },
         { text: "A inclinação instintiva automática à obediência hierárquica incondicional em relação aos chefes guerreiros do clã ancestral.", isCorrect: false },
         { text: "A aptidão intrínseca para a entesouramento pecuniário e para a estipulação mercantil de dividendos em praças públicas de comércio.", isCorrect: false }
@@ -3380,10 +3380,10 @@ const UECE_QUESTION_DATABASE = {
       context: "Leia o fragmento lírico: 'Ah, que dor dilacerante sinto no peito! Toda a minha alma sangra desamparada nesta noite de desespero imenso!'",
       question: "A ênfase expressiva colocada na interioridade do emissor, marcada por interjeições e pontuação exclamativa intensa, caracteriza predominantemente a:",
       options: [
-        { text: "Função emotiva (ou expressiva, focada na subjetividade do eu-lírico).", isCorrect: true },
-        { text: "Função fática (focada na verificação contínua do canal de contato).", isCorrect: false },
-        { text: "Função referencial (focada na exposição objetiva e neutra do contexto).", isCorrect: false },
-        { text: "Função conativa (ou apelativa, voltada a coagir a conduta do leitor).", isCorrect: false }
+        { text: "Função emotiva ou expressiva.", isCorrect: true },
+        { text: "Função fática.", isCorrect: false },
+        { text: "Função referencial.", isCorrect: false },
+        { text: "Função conativa ou apelativa.", isCorrect: false }
       ],
       explanation: "A função emotiva ou expressiva centra-se na primeira pessoa (eu), evidenciando os sentimentos, emoções e estados psicológicos do próprio locutor."
     },
@@ -3515,7 +3515,7 @@ const UECE_QUESTION_DATABASE = {
       context: "Os dados do Censo Demográfico do IBGE revelaram que grandes capitais do Nordeste, incluindo Fortaleza, registraram perda populacional ou crescimento significativamente inferior às médias históricas anteriores.",
       question: "Entre os fatores demográficos e espaciais que explicam esse fenômeno de arrefecimento demográfico nas metrópoles tradicionais, inclui-se:",
       options: [
-        { text: "A queda histórica da taxa de fecundidade e a desconcentração populacional para municípios polo do interior (como Sobral e Juazeiro do Norte) e periferias metropolitanas.", isCorrect: true },
+        { text: "A queda histórica da taxa de fecundidade e a desconcentração populacional para municípios polo do interior e periferias metropolitanas.", isCorrect: true },
         { text: "O êxodo integral das famílias metropolitanas cearenses rumo aos circuitos agrícolas cafeeiros do interior de São Paulo e do norte paranaense.", isCorrect: false },
         { text: "A aprovação de decretos normativos que limitam o matrimônio civil e instituem penalidades financeiras à reprodução familiar em áreas urbanas.", isCorrect: false },
         { text: "O recrudescimento desenfreado das taxas brutas de óbitos de recém-nascidos aos piores patamares sanitários experimentados no século XIX.", isCorrect: false }
@@ -3560,7 +3560,7 @@ const UECE_QUESTION_DATABASE = {
       context: "Em 'Ética a Nicômaco', Aristóteles investiga a natureza da virtude moral (aretê), definindo-a como um hábito deliberativo situado entre dois extremos viciosos (excesso e falta).",
       question: "A doutrina aristotélica da virtude como 'justo meio' (mesotês) exemplifica-se pelo fato de que a coragem é o equilíbrio entre:",
       options: [
-        { text: "A covardia (deficiência e falta de ânimo) e a temeridade irrefletida (excesso imprudente de audácia).", isCorrect: true },
+        { text: "A covardia por falta de ânimo e a temeridade irrefletida por excesso de audácia.", isCorrect: true },
         { text: "A sovinice acumuladora patológica e a mendicância indigente desprovida de qualquer recurso material.", isCorrect: false },
         { text: "O apego passional cego aos afetos e o rancor visceral destrutivo alimentado contra os concidadãos.", isCorrect: false },
         { text: "O comodismo contemplativo paralisante e o sacrifício suicida em combate sem prévia ponderação do dever.", isCorrect: false }
@@ -3597,8 +3597,8 @@ const UECE_QUESTION_DATABASE = {
       question: "Em relação à cinética desse sistema reacional catalisado, é correto afirmar que o catalisador atua:",
       options: [
         { text: "Diminuindo a energia de ativação da reação, proporcionando um novo caminho mecanicista para a formação do complexo ativado.", isCorrect: true },
-        { text: "Aumentando a variação de entalpia (ΔH) da reação, tornando o processo mais favorável termodinamicamente.", isCorrect: false },
-        { text: "Alterando a constante de equilíbrio químico (Kc), favorecendo unicamente a concentração dos produtos no estado final.", isCorrect: false },
+        { text: "Aumentando a variação de entalpia da reação, tornando o processo mais favorável termodinamicamente.", isCorrect: false },
+        { text: "Alterando a constante de equilíbrio químico, favorecendo unicamente a concentração dos produtos no estado final.", isCorrect: false },
         { text: "Elevando a energia cinética de todas as moléculas sem alterar a barreira de ativação dos reagentes.", isCorrect: false }
       ],
       explanation: "O catalisador não altera ΔH, nem desloca a posição do equilíbrio químico (Kc); sua função exclusiva é criar um caminho reacional alternativo com menor energia de ativação (Ea), acelerando a reação."
@@ -3611,10 +3611,10 @@ const UECE_QUESTION_DATABASE = {
       context: "O PVC (policloreto de vinila) é um dos materiais plásticos mais utilizados na construção civil cearense em canos de distribuição de água potável, esgoto sanitário e eletrodutos rígidos.",
       question: "O monômero precursor utilizado na polimerização por adição para a produção industrial do PVC é o:",
       options: [
-        { text: "Cloroeteno (cloreto de vinila: CH₂=CH-Cl).", isCorrect: true },
-        { text: "Triclorometano (clorofórmio: CHCl₃).", isCorrect: false },
-        { text: "1,2-dicloroetano saturado (CH₂Cl-CH₂Cl).", isCorrect: false },
-        { text: "Clorobenzeno aromático (C₆H₅Cl).", isCorrect: false }
+        { text: "Cloroeteno.", isCorrect: true },
+        { text: "Triclorometano.", isCorrect: false },
+        { text: "1,2-dicloroetano saturado.", isCorrect: false },
+        { text: "Clorobenzeno aromático.", isCorrect: false }
       ],
       explanation: "O PVC é obtido pela reação de polimerização por adição do cloroeteno (CH₂=CH-Cl), no qual a quebra da dupla ligação carbônica forma a cadeia polimérica (-CH₂-CHCl-)n."
     },
@@ -3626,8 +3626,8 @@ const UECE_QUESTION_DATABASE = {
       context: "A relação matemática entre a constante de equilíbrio em função das pressões parciais (Kp) e a constante em função das concentrações em quantidade de matéria (Kc) é expressa por Kp = Kc · (R · T)^(Δn), em que Δn é a variação do número de mols gasosos (produtos - reagentes).",
       question: "Em um sistema gasoso fechado a uma dada temperatura T, a igualdade numérica Kp = Kc ocorre estritamente quando:",
       options: [
-        { text: "O somatório dos coeficientes estequiométricos gasosos dos reagentes for rigorosamente igual ao dos produtos (Δn = 0).", isCorrect: true },
-        { text: "A temperatura absoluta do meio reacional for resfriada até a escala hipotética de zero Kelvin (-273,15 °C).", isCorrect: false },
+        { text: "O somatório dos coeficientes estequiométricos gasosos dos reagentes for rigorosamente igual ao dos produtos.", isCorrect: true },
+        { text: "A temperatura absoluta do meio reacional for resfriada até a escala hipotética de zero absoluto.", isCorrect: false },
         { text: "A cinética do processo for exclusivamente endotérmica e auxiliada por leito catalítico sólido poroso heterogêneo.", isCorrect: false },
         { text: "A pressão barométrica interna manométrica for evacuada integralmente até o regime assintótico de vácuo absoluto.", isCorrect: false }
       ],
@@ -3641,8 +3641,8 @@ const UECE_QUESTION_DATABASE = {
       context: "Certa massa fixa de um gás ideal, mantida sob pressão constante de 1,5 atm, ocupa inicialmente um volume de 4,0 L a uma temperatura absoluta Ti. O sistema é aquecido isobaricamente até que o volume atinja 10,0 L.",
       question: "Pela Lei de Charles e Gay-Lussac para transformações isobáricas, a relação entre a temperatura final (Tf) e a temperatura inicial (Ti) é:",
       options: [
-        { text: "5·Ti = 2·Tf (ou Tf = 2,5·Ti).", isCorrect: true },
-        { text: "Ti = 2,5·Tf (ou Tf = 0,4·Ti).", isCorrect: false },
+        { text: "5·Ti = 2·Tf.", isCorrect: true },
+        { text: "Ti = 2,5·Tf.", isCorrect: false },
         { text: "Tf = Ti + 6,0 Kelvin.", isCorrect: false },
         { text: "Tf · Ti = 40,0 Kelvin².", isCorrect: false }
       ],
@@ -3671,7 +3671,7 @@ const UECE_QUESTION_DATABASE = {
       context: "O ácido lático (ácido 2-hidroxipropanoico, CH₃-CH(OH)-COOH) acumula-se no tecido muscular durante esforços anaeróbios intensos e é largamente utilizado na indústria de laticínios cearense.",
       question: "A molécula de ácido lático exibe atividade óptica (enantiômeros dextrogiro e levogiro) devido à presença de:",
       options: [
-        { text: "Um átomo de carbono assimétrico (quiral) ligado a quatro ligantes distintos: -H, -OH, -CH₃ e -COOH.", isCorrect: true },
+        { text: "Um átomo de carbono assimétrico ligado a quatro ligantes químicos distintos.", isCorrect: true },
         { text: "Uma dupla ligação com impedimento estérico que impede a rotação molecular cis-trans.", isCorrect: false },
         { text: "Um anel aromático hexagonal com elétrons pi deslocalizados por ressonância.", isCorrect: false },
         { text: "Três átomos de oxigênio dispostos em geometria linear em torno da carbonila.", isCorrect: false }
@@ -3818,10 +3818,10 @@ const UECE_QUESTION_DATABASE = {
       context: "No plano cartesiano ortogonal ℝ², a equação de uma circunferência é expressa em sua forma geral por x² + y² - 6x - 8y = 0.",
       question: "As coordenadas do centro C e a medida do raio R dessa circunferência são, respectivamente:",
       options: [
-        { text: "Centro C(3, 4) e raio R = 5", isCorrect: true },
-        { text: "Centro C(-3, -4) e raio R = 25", isCorrect: false },
-        { text: "Centro C(6, 8) e raio R = 10", isCorrect: false },
-        { text: "Centro C(0, 0) e raio R = 7", isCorrect: false }
+        { text: "Centro no ponto 3, 4 e raio medindo 5", isCorrect: true },
+        { text: "Centro no ponto -3, -4 e raio medindo 25", isCorrect: false },
+        { text: "Centro no ponto 6, 8 e raio medindo 10", isCorrect: false },
+        { text: "Centro no ponto 0, 0 e raio medindo 7", isCorrect: false }
       ],
       explanation: "Completando quadrados: (x² - 6x + 9) + (y² - 8y + 16) = 9 + 16 ⇒ (x - 3)² + (y - 4)² = 25 = 5². Logo, o centro é C(3, 4) e o raio é R = √25 = 5."
     },
@@ -3899,7 +3899,7 @@ const UECE_QUESTION_DATABASE = {
       question: "O aumento na velocidade de liberação gasosa no caso do comprimido triturado é explicado cinematicamente pelo:",
       options: [
         { text: "Aumento da área superficial de contato, multiplicando o número de choques efetivos por unidade de tempo entre os reagentes.", isCorrect: true },
-        { text: "Elevação sensível do calor latente de transformação, duplicando o valor numérico da variação de entalpia molar padrão (ΔH).", isCorrect: false },
+        { text: "Elevação sensível do calor latente de transformação, duplicando o valor numérico da variação de entalpia molar padrão.", isCorrect: false },
         { text: "Redução forçada do coeficiente pré-exponencial de Arrhenius acompanhada do aumento da energia de ativação do sistema químico.", isCorrect: false },
         { text: "Degradação eletrolítica espontânea das moléculas do solvente com quebra homolítica de ligações e liberação de radicais livres.", isCorrect: false }
       ],
@@ -3913,10 +3913,10 @@ const UECE_QUESTION_DATABASE = {
       context: "O polietileno (PE) é o polímero de maior consumo no planeta, amplamente utilizado desde sacolas plásticas flexíveis até tanques de combustível rígidos.",
       question: "O polietileno é produzido industrialmente por meio da reação de polimerização por adição do gás hidrocarboneto:",
       options: [
-        { text: "Eteno (etileno: CH₂=CH₂).", isCorrect: true },
-        { text: "Etino (acetileno: CH≡CH).", isCorrect: false },
-        { text: "Metano (CH₄).", isCorrect: false },
-        { text: "Benzeno aromático (C₆H₆).", isCorrect: false }
+        { text: "Eteno.", isCorrect: true },
+        { text: "Etino.", isCorrect: false },
+        { text: "Metano.", isCorrect: false },
+        { text: "Benzeno aromático.", isCorrect: false }
       ],
       explanation: "O polietileno é formado a partir da adição sucessiva de monômeros de eteno (etileno: CH₂=CH₂), em que a abertura da ligação pi conecta as moléculas em longas cadeias saturadas."
     },
@@ -3943,8 +3943,8 @@ const UECE_QUESTION_DATABASE = {
       context: "Um cilindro equipado com pistão móvel sem atrito contém gás hélio ideal à temperatura estritamente constante T. O volume ocupado pelo gás é reduzido lentamente de 6,0 L para 2,0 L.",
       question: "De acordo com a Lei de Boyle para transformações isotérmicas (P · V = constante), a pressão final do gás sofrerá:",
       options: [
-        { text: "Um aumento para o triplo do seu valor original (3 · Pi).", isCorrect: true },
-        { text: "Uma redução para um terço do seu valor original (Pi / 3).", isCorrect: false },
+        { text: "Um aumento para o triplo do seu valor de pressão inicial.", isCorrect: true },
+        { text: "Uma redução para um terço do seu valor de pressão inicial.", isCorrect: false },
         { text: "Um aumento de apenas 20% em virtude da inércia dos átomos.", isCorrect: false },
         { text: "Uma redução completa para zero atm em vácuo manométrico.", isCorrect: false }
       ],
@@ -4033,10 +4033,10 @@ const UECE_QUESTION_DATABASE = {
       context: "Um casal em que o pai é do grupo sanguíneo A (heterozigoto: Iᴬi) e a mãe é do grupo sanguíneo B (heterozigota: Iᴮi) aguarda o nascimento do seu primeiro descendente biológico.",
       question: "A probabilidade de esse casal conceber uma criança do grupo sanguíneo O (doador universal do sistema ABO) é de:",
       options: [
-        { text: "25% (1/4)", isCorrect: true },
-        { text: "50% (1/2)", isCorrect: false },
-        { text: "0% (impossível)", isCorrect: false },
-        { text: "75% (3/4)", isCorrect: false }
+        { text: "25%", isCorrect: true },
+        { text: "50%", isCorrect: false },
+        { text: "0%", isCorrect: false },
+        { text: "75%", isCorrect: false }
       ],
       explanation: "Cruzamento Iᴬi × Iᴮi: genótipos possíveis são IᴬIᴮ (tipo AB - 25%), Iᴬi (tipo A - 25%), Iᴮi (tipo B - 25%) e ii (tipo O - 25%). Logo, a chance de nascer tipo O é de 25%."
     },
@@ -4078,7 +4078,7 @@ const UECE_QUESTION_DATABASE = {
       context: "Após consumir bebidas alcoólicas em um evento festivo na orla de Fortaleza, uma pessoa saudável percebe que passa a urinar com frequência incomum, produzindo grande volume de urina límpida e clara.",
       question: "Esse efeito diurético imediato provocado pelo etanol decorre do fato de que o álcool:",
       options: [
-        { text: "Inibe a secreção do hormônio antidiurético (ADH) pela hipófise posterior, diminuindo a reabsorção renal de água nos ductos coletores.", isCorrect: true },
+        { text: "Inibe a secreção do hormônio antidiurético pela hipófise posterior, diminuindo a reabsorção renal de água nos ductos coletores.", isCorrect: true },
         { text: "Promove a hiperativação das células beta pancreáticas com necrose exógena dos tecidos insulino-dependentes no parênquima.", isCorrect: false },
         { text: "Induz vasoespasmo generalizado nas artérias renais, culminando em necrose hemorrágica dos capilares glomerulares de Malpighi.", isCorrect: false },
         { text: "Provoca hipernatremia osmótica aguda, drenando fluidos vasculares para a luz vesical por efeito exclusivo de capilaridade.", isCorrect: false }
