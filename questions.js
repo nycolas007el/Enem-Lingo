@@ -3090,7 +3090,267 @@ const UECE_QUESTION_DATABASE = {
       ],
       explanation: "No contrato social hobbesiano, a renúncia mútua da liberdade natural em favor do Estado Soberano (Leviatã) tem como fim supremo a garantia da ordem, sobrevivência física e segurança coletiva."
     }
-  ],
+  ,
+
+    // ============================================================================
+    // QUESTÕES CLONES - UECE (MESMO CONTEÚDO / ABORDAGEM INÉDITA COM 4 OPÇÕES)
+    // ============================================================================
+    {
+      difficulty: "medio",
+      category: "Linguagens • Literatura Cearense",
+      topic: "UECE 2025: PADARIA ESPIRITUAL E BOEMIA LITERÁRIA (CLONE)",
+      title: "O Pão e os Estatutos Irreverentes da Agremiação",
+      context: "Dentre as regras peculiares e burlescas instituídas nos estatutos da Padaria Espiritual em Fortaleza, constava a divisão de seus membros em 'padeiros', 'forneiros' e a obrigação de 'fornecer pão de espírito sadio à população', combatendo o beletrismo estéril.",
+      question: "Sob a ótica da renovação estética das letras cearenses no final do século XIX, essa encenação carnavalesca dos membros da Padaria tinha por objetivo:",
+      options: [
+        { text: "Desmistificar a figura intocável do escritor acadêmico e democratizar o debate literário com forte senso de ironia e crítica social.", isCorrect: true },
+        { text: "Impor a censura prévia aos jornais operários fortalezenses e proibir qualquer influência do Simbolismo francês.", isCorrect: false },
+        { text: "Exaltar a monarquia portuguesa e restabelecer os cânones medievais da poesia trovadoresca.", isCorrect: false },
+        { text: "Limitar a circulação literária aos salões aristocráticos da alta burguesia cearense.", isCorrect: false }
+      ],
+      explanation: "A Padaria Espiritual usava o sarcasmo e a paródia institucional para dessacralizar a erudição vazia e aproximar a criação artística do cotidiano urbano e popular de Fortaleza."
+    },
+    {
+      difficulty: "medio",
+      category: "Linguagens • Literatura Cearense",
+      topic: "UECE 2024: O QUINZE DE RACHEL DE QUEIROZ (CLONE)",
+      title: "Conceição e Vicente: O Dilema Intelectual vs. Sertanejo",
+      context: "No romance 'O Quinze', o contraponto à marcha fúnebre dos retirantes Chico Bento e Cordulina é dado pela relação afetiva entre Conceição, professora letrada de ideias feministas e progressistas, e Vicente, criador de gado apegado à lida da terra.",
+      question: "O desenlace afetivo entre Conceição e Vicente traduz na narrativa de Rachel de Queiroz:",
+      options: [
+        { text: "A distância psicológica e cultural que separa o universo urbano ilustrado da intransigência e do pragmatismo da vida tradicional no sertão.", isCorrect: true },
+        { text: "A vitória militar das tropas legalistas sobre os cangaceiros que assolavam Quixadá.", isCorrect: false },
+        { text: "A conversão religiosa repentina de ambos os personagens ao misticismo messiânico de Juazeiro.", isCorrect: false },
+        { text: "A migração definitiva do casal para a Europa em busca de investimentos ferroviários.", isCorrect: false }
+      ],
+      explanation: "O descompasso entre a sensibilidade intelectual/urbana de Conceição e a rusticidade resignada de Vicente revela os limites de conciliação afetiva entre dois Brasis expostos pela seca."
+    },
+    {
+      difficulty: "facil",
+      category: "Linguagens • Gramática e Figuras de Sintaxe",
+      topic: "UECE 2024: FIGURAS DE LINGUAGEM E RECURSOS EXPRESSIVOS (CLONE)",
+      title: "Identificação de Metonímia e Sinestesia",
+      context: "Analise os versos modernistas: 'Ouço o cheiro amargo da poeira que sobe do chão crestado'.",
+      question: "A fusão de sensações corporais de sentidos distintos ('ouço' [audição] com 'cheiro' [olfato] e 'amargo' [paladar]) configura a figura de linguagem conhecida como:",
+      options: [
+        { text: "Sinestesia.", isCorrect: true },
+        { text: "Hipérbato.", isCorrect: false },
+        { text: "Eufemismo.", isCorrect: false },
+        { text: "Catacrese.", isCorrect: false }
+      ],
+      explanation: "Sinestesia é a figura de linguagem caracterizada pela sobreposição ou cruzamento de diferentes esferas sensoriais humanas (audição, olfato, visão, tato, paladar)."
+    },
+    {
+      difficulty: "medio",
+      category: "Linguagens • Funções da Linguagem",
+      topic: "UECE 2023: METALINGUAGEM E LINGUAGEM POÉTICA (CLONE)",
+      title: "A Função Emotiva / Expressiva no Lirismo",
+      context: "Leia o fragmento lírico: 'Ah, que dor dilacerante sinto no peito! Toda a minha alma sangra desamparada nesta noite de desespero imenso!'",
+      question: "A ênfase expressiva colocada na interioridade do emissor, marcada por interjeições e pontuação exclamativa intensa, caracteriza predominantemente a:",
+      options: [
+        { text: "Função emotiva (ou expressiva).", isCorrect: true },
+        { text: "Função fática.", isCorrect: false },
+        { text: "Função referencial.", isCorrect: false },
+        { text: "Função conativa (ou apelativa).", isCorrect: false }
+      ],
+      explanation: "A função emotiva ou expressiva centra-se na primeira pessoa (eu), evidenciando os sentimentos, emoções e estados psicológicos do próprio locutor."
+    },
+    {
+      difficulty: "medio",
+      category: "Linguagens • Literatura Brasileira",
+      topic: "UECE 2025: ROMANTISMO CEARENSE E JOSÉ DE ALENCAR (CLONE)",
+      title: "O Elemento Indigenista e a Cor Local em 'Ubirajara'",
+      context: "Ao lado de 'Iracema' e 'O Guarani', o romance 'Ubirajara' completa a tríade indianista de José de Alencar, retratando o Brasil pré-cabralino sem o contato com o colonizador europeu.",
+      question: "Nessas obras de feição indianista, Alencar constrói o protagonista autóctone como:",
+      options: [
+        { text: "Um herói cavalheiresco e nobre que encarna as virtudes éticas e o sentimento de honra característicos da fundação mítica nacional.", isCorrect: true },
+        { text: "Um bárbaro destituído de espiritualidade cuja civilização só tem início após a catequese jesuítica.", isCorrect: false },
+        { text: "Um mero coadjuvante cômico subordinado às determinações científicas do Iluminismo europeu.", isCorrect: false },
+        { text: "Um mercador pragmático focado no escambo de pau-brasil com piratas franceses.", isCorrect: false }
+      ],
+      explanation: "No Romantismo alencarino, o indígena é idealizado à semelhança dos cavaleiros medievais europeus, representando o símbolo imaculado e nobre da nacionalidade brasileira."
+    },
+    {
+      difficulty: "dificil",
+      category: "Linguagens • Semântica e Coesão",
+      topic: "UECE 2026: POLISSEMIA E CONECTIVOS ARGUMENTATIVOS (CLONE)",
+      title: "Relações Sintático-Semânticas de Proporcionalidade e Causa",
+      context: "Considere a frase: 'À proporção que as chuvas de inverno tardavam a chegar ao sertão dos Inhamuns, intensificava-se a angústia dos pequenos agricultores familiares.'",
+      question: "A locução conjuntiva 'À proporção que' expressa formalmente uma relação circunstancial de:",
+      options: [
+        { text: "Proporcionalidade concomitante entre dois processos graduais.", isCorrect: true },
+        { text: "Finalidade intencional direcionada à colheita.", isCorrect: false },
+        { text: "Concessão imprevista que anula a perda da safra.", isCorrect: false },
+        { text: "Comparação estática entre climas regionais dispares.", isCorrect: false }
+      ],
+      explanation: "'À proporção que' (assim como 'à medida que') introduz uma oração subordinada adverbial proporcional, indicando variação concomitante entre grandezas."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2024: A SEDIÇÃO DE JUAZEIRO (1914) (CLONE)",
+      title: "O 'Pacto dos Coronéis' de 1911 e a Liderança Caririense",
+      context: "Em 1911, antes da eclosão armada da Sedição de Juazeiro, lideranças políticas e grandes proprietários de terras do Vale do Cariri reuniram-se para firmar o 'Pacto dos Coronéis', mediado por Padre Cícero.",
+      question: "O principal propósito do 'Pacto dos Coronéis' no cenário político cearense da Primeira República foi:",
+      options: [
+        { text: "Cessar os conflitos sangrentos entre as oligarquias regionais, assegurando a hegemonia conservadora e o apoio coeso ao governo Nogueira Accioly.", isCorrect: true },
+        { text: "Abolir o latifúndio no Ceará e implementar a reforma agrária popular nas encostas da Chapada do Araripe.", isCorrect: false },
+        { text: "Proclamar a independência do Cariri em relação ao restante do território brasileiro.", isCorrect: false },
+        { text: "Entregar a administração fiscal de Juazeiro do Norte ao Exército federal legalista.", isCorrect: false }
+      ],
+      explanation: "O Pacto de 1911 unificou os coronéis do Cariri sob a liderança pacificadora de Padre Cícero e Floro Bartolomeu, consolidando a influência política de Juazeiro perante a capital Fortaleza."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2023: O CALDEIRÃO DA SANTA CRUZ DO DESERTO (CLONE)",
+      title: "A Produção Cooperativa e a Autonomia Camponesa",
+      context: "A comunidade camponesa do Caldeirão dos Jesuítas sustentava-se com ampla produção de mandioca, milho, feijão e algodão, mantendo armazéns comunitários e um padrão de vida superior ao dos trabalhadores submetidos aos regimes de servidão dos latifúndios vizinhos.",
+      question: "Essa prosperidade autônoma do Caldeirão causou grande apreensão entre os coronéis cearenses porque:",
+      options: [
+        { text: "Esvaziava os latifúndios vizinhos ao atrair a mão de obra sertaneja que fugia da exploração do sistema tradicional de meação e cambão.", isCorrect: true },
+        { text: "Exigia a destruição de todas as igrejas e oratórios católicos de Juazeiro do Norte.", isCorrect: false },
+        { text: "Financiava a importação ilegal de armamentos pesados da Alemanha nazista.", isCorrect: false },
+        { text: "Monopolizava as exportações de café brasileiro para a América do Norte.", isCorrect: false }
+      ],
+      explanation: "A abundância e autonomia comunitária do Caldeirão minavam a sujeição dos trabalhadores rurais aos coronéis, que viam na comunidade um péssimo exemplo para a subserviência do campesinato sertanejo."
+    },
+    {
+      difficulty: "facil",
+      category: "Ciências Humanas • História do Ceará",
+      topic: "UECE 2025: A TERRA DA LUZ E A ABOLIÇÃO DE 1884 (CLONE)",
+      title: "A Sociedade Libertadora Cearense e a Imprensa Abolicionista",
+      context: "A campanha abolicionista no Ceará na década de 1880 destacou-se pela intensa agitação cívica da 'Sociedade Cearense Libertadora' e pelo jornal 'O Libertador', fundado por intelectuais como João Cordeiro e Antônio Bezerra.",
+      question: "A estratégia adotada pelo movimento abolicionista no Ceará que viabilizou a libertação antecipada dos escravizados em 1884 combinava:",
+      options: [
+        { text: "Mobilização popular urbana, pressão sobre a alfândega portuária e arrecadação contínua de fundos para compra de alforrias município a município.", isCorrect: true },
+        { text: "Invasão militar de senzalas com apoio direto de canhoneiras da marinha real britânica.", isCorrect: false },
+        { text: "Submissão cega às ordens dos cafeicultores escravistas do Vale do Paraíba fluminense.", isCorrect: false },
+        { text: "Exclusão sumária das mulheres e dos jangadeiros de qualquer passeata cívica em Fortaleza.", isCorrect: false }
+      ],
+      explanation: "O Ceará articulou a ação de massa (greve de jangadeiros liderada por Dragão do Mar), imprensa combativa e fundos de emancipação de Redenção a Fortaleza, tornando-se pioneiro nacional."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • História do Brasil e Ceará",
+      topic: "UECE 2022: A CONFEDERAÇÃO DO EQUADOR (1824) (CLONE)",
+      title: "Bárbara de Alencar e o Martírio Republicano no Cariri",
+      context: "A luta pelas liberdades republicanas e federativas no Ceará teve como pioneira Bárbara de Alencar (mãe de Tristão Gonçalves), que participou ativamente da Revolução Pernambucana de 1817 e da Confederação do Equador de 1824.",
+      question: "A atuação feminina e republicana de Bárbara de Alencar destacou-se por ter sido:",
+      options: [
+        { text: "A primeira presa política do Brasil, desafiando a monarquia em defesa do autogoverno do Nordeste e dos ideais republicanos iluministas.", isCorrect: true },
+        { text: "A comandante da Guarda Imperial encarregada de dissolver a Constituinte no Rio de Janeiro.", isCorrect: false },
+        { text: "A negociadora que solicitou a anexação da Província do Ceará ao Reino Unido de Portugal.", isCorrect: false },
+        { text: "Uma defensora ferrenha do absolutismo e do Poder Moderador de D. Pedro I no Cariri.", isCorrect: false }
+      ],
+      explanation: "Bárbara de Alencar é reconhecida como a primeira presa política da história brasileira por seu heroico engajamento nas revoltas republicanas de 1817 e 1824 no Crato e em Fortaleza."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Geografia do Ceará",
+      topic: "UECE 2025: BACIA DO JAGUARIBE E O CINTURÃO DAS ÁGUAS (CLONE)",
+      title: "Açude Orós e a Hidroconflitividade no Semiárido",
+      context: "Inaugurado na década de 1960 pelo presidente Juscelino Kubitschek, o Açude Orós foi durante quatro décadas o maior reservatório hídrico cearense, até ser superado pelo Açude Castanhão em 2002.",
+      question: "A construção das grandes barragens no leito do Rio Jaguaribe teve por objetivo geoestratégico primordial:",
+      options: [
+        { text: "Perenizar o curso d'água outrora intermitente e amortecer os impactos catastróficos dos ciclos periódicos de seca sobre a população sertaneja.", isCorrect: true },
+        { text: "Interromper totalmente a irrigação no interior para destinar água exclusivamente à produção de celulose no exterior.", isCorrect: false },
+        { text: "Transformar a Caatinga em uma densa floresta de coníferas com clima subtropical de altitude.", isCorrect: false },
+        { text: "Secar as lagoas naturais do litoral para permitir a mineração de carvão mineral fóssil.", isCorrect: false }
+      ],
+      explanation: "A política hidráulica no Ceará (DNOCS e COGERH) construiu açudes como Orós e Castanhão para regularizar a vazão do Jaguaribe, perenizando o rio e abastecendo comunidades agrícolas e cidades."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Geografia do Ceará",
+      topic: "UECE 2024: NÚCLEOS DE DESERTIFICAÇÃO NO CEARÁ (CLONE)",
+      title: "O Papel da Pecuária e da Silvicultura Predatória na Perda de Solo",
+      context: "Nos sertões do Médio Jaguaribe e na região de Irauçuba, a remoção da cobertura lenhosa de Caatinga para uso energético em olarias e padarias expõe os horizontes superficiais do solo à radiação solar e às chuvas torrenciais concentradas.",
+      question: "O processo morfoclimático e antrópico que culmina na formação de pavimentos desérticos e perda definitiva de fertilidade pedológica denomina-se:",
+      options: [
+        { text: "Arenização e erosão laminar severa com formação de crostas impermeáveis no solo cristalino.", isCorrect: true },
+        { text: "Podzolização alpina induzida pelo congelamento estacional do lençol freático.", isCorrect: false },
+        { text: "Laterização ácida gerada pela proliferação de turfeiras pantanosas.", isCorrect: false },
+        { text: "Sedimentação eólica exclusiva oriunda da Cordilheira dos Andes.", isCorrect: false }
+      ],
+      explanation: "Em solos cristalinos rasos como os de Irauçuba, a retirada da Caatinga gera erosão laminar, lixiviação e formação de crosta dura pedregosa (pavimento desértico), consolidando a desertificação."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Geografia e Demografia",
+      topic: "UECE 2024: CENSO DEMOGRÁFICO DO IBGE NO CEARÁ (CLONE)",
+      title: "Desaceleração Demográfica da Região Metropolitana de Fortaleza",
+      context: "Os dados do Censo Demográfico do IBGE revelaram que grandes capitais do Nordeste, incluindo Fortaleza, registraram perda populacional ou crescimento significativamente inferior às médias históricas anteriores.",
+      question: "Entre os fatores demográficos e espaciais que explicam esse fenômeno de arrefecimento demográfico nas metrópoles tradicionais, inclui-se:",
+      options: [
+        { text: "A queda histórica da taxa de fecundidade e a desconcentração populacional para municípios polo do interior (como Sobral e Juazeiro do Norte) e periferias metropolitanas.", isCorrect: true },
+        { text: "A migração em massa de toda a população cearense de volta para a agricultura cafeeira do interior paulista.", isCorrect: false },
+        { text: "A promulgação de leis estaduais que proíbem o casamento civil e a natalidade urbana.", isCorrect: false },
+        { text: "A elevação da mortalidade infantil para os maiores índices registrados desde o século XIX.", isCorrect: false }
+      ],
+      explanation: "A transição demográfica (queda expressiva na taxa de fecundidade) somada ao transbordamento demográfico para cidades médias dinamizadas no interior explica o menor ritmo de crescimento das metrópoles."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Filosofia Contemporânea",
+      topic: "UECE 2025: MICHEL FOUCAULT E O BIOPODER (CLONE)",
+      title: "As Instituições Disciplinares e o Panoptismo",
+      context: "Em 'Vigiar e Punir', Michel Foucault analisa a passagem dos suplícios públicos monárquicos para o modelo carcerário moderno, valendo-se do projeto arquitetônico do Panóptico idealizado por Jeremy Bentham.",
+      question: "O princípio estrutural do Panóptico foucaultiano repousa na:",
+      options: [
+        { text: "Sensação permanente de visibilidade e vigilância exercida sobre o indivíduo, induzindo a autodisciplina e a docilização dos corpos.", isCorrect: true },
+        { text: "Tortura física permanente televisionada para incutir o terror nas praças públicas.", isCorrect: false },
+        { text: "Libertação irrestrita de todos os encarcerados para garantir o pleno livre-arbítrio.", isCorrect: false },
+        { text: "Subordinação de todas as fábricas e prisões à autoridade teológica do Vaticano.", isCorrect: false }
+      ],
+      explanation: "O Panóptico baseia-se na vigilância invisível e contínua: sabendo que pode ser visto a qualquer instante, o vigiado interioriza a norma e vigia o próprio comportamento (corpo dócil)."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências Humanas • Filosofia Moderna e Epistemologia",
+      topic: "UECE 2024: WITTGENSTEIN E OS LIMITES DA LINGUAGEM (CLONE)",
+      title: "Os Jogos de Linguagem nas 'Investigações Filosóficas'",
+      context: "Em sua fase madura ('Investigações Filosóficas'), Ludwig Wittgenstein revisou suas ideias iniciais do 'Tractatus' e formulou o célebre conceito de 'jogos de linguagem' (Sprachspiele).",
+      question: "Na concepção do 'segundo Wittgenstein', o significado de uma palavra é determinado:",
+      options: [
+        { text: "Pelo seu uso prático e contextualizado nas diversas formas de vida e atividades humanas cotidianas.", isCorrect: true },
+        { text: "Pela essência eterna e imutável que a palavra reflete no mundo inteligível platônico.", isCorrect: false },
+        { text: "Pela rigorosa correspondência biunívoca matemática entre a sílaba e um átomo químico específico.", isCorrect: false },
+        { text: "Pela aprovação formal de um dicionário oficial instituído pelo poder estatal centralizador.", isCorrect: false }
+      ],
+      explanation: "Nas Investigações Filosóficas, o significado não é uma imagem estática da realidade, mas decorre do seu uso concreto nos 'jogos de linguagem' tecidos nas formas de vida (Lebensformen)."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Filosofia Política Clássica",
+      topic: "UECE 2023: ARISTÓTELES E O ANIMAL POLÍTICO (CLONE)",
+      title: "A Ética a Nicômaco e a Teoria da Justa Medida",
+      context: "Em 'Ética a Nicômaco', Aristóteles investiga a natureza da virtude moral (aretê), definindo-a como um hábito deliberativo situado entre dois extremos viciosos (excesso e falta).",
+      question: "A doutrina aristotélica da virtude como 'justo meio' (mesotês) exemplifica-se pelo fato de que a coragem é o equilíbrio entre:",
+      options: [
+        { text: "A covardia (deficiência/falta de ânimo) e a temeridade irrefletida (excesso de audácia).", isCorrect: true },
+        { text: "A avareza desmedida e a miséria forçada.", isCorrect: false },
+        { text: "O amor incondicional e o ódio visceral sem justificativa.", isCorrect: false },
+        { text: "A preguiça contemplativa e o suicídio sacrificial perante o exército inimigo.", isCorrect: false }
+      ],
+      explanation: "Para Aristóteles, a virtude moral reside no caminho do meio (justa medida ponderada pela prudência racional): a coragem é a justa postura entre a covardia e a imprudência temerária."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências Humanas • Filosofia Política Moderna",
+      topic: "UECE 2025: THOMAS HOBBES E O ESTADO DE NATUREZA (CLONE)",
+      title: "Poder Soberano Indivisível e as Leis Civis",
+      context: "Ao estruturar as prerrogativas do Soberano no 'Leviatã', Hobbes argumenta que a soberania estatal deve ser una e indivisível, rejeitando a fragmentação do poder entre parlamento e rei.",
+      question: "Para Hobbes, a divisão da autoridade soberana entre diferentes poderes autônomos constitui um risco fatal porque:",
+      options: [
+        { text: "Gera facções rivais e instabilidade jurídica, recriando as condições que conduzem a sociedade de volta à guerra civil do estado de natureza.", isCorrect: true },
+        { text: "Impede que o clero católico assuma o comando do exército permanente nacional.", isCorrect: false },
+        { text: "Torna obrigatória a distribuição gratuita de terras a todos os cidadãos sem tributos.", isCorrect: false },
+        { text: "Viola as prescrições biológicas da teoria evolucionista de Darwin.", isCorrect: false }
+      ],
+      explanation: "Hobbes temia que a fragmentação do poder político (como ocorrido na Guerra Civil Inglesa) destruísse a eficácia do pacto protetivo, mergulhando a sociedade novamente no caos da violência e do medo."
+    },
+],
 
   natureza_matematica: [
     // ==========================================
@@ -3393,7 +3653,297 @@ const UECE_QUESTION_DATABASE = {
       ],
       explanation: "Pelo Teorema do Resto: Resto = P(-1) = 4. Substituindo x = -1: (-1)²⁰²⁴ + 3·(-1)²⁰²³ + k = 4 ⇒ 1 + 3·(-1) + k = 4 ⇒ 1 - 3 + k = 4 ⇒ -2 + k = 4 ⇒ k = 6."
     }
-  ]
+  ,
+
+    // ============================================================================
+    // QUESTÕES CLONES - NATUREZA & MATEMÁTICA UECE (4 OPÇÕES)
+    // ============================================================================
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Físico-Química",
+      topic: "UECE 2025: CINÉTICA QUÍMICA E CATÁLISE (CLONE)",
+      title: "Fatores que Modificam a Velocidade: Superfície de Contato",
+      context: "Ao dissolver um comprimido efervescente de mesma massa em copos com água à mesma temperatura (25 °C), o comprimido triturado (em pó) reage com efervescência muito mais rápida do que o comprimido inteiro em pastilha sólida.",
+      question: "O aumento na velocidade de liberação gasosa no caso do comprimido triturado é explicado cinematicamente pelo:",
+      options: [
+        { text: "Aumento da área superficial de contato, multiplicando o número de choques efetivos por unidade de tempo entre os reagentes.", isCorrect: true },
+        { text: "Aumento expressivo do calor de reação que dobra o valor da entalpia padrão (ΔH).", isCorrect: false },
+        { text: "Abaixamento forçado da constante de velocidade k de Arrhenius.", isCorrect: false },
+        { text: "Consumo prematuro da água do solvente por eletrólise espontânea.", isCorrect: false }
+      ],
+      explanation: "Quanto maior o estado de divisão de um reagente sólido (maior superfície de contato), maior é a exposição das partículas às colisões moleculares favoráveis, elevando a velocidade reacional."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Química Orgânica",
+      topic: "UECE 2024: POLÍMEROS SINTÉTICOS E MONÔMEROS (CLONE)",
+      title: "Polietileno de Alta e Baixa Densidade (PEAD e PEBD)",
+      context: "O polietileno (PE) é o polímero de maior consumo no planeta, amplamente utilizado desde sacolas plásticas flexíveis até tanques de combustível rígidos.",
+      question: "O polietileno é produzido industrialmente por meio da reação de polimerização por adição do gás hidrocarboneto:",
+      options: [
+        { text: "Eteno (etileno: CH₂=CH₂).", isCorrect: true },
+        { text: "Etino (acetileno: CH≡CH).", isCorrect: false },
+        { text: "Metano (CH₄).", isCorrect: false },
+        { text: "Benzeno aromático (C₆H₆).", isCorrect: false }
+      ],
+      explanation: "O polietileno é formado a partir da adição sucessiva de monômeros de eteno (etileno: CH₂=CH₂), em que a abertura da ligação pi conecta as moléculas em longas cadeias saturadas."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Equilíbrio Químico",
+      topic: "UECE 2024: CONSTANTE DE EQUILÍBRIO Kc E Kp (CLONE)",
+      title: "Princípio de Le Chatelier e Variação de Pressão",
+      context: "Considere a síntese do gás amônia em equilíbrio a 450 °C: N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g) + calor (ΔH < 0).",
+      question: "Com base no Princípio de Le Chatelier, para deslocar o equilíbrio no sentido de aumentar o rendimento na formação de amônia (NH₃), deve-se:",
+      options: [
+        { text: "Aumentar a pressão total sobre o sistema mantendo o volume reduzido.", isCorrect: true },
+        { text: "Aumentar a temperatura do sistema térmico do reator.", isCorrect: false },
+        { text: "Remover continuamente os reagentes N₂ e H₂ do recipiente.", isCorrect: false },
+        { text: "Adicionar um gás nobre inerte à volume estritamente constante.", isCorrect: false }
+      ],
+      explanation: "Reagentes: 1+3 = 4 mols de gás; Produtos: 2 mols de gás. O aumento de pressão desloca o equilíbrio para o lado de menor volume gasoso (formação de NH₃). Sendo exotérmica, resfriar também ajudaria."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Termodinâmica e Gases",
+      topic: "UECE 2023: ESTUDO DOS GASES IDEAIS (CLONE)",
+      title: "Transformação Isotérmica e Lei de Boyle-Mariotte",
+      context: "Um cilindro equipado com pistão móvel sem atrito contém gás hélio ideal à temperatura estritamente constante T. O volume ocupado pelo gás é reduzido lentamente de 6,0 L para 2,0 L.",
+      question: "De acordo com a Lei de Boyle para transformações isotérmicas (P · V = constante), a pressão final do gás sofrerá:",
+      options: [
+        { text: "Um aumento para o triplo do seu valor original (3 · Pi).", isCorrect: true },
+        { text: "Uma redução para um terço do seu valor original (Pi / 3).", isCorrect: false },
+        { text: "Um aumento de apenas 20% em virtude da inércia dos átomos.", isCorrect: false },
+        { text: "Uma redução completa para zero atm em vácuo manométrico.", isCorrect: false }
+      ],
+      explanation: "Isotérmica: P₁·V₁ = P₂·V₂ ⇒ Pi · 6,0 = Pf · 2,0 ⇒ Pf = (6/2) · Pi = 3·Pi. Reduzir o volume a 1/3 faz a pressão triplicar."
+    },
+    {
+      difficulty: "facil",
+      category: "Ciências da Natureza • Propriedades Coligativas",
+      topic: "UECE 2025: TONOSCOPIA E EBULIOSCOPIA (CLONE)",
+      title: "Osmose e Aplicação no Salgamento de Carnes",
+      context: "O salgamento tradicional da carne de sol e da carne-seca (charque) praticado no sertão nordestino é um método ancestral de conservação de alimentos que impede a deterioração bacteriana.",
+      question: "A eficácia biológica do salgamento na conservação dos alimentos baseia-se no princípio físico-químico da:",
+      options: [
+        { text: "Osmose, promovendo a perda maciça de água por desidratação das células dos micro-organismos decompositores devido ao meio hipertônico.", isCorrect: true },
+        { text: "Condensação de vapor que resfria a carne abaixo do ponto crioscópico.", isCorrect: false },
+        { text: "Polimerização de proteínas que transforma gordura em quitina sólida.", isCorrect: false },
+        { text: "Liberação de radiação ultravioleta esterilizante pelos cristais de NaCl.", isCorrect: false }
+      ],
+      explanation: "A alta concentração de sal gera meio hipertônico; a água do interior das células bacterianas migra para o exterior por osmose, provocando plasmólise e inviabilizando sua proliferação."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Isomeria e Estereoquímica",
+      topic: "UECE 2026: ISOMERIA ÓPTICA NO ÁCIDO LÁTICO (CLONE)",
+      title: "Mistura Racêmica e Ausência de Desvio Óptico",
+      context: "Um laboratório farmacêutico sintetiza em laboratório uma amostra equimolar (proporção 50% de enantiômero dextrogiro e 50% de enantiômero levogiro) do princípio ativo de um analgésico quiral.",
+      question: "Ao submeter essa amostra equimolar ao feixe de luz de um polarímetro, constata-se que ela:",
+      options: [
+        { text: "É opticamente inativa por compensação externa, pois o desvio para a direita de um enantiômero é anulado pelo desvio para a esquerda do outro.", isCorrect: true },
+        { text: "Desvia a luz polarizada a 90 graus no plano vertical por ressonância magnética.", isCorrect: false },
+        { text: "Converte-se espontaneamente em um alcano cíclico desprovido de isomeria plana.", isCorrect: false },
+        { text: "Apresenta atividade óptica dobrada em relação aos isômeros puros.", isCorrect: false }
+      ],
+      explanation: "Uma mistura racêmica é formada por partes iguais de enantiômeros d e l, resultando em desvio óptico nulo ($lpha = 0$) devido à compensação externa mútua."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Óptica Geométrica",
+      topic: "UECE 2024: ESPELHOS ESFÉRICOS E ASSOCIAÇÃO (CLONE)",
+      title: "Espelho Convexo e Retrovisores Automotivos",
+      context: "Os espelhos retrovisores externos laterais dos automóveis modernos são convexos e trazem a inscrição gravada em inglês: 'Objects in mirror are closer than they appear'.",
+      question: "A opção técnica pela geometria convexa nos espelhos retrovisores justifica-se pelo fato de que eles formam imagens:",
+      options: [
+        { text: "Virtuais, direitas e menores que o objeto, proporcionando um campo visual muito mais amplo ao motorista.", isCorrect: true },
+        { text: "Reais, invertidas e ampliadas, projetadas diretamente na retina do condutor.", isCorrect: false },
+        { text: "Completamente deformadas e destituídas de foco geométrico estável.", isCorrect: false },
+        { text: "Dotadas de inversão cromática com ampliação de sombras noturnas.", isCorrect: false }
+      ],
+      explanation: "Espelhos convexos formam, para qualquer objeto real, imagens virtuais, direitas e reduzidas. A redução das imagens permite enquadrar um campo de visão consideravelmente maior."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Mecânica e Energia",
+      topic: "UECE 2025: TRABALHO, ATRITO E FRENAGEM (CLONE)",
+      title: "Trabalho da Força Gravitacional e Energia Potencial",
+      context: "Um bloco de granito de massa 50 kg despenca do alto de uma pedreira cearense a partir do repouso de uma altura de 20 metros. Desprezando a resistência do ar e adotando g = 10 m/s²:",
+      question: "A velocidade com que o bloco atinge o solo no fundo da cava da pedreira é igual a:",
+      options: [
+        { text: "20 m/s", isCorrect: true },
+        { text: "40 m/s", isCorrect: false },
+        { text: "10 m/s", isCorrect: false },
+        { text: "200 m/s", isCorrect: false }
+      ],
+      explanation: "Conservação de energia mecânica: Ep = Ec ⇒ m·g·h = (1/2)·m·v² ⇒ v = √(2·g·h) = √(2 × 10 × 20) = √400 = 20 m/s."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Eletromagnetismo",
+      topic: "UECE 2023: INDUÇÃO ELETROMAGNÉTICA DE FARADAY (CLONE)",
+      title: "Transformadores de Tensão e Relação de Espiras",
+      context: "Em uma subestação de energia elétrica da Enel Ceará, um transformador ideal recebe no enrolamento primário uma tensão alternada eficaz de 2200 V e deve fornecer no secundário uma tensão de 220 V para uma rede residencial.",
+      question: "Para obter essa redução de tensão, a razão entre o número de espiras do primário (N₁) e do secundário (N₂) deve ser:",
+      options: [
+        { text: "N₁ / N₂ = 10", isCorrect: true },
+        { text: "N₁ / N₂ = 0,1", isCorrect: false },
+        { text: "N₁ / N₂ = 100", isCorrect: false },
+        { text: "N₁ / N₂ = 1", isCorrect: false }
+      ],
+      explanation: "Equação do transformador ideal: V₁ / V₂ = N₁ / N₂ ⇒ 2200 / 220 = 10. O enrolamento primário deve possuir 10 vezes o número de espiras do enrolamento secundário."
+    },
+    {
+      difficulty: "facil",
+      category: "Ciências da Natureza • Genética Clássica",
+      topic: "UECE 2025: SISTEMA ABO E TRANSFUSÃO SANGUÍNEA (CLONE)",
+      title: "Determinação Genotípica e Cruzamentos ABO",
+      context: "Um casal em que o pai é do grupo sanguíneo A (heterozigoto: Iᴬi) e a mãe é do grupo sanguíneo B (heterozigota: Iᴮi) aguarda o nascimento do seu primeiro descendente biológico.",
+      question: "A probabilidade de esse casal conceber uma criança do grupo sanguíneo O (doador universal do sistema ABO) é de:",
+      options: [
+        { text: "25% (1/4)", isCorrect: true },
+        { text: "50% (1/2)", isCorrect: false },
+        { text: "0% (impossível)", isCorrect: false },
+        { text: "75% (3/4)", isCorrect: false }
+      ],
+      explanation: "Cruzamento Iᴬi × Iᴮi: genótipos possíveis são IᴬIᴮ (tipo AB - 25%), Iᴬi (tipo A - 25%), Iᴮi (tipo B - 25%) e ii (tipo O - 25%). Logo, a chance de nascer tipo O é de 25%."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Ecologia e Cadeias Tróficas",
+      topic: "UECE 2024: MAGNIFICAÇÃO TRÓFICA E POLUIÇÃO (CLONE)",
+      title: "Fluxo Unidirecional de Energia vs. Ciclagem da Matéria",
+      context: "Ao longo dos níveis tróficos de uma teia alimentar em equilíbrio biológico no Parque Estadual do Cocó em Fortaleza, os nutrientes minerais e a energia solar comportam-se de maneiras distintas.",
+      question: "Sobre o fluxo energético e biogeoquímico nas teias ecológicas, é correto afirmar que:",
+      options: [
+        { text: "A energia flui de modo unidirecional e decrescente a cada nível trófico, enquanto a matéria é ciclada continuamente no ecossistema.", isCorrect: true },
+        { text: "A energia acumula-se ciclicamente aumentando a cada nível em direção aos produtores.", isCorrect: false },
+        { text: "A matéria desaparece completamente no nível dos carnívoros sem retorno ao solo.", isCorrect: false },
+        { text: "Os decompositores produzem nova energia a partir do nada contrariando a termodinâmica.", isCorrect: false }
+      ],
+      explanation: "A energia dissipa-se como calor (fluxo unidirecional decrescente), ao passo que os elementos químicos (carbono, nitrogênio, fósforo) são reciclados pelos decompositores."
+    },
+    {
+      difficulty: "medio",
+      category: "Ciências da Natureza • Botânica e Evolução Vegetal",
+      topic: "UECE 2023: ADAPTAÇÕES DA VEGETAÇÃO DA CAATINGA (CLONE)",
+      title: "Plantas Caducifólias e o Mecanismo de Abscisão Foliar",
+      context: "Uma das estratégias adaptativas mais espetaculares das árvores da Caatinga (como a catingueira e o umbuzeiro) durante os meses de estiagem rigorosa é a perda quase total de suas folhas, tornando a mata aparentemente cinzenta e morta.",
+      question: "A queda estacional das folhas (caducifólia) representa para a planta do semiárido:",
+      options: [
+        { text: "Um mecanismo fisiológico de economia hídrica que cessa a perda de água por transpiração foliar estomática.", isCorrect: true },
+        { text: "Um ataque viral letal que causa a decomposição instantânea das raízes axiais.", isCorrect: false },
+        { text: "Um processo que impede a fecundação de flores polinizadas pelo vento.", isCorrect: false },
+        { text: "Uma mutação aleatória que diminui o teor de amido no parênquima radicular.", isCorrect: false }
+      ],
+      explanation: "A perda das folhas (abscisão foliar) elimina a principal superfície de evapotranspiração da planta, permitindo que a árvore sobreviva aos meses secos com a água estocada nos troncos e raízes."
+    },
+    {
+      difficulty: "dificil",
+      category: "Ciências da Natureza • Fisiologia Humana",
+      topic: "UECE 2025: OSMORREGULAÇÃO E HORMÔNIO ADH (CLONE)",
+      title: "Ingestão de Bebidas Alcoólicas e a Inibição do ADH",
+      context: "Após consumir bebidas alcoólicas em um evento festivo na orla de Fortaleza, uma pessoa saudável percebe que passa a urinar com frequência incomum, produzindo grande volume de urina límpida e clara.",
+      question: "Esse efeito diurético imediato provocado pelo etanol decorre do fato de que o álcool:",
+      options: [
+        { text: "Inibe a secreção do hormônio antidiurético (ADH) pela hipófise posterior, diminuindo a reabsorção renal de água nos ductos coletores.", isCorrect: true },
+        { text: "Estimula a síntese acelerada de insulina destruindo as ilhotas pancreáticas.", isCorrect: false },
+        { text: "Provoca vasoconstrição renal total com necrose glomerular hemorrágica.", isCorrect: false },
+        { text: "Aumenta drasticamente o teor de sódio no sangue atraindo água para a bexiga por capilaridade.", isCorrect: false }
+      ],
+      explanation: "O álcool etílico inibe a liberação de ADH pelo hipotálamo/neuroipófise. Sem ADH, os túbulos coletores reabsorvem menos água, levando à diurese intensa e desidratação (ressaca)."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Geometria Plana",
+      topic: "UECE 2024: POLÍGONOS REGULARES E HEXÁGONO (CLONE)",
+      title: "Apótema e Área do Triângulo Equilátero",
+      context: "Um terreno triangular equilátero no município de Maracanaú possui lado medindo 12 metros de comprimento.",
+      question: "A altura h e a área total A desse terreno triangular em metros quadrados são, respectivamente:",
+      options: [
+        { text: "Altura h = 6√3 m e Área A = 36√3 m²", isCorrect: true },
+        { text: "Altura h = 12√3 m e Área A = 72√3 m²", isCorrect: false },
+        { text: "Altura h = 6 m e Área A = 72 m²", isCorrect: false },
+        { text: "Altura h = 3√3 m e Área A = 18√3 m²", isCorrect: false }
+      ],
+      explanation: "Em um triângulo equilátero de lado L = 12: Altura h = (L·√3)/2 = (12√3)/2 = 6√3 m. Área A = (L²·√3)/4 = (144√3)/4 = 36√3 m²."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Geometria Analítica",
+      topic: "UECE 2024: EQUAÇÃO DA CIRCUNFERÊNCIA E RETAS (CLONE)",
+      title: "Distância de um Ponto a uma Reta no Plano",
+      context: "No plano cartesiano ℝ², considere o ponto P(1, 2) e a reta r representada pela equação geral 3x + 4y - 1 = 0.",
+      question: "A distância d perpendicular do ponto P até a reta r é rigorosamente igual a:",
+      options: [
+        { text: "d = 2 unidades", isCorrect: true },
+        { text: "d = 5 unidades", isCorrect: false },
+        { text: "d = 10 unidades", isCorrect: false },
+        { text: "d = 1 unidade", isCorrect: false }
+      ],
+      explanation: "Fórmula da distância de ponto a reta: d = |a·x₀ + b·y₀ + c| / √(a² + b²) = |3(1) + 4(2) - 1| / √(3² + 4²) = |3 + 8 - 1| / √25 = 10 / 5 = 2."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Análise Combinatória",
+      topic: "UECE 2025: PRINCÍPIO FUNDAMENTAL DA CONTAGEM (CLONE)",
+      title: "Anagramas com Letras Juntas de uma Palavra",
+      context: "Considere a palavra CEARÁ (composta pelas letras C, E, A, R, Á, que para fins de contagem combinatória trataremos como 5 letras distintas {C, E, A, R, X}).",
+      question: "A quantidade de anagramas formados por essas 5 letras em que as vogais fiquem sempre juntas em bloco é igual a:",
+      options: [
+        { text: "24", isCorrect: true },
+        { text: "120", isCorrect: false },
+        { text: "60", isCorrect: false },
+        { text: "12", isCorrect: false }
+      ],
+      explanation: "Tratando as duas vogais como um único bloco [Vogais]: temos 3 blocos consonantais/gerais (C, R e [V]) que permutam entre si de P₃ = 3! = 6 maneiras. As 2 vogais internas permutam de 2! = 2 maneiras. Total: 6 × 2 = 24 anagramas (considerando letras distintas)."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Números Complexos",
+      topic: "UECE 2023: POTÊNCIAS DA UNIDADE IMAGINÁRIA (CLONE)",
+      title: "Módulo e Conjugado no Plano de Argand-Gauss",
+      context: "Seja o número complexo z = 3 - 4i no plano de Argand-Gauss, onde i² = -1.",
+      question: "O módulo |z| e o número complexo conjugado z̄ são expressos, respectivamente, por:",
+      options: [
+        { text: "|z| = 5 e z̄ = 3 + 4i", isCorrect: true },
+        { text: "|z| = 25 e z̄ = -3 + 4i", isCorrect: false },
+        { text: "|z| = 7 e z̄ = 3 - 4i", isCorrect: false },
+        { text: "|z| = 1 e z̄ = -3 - 4i", isCorrect: false }
+      ],
+      explanation: "Módulo: |z| = √(a² + b²) = √(3² + (-4)²) = √(9 + 16) = √25 = 5. O conjugado z̄ inverte o sinal da parte imaginária: z̄ = 3 + 4i."
+    },
+    {
+      difficulty: "medio",
+      category: "Matemática • Sequências e Progressões",
+      topic: "UECE 2025: PROGRESSÃO GEOMÉTRICA INFINITA (CLONE)",
+      title: "Soma Finita dos Termos de uma PG",
+      context: "Uma sequência em progressão geométrica finita tem primeiro termo a₁ = 3 e razão q = 2.",
+      question: "A soma dos 6 primeiros termos (S₆) dessa progressão geométrica é rigorosamente igual a:",
+      options: [
+        { text: "189", isCorrect: true },
+        { text: "192", isCorrect: false },
+        { text: "96", isCorrect: false },
+        { text: "381", isCorrect: false }
+      ],
+      explanation: "Soma de PG finita: Sn = a₁·(qⁿ - 1) / (q - 1). Para n = 6: S₆ = 3·(2⁶ - 1) / (2 - 1) = 3·(64 - 1) / 1 = 3 × 63 = 189."
+    },
+    {
+      difficulty: "dificil",
+      category: "Matemática • Polinômios e Álgebra",
+      topic: "UECE 2024: TEOREMA DO RESTO DE D'ALEMBERT (CLONE)",
+      title: "Polinômio Divisível e Raízes Reais",
+      context: "O polinômio P(x) = x³ - 4x² + x + m é exatamente divisível pelo binômio (x - 2).",
+      question: "Pelo Teorema de D'Alembert, o valor numérico do termo independente real m é:",
+      options: [
+        { text: "m = 6", isCorrect: true },
+        { text: "m = -6", isCorrect: false },
+        { text: "m = 4", isCorrect: false },
+        { text: "m = 0", isCorrect: false }
+      ],
+      explanation: "Se P(x) é divisível por (x - 2), então o resto é zero: P(2) = 0. Substituindo x = 2: (2)³ - 4(2)² + (2) + m = 0 ⇒ 8 - 16 + 2 + m = 0 ⇒ -6 + m = 0 ⇒ m = 6."
+    }
+]
 };
 
 // Objeto de Acesso Unificado aos Bancos de Questões por Modalidade
