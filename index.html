@@ -348,6 +348,26 @@
       border-bottom-color: #2b1316;
     }
 
+        .icon-infinite {
+      background: #2e1065;
+      color: #c084fc;
+    }
+
+    .area-card-btn.infinite-btn {
+      border-color: #581c87;
+      border-bottom-color: #3b0764;
+      background: #1e1338;
+    }
+
+    .area-card-btn.infinite-btn:hover {
+      background: #271947;
+      border-color: #7e22ce;
+    }
+
+    .area-card-btn.infinite-btn:active {
+      border-bottom-color: #2e1065;
+    }
+
     .area-card-btn.stats-btn {
       border-color: #1e4558;
       border-bottom-color: #143241;
@@ -1109,6 +1129,15 @@
         </div>
       </button>
 
+      <!-- Modo Motor de Questões Infinitas (Procedural Dinâmico) -->
+      <button class="area-card-btn infinite-btn" onclick="startInfiniteQuiz()">
+        <div class="area-icon-wrap icon-infinite">♾️</div>
+        <div class="area-info">
+          <h3 style="color: #c084fc;">Treino Infinito (Gerador IA)</h3>
+          <p id="infiniteBtnDesc">Questões procedurais inéditas geradas em tempo real com valores e cálculos aleatórios.</p>
+        </div>
+      </button>
+
       <!-- Opção de Treino Especial: Apenas Pontos Fracos do Usuário -->
       <button class="area-card-btn weak-btn" onclick="startWeakPointsQuiz()">
         <div class="area-icon-wrap icon-weak">🎯</div>
@@ -1270,6 +1299,7 @@
 
   <!-- Banco de Questões Completo -->
   <script src="questions.js"></script>
+  <script src="infinite-engine.js"></script>
 
   <script>
     // Estado Global do App & Modalidade
@@ -1705,6 +1735,34 @@
           descEl.textContent = "Nenhum erro registrado ainda. Treine nos cadernos acima!";
         }
       }
+    }
+
+    function startInfiniteQuiz() {
+      const sidePanel = document.getElementById('sideAnalysisPanel');
+      if (sidePanel) {
+        sidePanel.style.display = 'none';
+      }
+
+      userAnswersHistory = [];
+      // Gera lote de 5 questões procedurais infinitas com recalibração de gabarito e alternativas de acordo com o modo ativo
+      const infiniteQuestions = generateInfiniteQuizBatch(5, currentExamMode);
+
+      activeQuestionList = infiniteQuestions.map(q => {
+        return {
+          ...q,
+          shuffledOptions: shuffleArray(q.options)
+        };
+      });
+
+      currentQuestionIndex = 0;
+      hearts = 3;
+      heartsCountEl.textContent = hearts;
+      
+      areaSelectorScreen.style.display = "none";
+      questionView.style.display = "flex";
+      footerBar.style.display = "block";
+      
+      loadQuestion();
     }
 
     function startWeakPointsQuiz() {
