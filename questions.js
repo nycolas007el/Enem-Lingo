@@ -1491,22 +1491,24 @@ const QUESTION_DATABASE = {
       title: "Consumo Energético e Eficiência de Eletrodomésticos",
       context: "Uma família planeja reduzir sua fatura mensal de energia elétrica substituindo um aparelho antigo de alto consumo. A tabela a seguir registra as potências elétricas e o tempo diário médio de utilização de cinco aparelhos residenciais.",
       question: "Considerando uma tarifa de R$ 0,80 por kWh consumido em um mês padrão de 30 dias, o eletrodoméstico responsável pelo MAIOR custo financeiro na conta de luz dessa família é o(a):",
-      visualHtml: `<table class="enem-table">
-        <thead>
-          <tr>
-            <th>Aparelho</th>
-            <th>Potência (W)</th>
-            <th>Uso Diário Médio</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Chuveiro Elétrico</td><td>5.500 W</td><td>40 minutos (0,67 h)</td></tr>
-          <tr><td>Ar-Condicionado</td><td>1.200 W</td><td>8 horas</td></tr>
-          <tr><td>Geladeira Frost-Free</td><td>250 W</td><td>24 horas (motor cicla 10 h)</td></tr>
-          <tr><td>Televisor LED</td><td>100 W</td><td>5 horas</td></tr>
-          <tr><td>Forno Micro-ondas</td><td>1.400 W</td><td>15 minutos (0,25 h)</td></tr>
-        </tbody>
-      </table><div class="enem-visual-caption">Tabela técnica: Potência nominal e tempo de uso de eletrodomésticos residenciais.</div>`,
+      visualHtml: `<div class="enem-table-wrapper">
+        <table class="enem-table">
+          <thead>
+            <tr>
+              <th>Aparelho</th>
+              <th>Potência (W)</th>
+              <th>Uso Diário</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:700;">Chuveiro Elétrico</td><td>5.500 W</td><td>40 min (0,67 h)</td></tr>
+            <tr><td style="font-weight:700;">Ar-Condicionado</td><td>1.200 W</td><td>8 horas</td></tr>
+            <tr><td style="font-weight:700;">Geladeira Frost-Free</td><td>250 W</td><td>24 h (motor 10 h)</td></tr>
+            <tr><td style="font-weight:700;">Televisor LED</td><td>100 W</td><td>5 horas</td></tr>
+            <tr><td style="font-weight:700;">Micro-ondas</td><td>1.400 W</td><td>15 min (0,25 h)</td></tr>
+          </tbody>
+        </table>
+      </div><div class="enem-visual-caption"><span>📊</span> Tabela técnica: Potência nominal e tempo de uso diário.</div>`,
       options: [
         { text: "Ar-Condicionado (9,6 kWh/dia).", isCorrect: true },
         { text: "Chuveiro Elétrico (3,67 kWh/dia).", isCorrect: false },

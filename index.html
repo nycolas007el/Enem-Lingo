@@ -496,39 +496,67 @@
     }
 
     
-    /* Suporte a Elementos Visuais do ENEM (Diagramas, SVGs, Gráficos e Tabelas) */
+    /* Suporte a Elementos Visuais do ENEM (Diagramas, SVGs, Gráficos e Tabelas Responsivas) */
     .question-visual-box {
       display: none;
       width: 100%;
       background: #13222a;
       border: 1.5px solid #233c47;
       border-radius: 12px;
-      padding: 12px;
+      padding: 10px 8px;
       margin-bottom: 14px;
       text-align: center;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* Rolagem macia e fluida no iOS e Android */
+    }
+
+    /* Scrollbar sutil e visível para o usuário saber que pode rolar para os lados no celular */
+    .question-visual-box::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .question-visual-box::-webkit-scrollbar-track {
+      background: #101c22;
+      border-radius: 4px;
+    }
+
+    .question-visual-box::-webkit-scrollbar-thumb {
+      background: #233c47;
+      border-radius: 4px;
     }
 
     .question-visual-box svg {
       max-width: 100%;
+      min-width: 270px;
       height: auto;
       display: inline-block;
       vertical-align: middle;
     }
 
-    /* Estilo de Tabelas Técnicas Oficiais do ENEM */
+    /* Envoltório de rolagem com indicador visual de arrastar para o lado */
+    .enem-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 4px 0;
+    }
+
+    /* Estilo de Tabelas Técnicas Oficiais do ENEM - 100% Responsivas */
     .enem-table {
       width: 100%;
+      min-width: 290px;
       border-collapse: collapse;
-      margin: 4px 0;
-      font-size: 12.5px;
+      margin: 0 auto;
+      font-size: 11.5px;
       color: #e2e8f0;
+      word-break: normal;
     }
 
     .enem-table th, .enem-table td {
       border: 1px solid #284452;
-      padding: 7px 10px;
+      padding: 6px 8px;
       text-align: center;
+      line-height: 1.25;
     }
 
     .enem-table th {
@@ -536,23 +564,45 @@
       color: #38bdf8;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-size: 11px;
+      letter-spacing: 0.4px;
+      font-size: 10.5px;
+      white-space: nowrap;
     }
 
     .enem-table tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .enem-table tr:hover {
-      background: rgba(56, 189, 248, 0.06);
+      background: rgba(56, 189, 248, 0.08);
     }
 
     .enem-visual-caption {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #94a3b8;
       margin-top: 6px;
       font-style: italic;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    /* Ajuste para telas estreitas de smartphones (< 380px) */
+    @media (max-width: 380px) {
+      .enem-table {
+        font-size: 10.5px;
+      }
+      .enem-table th, .enem-table td {
+        padding: 5px 6px;
+      }
+      .enem-table th {
+        font-size: 9.5px;
+      }
+      .question-visual-box {
+        padding: 8px 4px;
+      }
     }
 
     .question-context {
