@@ -12,7 +12,18 @@
   Estude no formato Duolingo com sistema de ofensivas (streaks), vidas, gemas, feedback sonoro e progressão diária.
 </p>
 
+<p align="center">
+  <a href="https://nycolas007el.github.io/Enem-Lingo/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Acessar_Online-GitHub_Pages-58cc02?style=for-the-badge" alt="Deploy Online" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="./docs/preview.png" alt="Demonstração do ENEM Lingo" width="850px" style="border-radius: 10px;" />
+</p>
+
 [Visão Geral](#-visão-geral) •
+[Demonstração Online](#-demonstração-online) •
 [Funcionalidades Gamificadas](#-funcionalidades-gamificadas) •
 [Áreas de Conhecimento](#-áreas-do-conhecimento-cobertas) •
 [Tecnologias](#-tecnologias-utilizadas) •
