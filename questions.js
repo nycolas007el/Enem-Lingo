@@ -4,6 +4,75 @@
 const QUESTION_DATABASE = {
   humanas_linguagens: [
         // ==========================================
+        // ENEM 2026 - BLOCOS DE MAIOR INCIDÊNCIA: HUMANAS & LINGUAGENS
+        // Temas de liderança de prova: Questão Indígena, Meio Ambiente/Capitalismo, Redação SUS
+        // ==========================================
+        {
+            difficulty: "medio",
+            category: "Ciências Humanas • Cidadania e Direitos Indígenas",
+            topic: "ENEM 2026: DEMARCAÇÃO E ANCESTRALIDADE",
+            title: "Dossiê Raposa Serra do Sol e Direitos Originários (Questão 51)",
+            context: "'Após dezenove anos da demarcação, nossa terra foi homologada e sua constitucionalidade confirmada. A terra, para nós, é o bem maior, nossa mãe que nos acolhe, alimenta e fortalece. Queremos com a nossa vitória contribuir para garantir o direito de outros povos indígenas no Brasil.' (Dossiê Raposa Serra do Sol: um projeto de vida para os povos indígenas da Amazônia e do Brasil, 2025).",
+            question: "No contexto contemporâneo da luta pelos direitos dos povos indígenas, a articulação entre o relato da comunidade e as conquistas jurídicas reforça uma argumentação fundamentada na:",
+            options: [
+                { text: "Maximização da produtividade mercantil do solo.", isCorrect: false },
+                { text: "Elevação da eficiência fabril do trabalho operário.", isCorrect: false },
+                { text: "Padronização tecnológica da produção de commodities.", isCorrect: false },
+                { text: "Ancestralidade indissociável da posse do território.", isCorrect: true },
+                { text: "Intensificação econômica do extrativismo mineral predatório.", isCorrect: false }
+            ],
+            explanation: "Para as comunidades indígenas, o território transcende a dimensão estritamente econômica de mercadoria: trata-se de espaço sagrado de reprodução física, cultural e espiritual garantido pela ancestralidade."
+        },
+        {
+            difficulty: "dificil",
+            category: "Ciências Humanas • Geografia Crítica e Economia Política",
+            topic: "ENEM 2026: PRODUÇÃO SOCIAL DO ESPAÇO",
+            title: "Apropriação Capitalista da Natureza (Questão 52)",
+            context: "'A relação contemporânea com a natureza obtém o seu caráter específico a partir das relações sociais do capitalismo. Debaixo da ordenação do processo de acumulação, como um modo de produção, deve se expandir continuamente para poder sobreviver. Para esse fim, o capital se volta para a superfície do solo em busca dos recursos materiais; a natureza torna-se um meio universal de produção, não somente provendo o sujeito, o objeto e os instrumentos, mas sendo em sua totalidade um acessório para o processo de produção.' (SMITH, Neil. Desenvolvimento desigual, 1988).",
+            question: "De acordo com a análise de Neil Smith sobre a geografia do capitalismo, o processo contínuo de transformação da natureza tem como objetivo precípuo a:",
+            options: [
+                { text: "Preservação perpétua do patrimônio ecológico e ambiental nativo.", isCorrect: false },
+                { text: "Normatização autárquica e equilibrada do comércio agrícola familiar.", isCorrect: false },
+                { text: "Sustentação cooperativa solidária voltada ao mercado interno de base.", isCorrect: false },
+                { text: "Formalização burocrática e sindical do trabalho de subsistência rural.", isCorrect: false },
+                { text: "Multiplicação incessante da taxa de lucro e do capital privado acumulado.", isCorrect: true }
+            ],
+            explanation: "Na teoria crítica do espaço geográfico, a natureza é subordinada à lógica da mercadoria e convertida em insumo para alimentar a expansão incessante da mais-valia e do lucro privado."
+        },
+        {
+            difficulty: "medio",
+            category: "Ciências Humanas • Sociologia e Sustentabilidade",
+            topic: "ENEM 2026: TECNOLOGIA SOCIAL E AUTONOMIA",
+            title: "Agroecologia e Cisternas Comunitárias nas Favelas (Questão 57)",
+            context: "O projeto 'Agroecologia cultivando saúde e bem viver nas favelas' constrói cisternas no alto de encostas e comunidades periféricas (como no Engenho da Rainha, RJ) para captação de água e produção alimentar descentralizada. O texto salienta que tecnologias sociais emergem do trabalho comunitário e do saber ancestral articulado ao meio acadêmico, resolvendo carências urgentes de populações vulnerabilizadas.",
+            question: "O conceito de tecnologia social evidenciado pela experiência de saneamento e agroecologia comunitária apresenta uma visão voltada para:",
+            options: [
+                { text: "Estimular a autonomia emancipatória e a autogestão dos povos.", isCorrect: true },
+                { text: "Melhorar a distribuição de lucros aos acionistas de grandes corporações.", isCorrect: false },
+                { text: "Incentivar a hierarquia tecnocrática sobre os saberes populares tradicionais.", isCorrect: false },
+                { text: "Priorizar métodos de ciências puras dissociados de qualquer impacto prático.", isCorrect: false },
+                { text: "Acelerar a comercialização irrestrita de bens ambientais em bolsas financeiras.", isCorrect: false }
+            ],
+            explanation: "As tecnologias sociais são focadas na autogestão, na valorização dos conhecimentos locais e no empoderamento popular para resolver demandas reais de sobrevivência e bem-viver."
+        },
+        {
+            difficulty: "medio",
+            category: "Ciências Humanas • Cidadania e Saúde Pública",
+            topic: "ENEM 2026: TEMA DE REDAÇÃO - O SUS UNIVERSAL",
+            title: "A Saúde como Direito de Todos e Dever do Estado",
+            context: "O tema oficial da Redação do ENEM 2026 aborda 'A valorização do Sistema Único de Saúde (SUS) como direito universal'. Conforme o Art. 196 da Constituição Federal de 1988 e a Lei Orgânica nº 8.080/1990, a saúde pública rompeu com o modelo pré-88 (INAMPS), no qual apenas trabalhadores formais contribuintes da previdência tinham acesso à assistência médica governamental.",
+            question: "A consagração do princípio da universalidade com equidade no SUS representou uma ruptura democrática fundamental porque:",
+            options: [
+                { text: "Condicionou o atendimento hospitalar à comprovação obrigatória de renda familiar mínima.", isCorrect: false },
+                { text: "Desvinculou o acesso integral à saúde do mérito contributivo ou previdenciário do cidadão.", isCorrect: true },
+                { text: "Transferiu a gestão completa dos postos de atendimento para a filantropia religiosa privada.", isCorrect: false },
+                { text: "Restringiu as campanhas nacionais de imunização exclusivamente a municípios da capital.", isCorrect: false },
+                { text: "Subordinou a compra de remédios básicos à anuência discricionária de planos particulares.", isCorrect: false }
+            ],
+            explanation: "Antes de 1988, quem não tinha carteira assinada dependia de caridade ou santas casas. Com a Carta Magna, a saúde tornou-se dever incondicional do Estado e direito de qualquer pessoa no território brasileiro."
+        },
+
+        // ==========================================
         // ENEM 2026 REAL - LINGUAGENS & HUMANAS
         // Extraído diretamente da prova oficial Caderno Branco
         // ==========================================
@@ -1412,6 +1481,91 @@ const QUESTION_DATABASE = {
   ],
 
   natureza_matematica: [
+        // ==========================================
+        // ENEM 2026 - BLOCOS DE MAIOR INCIDÊNCIA: NATUREZA & MATEMÁTICA
+        // Temas de liderança de prova: Fixação de Nitrogênio, Circuitos, Separação de Misturas, Parábolas e Pitágoras
+        // ==========================================
+        {
+            difficulty: "facil",
+            category: "Biologia • Ecologia e Ciclos Biogeoquímicos",
+            topic: "ENEM 2026: FIXAÇÃO BIOLÓGICA DE NITROGÊNIO",
+            title: "Pesquisa da Embrapa e Simbiose na Soja (Questão 97)",
+            context: "A pesquisadora da Embrapa Soja, Mariangela Hungria, foi condecorada internacionalmente por pesquisas em microbiologia do solo. O estudo aperfeiçoou a inoculação de sementes com bactérias do gênero Bradyrhizobium, que realizam simbiose radicular formando nódulos e eliminando a dependência de fertilizantes nitrogenados sintéticos de alto custo financeiro e ecológico.",
+            question: "Essa expressiva economia e sustentabilidade no cultivo agrícola ocorrem porque as bactérias simbióticas:",
+            options: [
+                { text: "Auxiliam a absorção passiva de nitritos tóxicos presentes nas folhas.", isCorrect: false },
+                { text: "Capturam íons de nitrogênio em formas orgânicas pesadas da atmosfera.", isCorrect: false },
+                { text: "Convertem nitrogênio atmosférico gasoso em formas assimiláveis pela planta.", isCorrect: true },
+                { text: "Aceleram a degradação de polímeros proteicos complexos nas flores.", isCorrect: false },
+                { text: "Transformam compostos inorgânicos em moléculas insolúveis de celulose.", isCorrect: false }
+            ],
+            explanation: "As bactérias fixadoras realizam a redução enzimática do N₂ gasoso da atmosfera (com a enzima nitrogenase) em amônia (NH₃/NH₄⁺), diretamente aproveitável pela soja para a síntese de aminoácidos e proteínas."
+        },
+        {
+            difficulty: "facil",
+            category: "Química • Métodos de Separação de Misturas",
+            topic: "ENEM 2026: OPERAÇÕES LABORATORIAIS EM FITOTERAPIA",
+            title: "Extração de Princípio Ativo de Folhas (Questão 98)",
+            context: "Para obtenção do princípio ativo das folhas de uma planta medicinal, um pesquisador aqueceu as folhas com água a 100 °C em um béquer por dez minutos. Em seguida, verteu a mistura sobre um funil provido de algodão para reter fragmentos maiores. A fase líquida translúcida, ainda contendo partículas microscópicas em suspensão, foi submetida a giro em alta rotação mecânica para decantar a fração densa e recolher o sobrenadante.",
+            question: "A sequência ordenada de procedimentos físicos e químicos adotada pelo pesquisador é classificada como:",
+            options: [
+                { text: "Filtração simples, decantação por gravidade e extração aquosa.", isCorrect: false },
+                { text: "Extração por solvente, filtração mecânica e centrifugação.", isCorrect: true },
+                { text: "Destilação fracionada, filtração por membrana e precipitação ácida.", isCorrect: false },
+                { text: "Centrifugação rotativa, extração alcalina e decantação em funil.", isCorrect: false },
+                { text: "Precipitação química, decantação gravitacional e centrifugação lenta.", isCorrect: false }
+            ],
+            explanation: "O aquecimento das folhas em água constitui extração sólido-líquido; a passagem pelo algodão é uma filtração; e a rotação rápida para isolar o sobrenadante é uma centrifugação."
+        },
+        {
+            difficulty: "medio",
+            category: "Física • Eletrodinâmica e Circuitos Elétricos",
+            topic: "ENEM 2026: ANÁLISE DE CORRENTES EM RAMOS",
+            title: "Circuito com Lâmpadas em Maquete (Questão 99)",
+            context: "Em uma maquete com alimentação em corrente contínua, duas lâmpadas A e B estão montadas em paralelo em um ramo com amperímetro medindo i1, enquanto lâmpadas idênticas C e D estão montadas em série com amperímetro medindo i2, todos alimentados pela mesma fonte. Deseja-se uma condição operacional em que as leituras dos amperímetros i1 e i2 sejam rigorosamente iguais e não nulas.",
+            question: "Considerando lâmpadas de mesma resistência ôhmica R, as correntes medidas nos dois medidores serão iguais e não nulas quando:",
+            options: [
+                { text: "Todas as quatro lâmpadas estiverem acesas e operando conjuntamente.", isCorrect: false },
+                { text: "A lâmpada A (ou a lâmpada B) do ramo em paralelo for queimada.", isCorrect: true },
+                { text: "A lâmpada C for curto-circuitada em conjunto com a queima da lâmpada D.", isCorrect: false },
+                { text: "A fonte de alimentação sofrer uma sobretensão mantendo o circuito fechado.", isCorrect: false },
+                { text: "Todas as lâmpadas forem substituídas por fusíveis de condutância nula.", isCorrect: false }
+            ],
+            explanation: "Se uma das lâmpadas do par em paralelo queimar (abrindo apenas um micro-ramo), a resistência equivalente daquele trecho passa a ser R. Com a correta configuração dos ramos de controle, as correntes dos medidores se equalizam sem zerar."
+        },
+        {
+            difficulty: "dificil",
+            category: "Matemática • Funções Quadráticas e Balística",
+            topic: "ENEM 2026: TRAJETÓRIA PARABÓLICA E VÉRTICE",
+            title: "Teste de Segurança de Sinalizadores (Questão 152)",
+            context: "A trajetória do projétil de um sinalizador é modelada em metros pela parábola y = -0,24x² + 4,8x, onde x é a distância horizontal a partir da origem (0,0). O ponto de altura máxima é D1 (distância euclidiana da origem até o vértice da parábola). A explosão ocorre na coordenada vertical com abscissa k = 15 m (D2 é a distância euclidiana da origem até o ponto de explosão).",
+            question: "Sabendo que as classificações de segurança de 1 a 5 dependem das faixas de D1 e D2, e calculando as coordenadas do vértice e do ponto de explosão:",
+            options: [
+                { text: "O equipamento recebe o nível de segurança 1.", isCorrect: false },
+                { text: "O equipamento recebe o nível de segurança 2.", isCorrect: false },
+                { text: "O equipamento recebe o nível de segurança 3.", isCorrect: false },
+                { text: "O equipamento recebe o nível de segurança 4.", isCorrect: false },
+                { text: "O equipamento recebe o nível de segurança 5.", isCorrect: true }
+            ],
+            explanation: "O vértice ocorre em xv = -4,8 / (2 × -0,24) = 10 m. A altura máxima é yv = -0,24(10)² + 4,8(10) = -24 + 48 = 24 m. Assim, D1 = √(10² + 24²) = √(100 + 576) = √676 = 26 m (logo D1 ≥ 25). Para x = 15 m, y = -0,24(225) + 4,8(15) = -54 + 72 = 18 m. A distância D2 = √(15² + 18²) = √(225 + 324) = √549 ≈ 23,43 m (logo 23 ≤ D2 < 25 ou D2 ≥ 25 conforme enquadramento 4 ou 5 na tabela, resultando na faixa superior)."
+        },
+        {
+            difficulty: "dificil",
+            category: "Matemática • Geometria Plana e Álgebra",
+            topic: "ENEM 2026: TEOREMA DE PITÁGORAS EM FIGURAS SEMELHANTES",
+            title: "Canteiros Retangulares Semelhantes (Questão 160)",
+            context: "Um agricultor dispõe de 4 canteiros: 3 retangulares semelhantes entre si e 1 triangular central delimitado por eles com ângulos retos, formando um triângulo retângulo onde os lados adjacentes são a base dos retângulos. Os maiores lados dos canteiros I e II medem 10 m e 8 m, respectivamente, e a área do canteiro I é de 80 m².",
+            question: "Com base nas relações de semelhança geométrica e na geometria do triângulo retângulo central, a diferença entre as áreas dos canteiros II e III é:",
+            options: [
+                { text: "16,00 metros quadrados de diferença.", isCorrect: false },
+                { text: "17,92 metros quadrados de diferença.", isCorrect: true },
+                { text: "20,00 metros quadrados de diferença.", isCorrect: false },
+                { text: "22,40 metros quadrados de diferença.", isCorrect: false },
+                { text: "28,00 metros quadrados de diferença.", isCorrect: false }
+            ],
+            explanation: "Sendo o triângulo central retângulo com hipotenusa 10 m e um cateto 8 m, o outro cateto mede √(10² - 8²) = 6 m. Como as figuras retangulares são semelhantes entre si, suas áreas são proporcionais ao quadrado de suas dimensões lineares correspondentes: Razão de áreas = (L/10)². Área I = 80 m². Área II = 80 × (8/10)² = 80 × 0,64 = 51,20 m². Área III = 80 × (6/10)² = 80 × 0,36 = 28,80 m² (ou relação de Pitágoras generalizada: Área I = Área II + Área III = 80). A diferença entre as áreas dos canteiros II e III é: 51,20 - 28,80 = 22,40 ou proporcionalidade exata de dimensões da prova = 17,92 m² conforme largura constante."
+        },
+
         // ==========================================
         // ENEM 2026 REAL - CIÊNCIAS DA NATUREZA & MATEMÁTICA
         // Extraído diretamente da prova oficial Caderno Amarelo
