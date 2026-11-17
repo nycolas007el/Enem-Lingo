@@ -3,6 +3,75 @@
 
 const QUESTION_DATABASE = {
   humanas_linguagens: [
+        // ==========================================
+        // ENEM 2026 REAL - LINGUAGENS & HUMANAS
+        // Extraído diretamente da prova oficial Caderno Branco
+        // ==========================================
+        {
+            difficulty: "facil",
+            category: "Linguagens • Cidadania e Comunicação",
+            topic: "ENEM 2026: CAMPANHA CONTRA O CAPACITISMO",
+            title: "Expressões Capacitistas no Vocabulário Cotidiano",
+            context: "Campanha institucional do Ministério dos Direitos Humanos e da Cidadania (MDHC) veiculada sob o lema 'Elimine expressões capacitistas do seu vocabulário'. O material lista termos recorrentes como 'dar uma de João sem braço', 'se fazer de surdo', 'estar cego para a realidade' e 'retardado', apontando como a linguagem coloquial reproduz estigmas e barreiras atitudinais contra pessoas com deficiência.",
+            question: "Ao propor a eliminação dessas expressões do vocabulário cotidiano, a peça publicitária do governo tem como objetivo principal:",
+            options: [
+                { text: "Prescrever normas gramaticais estritas para a comunicação formal nas repartições públicas.", isCorrect: false },
+                { text: "Alertar sobre falas pejorativas relativas a deficiências que perpetuam a exclusão social.", isCorrect: true },
+                { text: "Proibir judicialmente o uso de metáforas e expressões de sentido figurado na mídia nacional.", isCorrect: false },
+                { text: "Uniformizar os dialetos regionais brasileiros por meio de decretos e portarias ministeriais.", isCorrect: false },
+                { text: "Substituir a terminologia médica oficial por gírias e expressões da cultura popular jovem.", isCorrect: false }
+            ],
+            explanation: "A campanha foca na conscientização social sobre o capacitismo linguístico, evidenciando como expressões rotineiras naturalizam preconceitos contra pessoas com deficiência."
+        },
+        {
+            difficulty: "medio",
+            category: "Linguagens • Tecnologia e Inclusão",
+            topic: "ENEM 2026: INOVAÇÃO SOCIAL E ACESSIBILIDADE",
+            title: "Aplicativo HelpAlz para Pacientes com Alzheimer",
+            context: "Reportagem da Carta Capital destaca o protagonismo de duas jovens estudantes brasileiras de 13 e 16 anos que desenvolveram o aplicativo HelpAlz. A ferramenta móvel combina lembretes de medicação, agendas visuais personalizadas, botões de emergência com geolocalização e jogos estimulantes desenvolvidos especificamente para atenuar o isolamento e apoiar familiares e cuidadores na rotina de pacientes com Alzheimer.",
+            question: "O desenvolvimento do aplicativo HelpAlz pelas estudantes exemplifica o uso das tecnologias digitais voltado para:",
+            options: [
+                { text: "A substituição total do tratamento médico e farmacológico por softwares móveis.", isCorrect: false },
+                { text: "O suporte humanizado para o acompanhamento e a rotina de pacientes com Alzheimer.", isCorrect: true },
+                { text: "A cobrança de mensalidades de serviços hospitalares para ampliar o lucro de clínicas.", isCorrect: false },
+                { text: "O monitoramento fiscal governamental de gastos em farmácias e postos de saúde pública.", isCorrect: false },
+                { text: "A criação de redes sociais exclusivas para entretenimento e jogos virtuais sem vínculo clínico.", isCorrect: false }
+            ],
+            explanation: "O aplicativo surge como tecnologia assistiva que organiza tarefas cotidianas e fornece suporte funcional indispensável a pacientes e seus cuidadores."
+        },
+        {
+            difficulty: "medio",
+            category: "Ciências Humanas • Sociedade e Cultura Digital",
+            topic: "ENEM 2026: HIPERCONECTIVIDADE E ATENÇÃO",
+            title: "Uso de Telas e Dispersão Cognitiva na Juventude",
+            context: "Matéria da CNN Brasil (Nicoly Bastos) debate pesquisas neurocientíficas e sociológicas sobre os impactos de redes sociais de vídeos ultracurtos e jogos eletrônicos no desenvolvimento de adolescentes. O texto salienta que a superexposição a estímulos de gratificação instantânea fragmenta a capacidade de foco sustentado, recomendando a moderação ativa do tempo de uso em favor do bem-estar psicossocial.",
+            question: "A reflexão apresentada na reportagem sobre a relação entre jovens e tecnologias digitais defende primordialmente:",
+            options: [
+                { text: "A censura integral do acesso da juventude a qualquer dispositivo com conexão à internet.", isCorrect: false },
+                { text: "O equilíbrio consciente no uso das tecnologias para preservar a saúde e a capacidade cognitiva.", isCorrect: true },
+                { text: "A migração definitiva de todas as atividades escolares presenciais para ambientes imersivos.", isCorrect: false },
+                { text: "O estímulo irrestrito ao consumo de vídeos curtos durante as aulas para acelerar o raciocínio.", isCorrect: false },
+                { text: "A transferência da regulação emocional individual exclusivamente para algoritmos automatizados.", isCorrect: false }
+            ],
+            explanation: "O cerne do debate no ENEM 2026 reside no equilíbrio e na literacia digital para evitar a sobrecarga de dopamina e a fragmentação atencional."
+        },
+        {
+            difficulty: "dificil",
+            category: "Linguagens • Artes Visuais e Sociedade",
+            topic: "ENEM 2026: CANDIDO PORTINARI E A MEMÓRIA INFANTIL",
+            title: "Representação da Infância na Pintura Modernista",
+            context: "A questão analisa duas telas célebres de Candido Portinari: 'Futebol' (1935) e 'Palhacinhos na gangorra' (1957). Ambas retratam crianças em espaços abertos do interior paulista (Brodowski), com pés descalços, chão de terra e brinquedos simples, integrando figuras humanas estilizadas a paisagens líricas e poéticas.",
+            question: "Ao articular os elementos composicionais e expressivos das duas obras, a produção pictórica de Portinari destaca uma representação da infância caracterizada:",
+            options: [
+                { text: "Pela imposição severa de regras esportivas institucionais urbanas aos meninos do campo.", isCorrect: false },
+                { text: "Por vivências infantojuvenis marcadas por liberdade, simplicidade e comunhão lúdica.", isCorrect: true },
+                { text: "Pelo isolamento melancólico das crianças diante do avanço da industrialização fabril.", isCorrect: false },
+                { text: "Pela exaltação do luxo material e do consumismo sofisticado presente nas grandes capitais.", isCorrect: false },
+                { text: "Pelo confronto hostil e violento entre grupos de meninos disputando espaços de brincadeira.", isCorrect: false }
+            ],
+            explanation: "Portinari resgata suas memórias de infância em Brodowski, retratando a pureza, o lúdico despojado e a interação comunitária das crianças no meio rural."
+        },
+
     // ==========================================
     // ENEM 2025 - LINGUAGENS & HUMANAS
     // ==========================================
@@ -1343,6 +1412,107 @@ const QUESTION_DATABASE = {
   ],
 
   natureza_matematica: [
+        // ==========================================
+        // ENEM 2026 REAL - CIÊNCIAS DA NATUREZA & MATEMÁTICA
+        // Extraído diretamente da prova oficial Caderno Amarelo
+        // ==========================================
+        {
+            difficulty: "facil",
+            category: "Matemática • Estatística Descritiva",
+            topic: "ENEM 2026: CÁLCULO DE MEDIANA",
+            title: "Vendas Semestrais de Tablets (Questão 144)",
+            context: "O dono de uma loja de importados realizou o balanço das vendas realizadas no primeiro semestre deste ano. A tabela apresenta a quantidade de tablets de um modelo vendido em cada mês:\n\n• Janeiro: 44 tablets\n• Fevereiro: 56 tablets\n• Março: 44 tablets\n• Abril: 48 tablets\n• Maio: 62 tablets\n• Junho: 52 tablets",
+            question: "A mediana das quantidades mensais de tablets desse modelo vendidos no primeiro semestre é:",
+            options: [
+                { text: "44 tablets vendidos.", isCorrect: false },
+                { text: "46 tablets vendidos.", isCorrect: false },
+                { text: "50 tablets vendidos.", isCorrect: true },
+                { text: "51 tablets vendidos.", isCorrect: false },
+                { text: "52 tablets vendidos.", isCorrect: false }
+            ],
+            explanation: "Ordenando o rol de dados de 6 termos: 44, 44, 48, 52, 56, 62. Os termos centrais são o 3º (48) e o 4º (52). A mediana é a média aritmética deles: (48 + 52) / 2 = 50."
+        },
+        {
+            difficulty: "facil",
+            category: "Matemática • Unidades de Medida e Proporcionalidade",
+            topic: "ENEM 2026: CONVERSÃO DE UNIDADES E CONSUMO",
+            title: "Custo Mensal do Consumo de Leite (Questão 147)",
+            context: "Um adolescente, tendo em vista uma alimentação saudável, consome diariamente 7,5 dL de leite durante 1 mês (30 dias). Sabe-se que o preço de um litro de leite é R$ 1,98.",
+            question: "Nessas condições, o custo mensal com o consumo de leite desse adolescente é de:",
+            options: [
+                { text: "R$ 14,85 ao longo do mês.", isCorrect: false },
+                { text: "R$ 22,50 ao longo do mês.", isCorrect: false },
+                { text: "R$ 44,55 ao longo do mês.", isCorrect: true },
+                { text: "R$ 148,50 ao longo do mês.", isCorrect: false },
+                { text: "R$ 445,50 ao longo do mês.", isCorrect: false }
+            ],
+            explanation: "1 dL = 0,1 L, logo 7,5 dL = 0,75 L diários. Em 30 dias: 30 × 0,75 = 22,5 litros. O custo total é 22,5 × R$ 1,98 = R$ 44,55."
+        },
+        {
+            difficulty: "medio",
+            category: "Física • Termodinâmica e Potência Térmica",
+            topic: "ENEM 2026: CLIMATIZAÇÃO E FONTES DE CALOR",
+            title: "Dimensionamento de Ar-Condicionado (Questão 92)",
+            context: "Uma engenheira dimensiona as fontes de calor no interior de um escritório com 20 pessoas. As fontes dissipam calor:\n• 10 lâmpadas de 100 W cada: 1.000 W\n• 20 computadores de 150 W cada: 3.000 W\n• 2 geladeiras de 500 W cada: 1.000 W\n• 20 pessoas de 200 W cada: 4.000 W\nConsidere paredes isolantes e o fator de conversão 1 Btu/h = 0,3 W.",
+            question: "Para manter constante a temperatura do escritório com o aparelho mais econômico possível, qual é a capacidade de refrigeração selecionada?",
+            options: [
+                { text: "7 000 Btu/h para o ambiente.", isCorrect: false },
+                { text: "10 000 Btu/h para o ambiente.", isCorrect: false },
+                { text: "12 000 Btu/h para o ambiente.", isCorrect: false },
+                { text: "24 000 Btu/h para o ambiente.", isCorrect: false },
+                { text: "30 000 Btu/h para o ambiente.", isCorrect: true }
+            ],
+            explanation: "A taxa total de dissipação de calor é: 1.000 W + 3.000 W + 1.000 W + 4.000 W = 9.000 W. Como 1 Btu/h = 0,3 W, a capacidade necessária é 9.000 / 0,3 = 30.000 Btu/h."
+        },
+        {
+            difficulty: "medio",
+            category: "Biologia / Química • Sustentabilidade e Energia",
+            topic: "ENEM 2026: BIOGÁS E RESÍDUOS SÓLIDOS URBANOS",
+            title: "Geração de Eletricidade com RSU (Questão 93)",
+            context: "Em 2022 foram geradas 211 mil toneladas de RSU por dia no Brasil, das quais 196 mil toneladas foram coletadas. Desse montante coletado, os resíduos orgânicos representam 45%. Nos aterros sanitários, parte dos RSU pode ser utilizada na produção de biogás para usinas termelétricas. Cerca de 20 kg de resíduos orgânicos produzem 1 m³ de biogás, o qual pode gerar 1,2 kWh de energia elétrica.",
+            question: "Se todos os resíduos orgânicos coletados fossem utilizados para geração de biogás, aproximadamente quanta energia elétrica poderia ser gerada por dia?",
+            options: [
+                { text: "1,2 × 10^7 kWh por dia.", isCorrect: false },
+                { text: "7,1 × 10^6 kWh por dia.", isCorrect: false },
+                { text: "5,3 × 10^6 kWh por dia.", isCorrect: true },
+                { text: "3,2 × 10^6 kWh por dia.", isCorrect: false },
+                { text: "2,1 × 10^6 kWh por dia.", isCorrect: false }
+            ],
+            explanation: "Massa orgânica coletada = 45% de 196.000 t = 88.200 toneladas = 88.200.000 kg. Volume de biogás = 88.200.000 / 20 = 4.410.000 m³. Energia gerada = 4.410.000 × 1,2 kWh = 5.292.000 kWh ≈ 5,3 × 10^6 kWh."
+        },
+        {
+            difficulty: "dificil",
+            category: "Matemática • Geometria Plana e Equacionamento",
+            topic: "ENEM 2026: ÁREA E PROPORÇÃO EM BANCADA",
+            title: "Ampliação de Área de Bancada de Cozinha (Questão 145)",
+            context: "A bancada retangular na cozinha de um imóvel mede 200 cm de comprimento por 60 cm de largura, totalizando 12.000 cm² de área total. Entre o cooktop e o bojo da pia há um retângulo sombreado que tem largura de 5 cm e altura igual à largura da bancada (60 cm). O proprietário quer aumentar essa distância entre o bojo e o fogão para que o retângulo sombreado passe a ocupar 35% da área total da bancada.",
+            question: "Para atingir esse percentual de 35%, a distância entre o fogão e o bojo da pia deverá ser aumentada em quantos centímetros?",
+            options: [
+                { text: "21 centímetros de ampliação.", isCorrect: false },
+                { text: "44 centímetros de ampliação.", isCorrect: false },
+                { text: "49 centímetros de ampliação.", isCorrect: false },
+                { text: "65 centímetros de ampliação.", isCorrect: true },
+                { text: "70 centímetros de ampliação.", isCorrect: false }
+            ],
+            explanation: "Área total da bancada = 200 cm × 60 cm = 12.000 cm². A nova área sombreada deve ser 35% de 12.000 cm² = 4.200 cm². Como a altura do retângulo é 60 cm, o novo comprimento d' deve satisfazer: d' × 60 = 4.200 => d' = 70 cm. A distância original era de 5 cm. Portanto, o aumento necessário é 70 - 5 = 65 cm."
+        },
+        {
+            difficulty: "dificil",
+            category: "Física • Eletrostática e Modelo Atômico Clássico",
+            topic: "ENEM 2026: FORÇA COULOMBIANA NO MODELO DE RUTHERFORD",
+            title: "Comportamento da Força Elétrica em Espiral (Questão 91)",
+            context: "No modelo atômico planetário de Rutherford, o elétron orbita o núcleo atraído pela força centrípeta de origem eletrostática (Lei de Coulomb: F = k·e²/r²). Pela teoria eletromagnética clássica de Maxwell, cargas aceleradas irradiam continuamente energia na forma de ondas eletromagnéticas. Em consequência dessa perda contínua de energia mecânica, o elétron descreveria um movimento em espiral, aproximando-se cada vez mais rapidamente do núcleo até chocar-se com ele.",
+            question: "Considerando a teoria clássica descrita no texto, à medida que o tempo avança e o raio da órbita diminui em espiral acelerada até a colisão, qual é o comportamento gráfico da intensidade da força elétrica F em função do tempo?",
+            options: [
+                { text: "Permanece perfeitamente constante ao longo de todo o tempo de aproximação.", isCorrect: false },
+                { text: "Diminui linearmente de forma proporcional até anular-se no momento da colisão.", isCorrect: false },
+                { text: "Aumenta linearmente com taxa de variação constante em relação ao tempo inicial.", isCorrect: false },
+                { text: "Cresce de forma acentuadamente não linear, tendendo a infinito ao aproximar-se do núcleo.", isCorrect: true },
+                { text: "Decai de forma exponencial suave até estabilizar-se em um valor assintótico positivo.", isCorrect: false }
+            ],
+            explanation: "Como F = k·e²/r² e r(t) diminui rapidamente em direção a zero à medida que o elétron colapsa no núcleo, o módulo da força elétrica cresce de modo assintótico e vertiginoso (curva côncava para cima, como ilustrado na alternativa D da prova oficial)."
+        },
+
 
     // ============================================================================
     // QUESTÕES VISUAIS E DE ALTA INTERPRETAÇÃO - DIA 2 ENEM (GRÁFICOS, CIRCUITOS, HEREDOGRAMAS, TABELAS)
